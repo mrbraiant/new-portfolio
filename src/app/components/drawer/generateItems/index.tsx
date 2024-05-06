@@ -9,22 +9,30 @@ type GenerateItemProps = {
   icon: ReactNode;
   text: string;
   route: string;
+  botomIcons?: boolean;
 };
 
 export const GenerateItems = ({
   icon,
   text,
   route,
+  botomIcons = false,
 }: GenerateItemProps) => {
   return (
     <ListItemButton
       href={`#${route}`}
-      style={{ scrollBehavior: 'smooth' }}
+      sx={{
+        '&:hover': {
+          backgroundColor: botomIcons
+            ? '#24394C'
+            : '#485A6A',
+          color: '#DADEE1',
+        },
+      }}
     >
       <ListItemIcon
         sx={{
           paddingLeft: '0.3rem',
-          scrollBehavior: 'smooth',
         }}
       >
         {icon}

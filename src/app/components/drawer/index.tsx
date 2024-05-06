@@ -41,6 +41,7 @@ import {
 } from '@mui/icons-material';
 import Image from 'next/image';
 import { Text } from '@components/text';
+import { SectionTitle } from '@components/sectionTitle';
 
 const drawerWidth = 180;
 const iconColor = '#00192F';
@@ -189,7 +190,9 @@ export const MiniDrawer = () => {
         <List>
           <ListItem
             disablePadding
-            sx={{ display: 'block' }}
+            sx={{
+              display: 'block',
+            }}
           >
             <GenerateItems
               icon={<Cottage sx={{ color: iconColor }} />}
@@ -226,6 +229,7 @@ export const MiniDrawer = () => {
             />
           </ListItem>
         </List>
+
         <Divider />
         <List>
           <ListItem
@@ -236,16 +240,19 @@ export const MiniDrawer = () => {
               icon={<School sx={{ color: iconColor }} />}
               route="education"
               text="Education"
+              botomIcons
             />
             <GenerateItems
               icon={<Message sx={{ color: iconColor }} />}
               route="contact"
               text="Contact"
+              botomIcons
             />
             <GenerateItems
               icon={<Newspaper sx={{ color: iconColor }} />}
               route="blog"
               text="Blog"
+              botomIcons
             />
           </ListItem>
         </List>
@@ -261,6 +268,7 @@ export const MiniDrawer = () => {
           id="home"
           src={'/images/background.png'}
           priority
+          loading="eager"
           sizes="100vw"
           width={1100}
           height={600}
@@ -270,12 +278,6 @@ export const MiniDrawer = () => {
             objectFit: 'cover',
           }}
         />
-        {/* <img
-          alt="main-image"
-          id="home"
-          src={'/images/background.jpeg'}
-          style={{ width: '95vw', height: '95vh' }}
-        /> */}
         <Box
           component="main"
           sx={{
@@ -288,106 +290,7 @@ export const MiniDrawer = () => {
           {/* CONTENT AREA */}
 
           <div id="about">
-            <div
-              style={{
-                width: '90vw',
-                height: '20vh',
-                backgroundColor: 'darkblue',
-                borderRadius: 10,
-              }}
-            >
-              <Text
-                type="h4"
-                sx={{ color: 'white' }}
-                textAlign="center"
-              >
-                About me
-              </Text>
-            </div>
-            <Typography paragraph>
-              Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua.
-              Rhoncus dolor purus non enim praesent
-              elementum facilisis leo vel. Risus at ultrices
-              mi tempus imperdiet. Semper risus in hendrerit
-              gravida rutrum quisque non tellus. Convallis
-              convallis tellus id interdum velit laoreet id
-              donec ultrices. Odio morbi quis commodo odio
-              aenean sed adipiscing. Amet nisl suscipit
-              adipiscing bibendum est ultricies integer
-              quis. Cursus euismod quis viverra nibh cras.
-              Metus vulputate eu scelerisque felis imperdiet
-              proin fermentum leo. Mauris commodo quis
-              imperdiet massa tincidunt. Cras tincidunt
-              lobortis feugiat vivamus at augue. At augue
-              eget arcu dictum varius duis at consectetur
-              lorem. Velit sed ullamcorper morbi tincidunt.
-              Lorem donec massa sapien faucibus et molestie
-              ac.
-            </Typography>
-            <Typography paragraph>
-              Consequat mauris nunc congue nisi vitae
-              suscipit. Fringilla est ullamcorper eget nulla
-              facilisi etiam dignissim diam. Pulvinar
-              elementum integer enim neque volutpat ac
-              tincidunt. Ornare suspendisse sed nisi lacus
-              sed viverra tellus. Purus sit amet volutpat
-              consequat mauris. Elementum eu facilisis sed
-              odio morbi. Euismod lacinia at quis risus sed
-              vulputate odio. Morbi tincidunt ornare massa
-              eget egestas purus viverra accumsan in. In
-              hendrerit gravida rutrum quisque non tellus
-              orci ac. Pellentesque nec nam aliquam sem et
-              tortor. Habitant morbi tristique senectus et.
-              Adipiscing elit duis tristique sollicitudin
-              nibh sit. Ornare aenean euismod elementum nisi
-              quis eleifend. Commodo viverra maecenas
-              accumsan lacus vel facilisis. Nulla posuere
-              sollicitudin aliquam ultrices sagittis orci a.
-            </Typography>
-            <Typography paragraph>
-              Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua.
-              Rhoncus dolor purus non enim praesent
-              elementum facilisis leo vel. Risus at ultrices
-              mi tempus imperdiet. Semper risus in hendrerit
-              gravida rutrum quisque non tellus. Convallis
-              convallis tellus id interdum velit laoreet id
-              donec ultrices. Odio morbi quis commodo odio
-              aenean sed adipiscing. Amet nisl suscipit
-              adipiscing bibendum est ultricies integer
-              quis. Cursus euismod quis viverra nibh cras.
-              Metus vulputate eu scelerisque felis imperdiet
-              proin fermentum leo. Mauris commodo quis
-              imperdiet massa tincidunt. Cras tincidunt
-              lobortis feugiat vivamus at augue. At augue
-              eget arcu dictum varius duis at consectetur
-              lorem. Velit sed ullamcorper morbi tincidunt.
-              Lorem donec massa sapien faucibus et molestie
-              ac.
-            </Typography>
-            <Typography paragraph>
-              Consequat mauris nunc congue nisi vitae
-              suscipit. Fringilla est ullamcorper eget nulla
-              facilisi etiam dignissim diam. Pulvinar
-              elementum integer enim neque volutpat ac
-              tincidunt. Ornare suspendisse sed nisi lacus
-              sed viverra tellus. Purus sit amet volutpat
-              consequat mauris. Elementum eu facilisis sed
-              odio morbi. Euismod lacinia at quis risus sed
-              vulputate odio. Morbi tincidunt ornare massa
-              eget egestas purus viverra accumsan in. In
-              hendrerit gravida rutrum quisque non tellus
-              orci ac. Pellentesque nec nam aliquam sem et
-              tortor. Habitant morbi tristique senectus et.
-              Adipiscing elit duis tristique sollicitudin
-              nibh sit. Ornare aenean euismod elementum nisi
-              quis eleifend. Commodo viverra maecenas
-              accumsan lacus vel facilisis. Nulla posuere
-              sollicitudin aliquam ultrices sagittis orci a.
-            </Typography>
+            <SectionTitle title="About" />
             <Typography paragraph>
               Lorem ipsum dolor sit amet, consectetur
               adipiscing elit, sed do eiusmod tempor
@@ -476,13 +379,10 @@ export const MiniDrawer = () => {
           <Divider />
 
           <div id="experience">
-            <div
-              style={{
-                width: '90vw',
-                height: '20vh',
-                backgroundColor: 'darkorange',
-              }}
-            ></div>
+            <SectionTitle
+              title="Experience"
+              backgroundColor="#24394C"
+            />
             <Typography paragraph>
               Lorem ipsum dolor sit amet, consectetur
               adipiscing elit, sed do eiusmod tempor
@@ -529,13 +429,10 @@ export const MiniDrawer = () => {
 
           <Divider />
           <div id="projects">
-            <div
-              style={{
-                width: '90vw',
-                height: '20vh',
-                backgroundColor: 'darkgreen',
-              }}
-            ></div>
+            <SectionTitle
+              title="Projects"
+              backgroundColor="#485A6A"
+            />
             <Typography paragraph>
               Lorem ipsum dolor sit amet, consectetur
               adipiscing elit, sed do eiusmod tempor
@@ -642,6 +539,278 @@ export const MiniDrawer = () => {
               Lorem donec massa sapien faucibus et molestie
               ac.
             </Typography>
+            <Typography paragraph>
+              Consequat mauris nunc congue nisi vitae
+              suscipit. Fringilla est ullamcorper eget nulla
+              facilisi etiam dignissim diam. Pulvinar
+              elementum integer enim neque volutpat ac
+              tincidunt. Ornare suspendisse sed nisi lacus
+              sed viverra tellus. Purus sit amet volutpat
+              consequat mauris. Elementum eu facilisis sed
+              odio morbi. Euismod lacinia at quis risus sed
+              vulputate odio. Morbi tincidunt ornare massa
+              eget egestas purus viverra accumsan in. In
+              hendrerit gravida rutrum quisque non tellus
+              orci ac. Pellentesque nec nam aliquam sem et
+              tortor. Habitant morbi tristique senectus et.
+              Adipiscing elit duis tristique sollicitudin
+              nibh sit. Ornare aenean euismod elementum nisi
+              quis eleifend. Commodo viverra maecenas
+              accumsan lacus vel facilisis. Nulla posuere
+              sollicitudin aliquam ultrices sagittis orci a.
+            </Typography>
+          </div>
+
+          <Divider />
+          <div id="skills">
+            <SectionTitle
+              title="Skills"
+              backgroundColor="#6D7B88"
+            />
+            <Typography paragraph>
+              Consequat mauris nunc congue nisi vitae
+              suscipit. Fringilla est ullamcorper eget nulla
+              facilisi etiam dignissim diam. Pulvinar
+              elementum integer enim neque volutpat ac
+              tincidunt. Ornare suspendisse sed nisi lacus
+              sed viverra tellus. Purus sit amet volutpat
+              consequat mauris. Elementum eu facilisis sed
+              odio morbi. Euismod lacinia at quis risus sed
+              vulputate odio. Morbi tincidunt ornare massa
+              eget egestas purus viverra accumsan in. In
+              hendrerit gravida rutrum quisque non tellus
+              orci ac. Pellentesque nec nam aliquam sem et
+              tortor. Habitant morbi tristique senectus et.
+              Adipiscing elit duis tristique sollicitudin
+              nibh sit. Ornare aenean euismod elementum nisi
+              quis eleifend. Commodo viverra maecenas
+              accumsan lacus vel facilisis. Nulla posuere
+              sollicitudin aliquam ultrices sagittis orci a.
+            </Typography>{' '}
+            <Typography paragraph>
+              Consequat mauris nunc congue nisi vitae
+              suscipit. Fringilla est ullamcorper eget nulla
+              facilisi etiam dignissim diam. Pulvinar
+              elementum integer enim neque volutpat ac
+              tincidunt. Ornare suspendisse sed nisi lacus
+              sed viverra tellus. Purus sit amet volutpat
+              consequat mauris. Elementum eu facilisis sed
+              odio morbi. Euismod lacinia at quis risus sed
+              vulputate odio. Morbi tincidunt ornare massa
+              eget egestas purus viverra accumsan in. In
+              hendrerit gravida rutrum quisque non tellus
+              orci ac. Pellentesque nec nam aliquam sem et
+              tortor. Habitant morbi tristique senectus et.
+              Adipiscing elit duis tristique sollicitudin
+              nibh sit. Ornare aenean euismod elementum nisi
+              quis eleifend. Commodo viverra maecenas
+              accumsan lacus vel facilisis. Nulla posuere
+              sollicitudin aliquam ultrices sagittis orci a.
+            </Typography>{' '}
+            <Typography paragraph>
+              Consequat mauris nunc congue nisi vitae
+              suscipit. Fringilla est ullamcorper eget nulla
+              facilisi etiam dignissim diam. Pulvinar
+              elementum integer enim neque volutpat ac
+              tincidunt. Ornare suspendisse sed nisi lacus
+              sed viverra tellus. Purus sit amet volutpat
+              consequat mauris. Elementum eu facilisis sed
+              odio morbi. Euismod lacinia at quis risus sed
+              vulputate odio. Morbi tincidunt ornare massa
+              eget egestas purus viverra accumsan in. In
+              hendrerit gravida rutrum quisque non tellus
+              orci ac. Pellentesque nec nam aliquam sem et
+              tortor. Habitant morbi tristique senectus et.
+              Adipiscing elit duis tristique sollicitudin
+              nibh sit. Ornare aenean euismod elementum nisi
+              quis eleifend. Commodo viverra maecenas
+              accumsan lacus vel facilisis. Nulla posuere
+              sollicitudin aliquam ultrices sagittis orci a.
+            </Typography>
+          </div>
+
+          <Divider />
+          <div id="education">
+            <SectionTitle
+              title="Education"
+              backgroundColor="#919CA5"
+            />
+            <Typography paragraph>
+              Consequat mauris nunc congue nisi vitae
+              suscipit. Fringilla est ullamcorper eget nulla
+              facilisi etiam dignissim diam. Pulvinar
+              elementum integer enim neque volutpat ac
+              tincidunt. Ornare suspendisse sed nisi lacus
+              sed viverra tellus. Purus sit amet volutpat
+              consequat mauris. Elementum eu facilisis sed
+              odio morbi. Euismod lacinia at quis risus sed
+              vulputate odio. Morbi tincidunt ornare massa
+              eget egestas purus viverra accumsan in. In
+              hendrerit gravida rutrum quisque non tellus
+              orci ac. Pellentesque nec nam aliquam sem et
+              tortor. Habitant morbi tristique senectus et.
+              Adipiscing elit duis tristique sollicitudin
+              nibh sit. Ornare aenean euismod elementum nisi
+              quis eleifend. Commodo viverra maecenas
+              accumsan lacus vel facilisis. Nulla posuere
+              sollicitudin aliquam ultrices sagittis orci a.
+            </Typography>{' '}
+            <Typography paragraph>
+              Consequat mauris nunc congue nisi vitae
+              suscipit. Fringilla est ullamcorper eget nulla
+              facilisi etiam dignissim diam. Pulvinar
+              elementum integer enim neque volutpat ac
+              tincidunt. Ornare suspendisse sed nisi lacus
+              sed viverra tellus. Purus sit amet volutpat
+              consequat mauris. Elementum eu facilisis sed
+              odio morbi. Euismod lacinia at quis risus sed
+              vulputate odio. Morbi tincidunt ornare massa
+              eget egestas purus viverra accumsan in. In
+              hendrerit gravida rutrum quisque non tellus
+              orci ac. Pellentesque nec nam aliquam sem et
+              tortor. Habitant morbi tristique senectus et.
+              Adipiscing elit duis tristique sollicitudin
+              nibh sit. Ornare aenean euismod elementum nisi
+              quis eleifend. Commodo viverra maecenas
+              accumsan lacus vel facilisis. Nulla posuere
+              sollicitudin aliquam ultrices sagittis orci a.
+            </Typography>{' '}
+            <Typography paragraph>
+              Consequat mauris nunc congue nisi vitae
+              suscipit. Fringilla est ullamcorper eget nulla
+              facilisi etiam dignissim diam. Pulvinar
+              elementum integer enim neque volutpat ac
+              tincidunt. Ornare suspendisse sed nisi lacus
+              sed viverra tellus. Purus sit amet volutpat
+              consequat mauris. Elementum eu facilisis sed
+              odio morbi. Euismod lacinia at quis risus sed
+              vulputate odio. Morbi tincidunt ornare massa
+              eget egestas purus viverra accumsan in. In
+              hendrerit gravida rutrum quisque non tellus
+              orci ac. Pellentesque nec nam aliquam sem et
+              tortor. Habitant morbi tristique senectus et.
+              Adipiscing elit duis tristique sollicitudin
+              nibh sit. Ornare aenean euismod elementum nisi
+              quis eleifend. Commodo viverra maecenas
+              accumsan lacus vel facilisis. Nulla posuere
+              sollicitudin aliquam ultrices sagittis orci a.
+            </Typography>
+          </div>
+
+          <Divider />
+          <div id="contact">
+            <SectionTitle
+              title="Contact"
+              backgroundColor="#6D7B88"
+            />
+            <Typography paragraph>
+              Consequat mauris nunc congue nisi vitae
+              suscipit. Fringilla est ullamcorper eget nulla
+              facilisi etiam dignissim diam. Pulvinar
+              elementum integer enim neque volutpat ac
+              tincidunt. Ornare suspendisse sed nisi lacus
+              sed viverra tellus. Purus sit amet volutpat
+              consequat mauris. Elementum eu facilisis sed
+              odio morbi. Euismod lacinia at quis risus sed
+              vulputate odio. Morbi tincidunt ornare massa
+              eget egestas purus viverra accumsan in. In
+              hendrerit gravida rutrum quisque non tellus
+              orci ac. Pellentesque nec nam aliquam sem et
+              tortor. Habitant morbi tristique senectus et.
+              Adipiscing elit duis tristique sollicitudin
+              nibh sit. Ornare aenean euismod elementum nisi
+              quis eleifend. Commodo viverra maecenas
+              accumsan lacus vel facilisis. Nulla posuere
+              sollicitudin aliquam ultrices sagittis orci a.
+            </Typography>{' '}
+            <Typography paragraph>
+              Consequat mauris nunc congue nisi vitae
+              suscipit. Fringilla est ullamcorper eget nulla
+              facilisi etiam dignissim diam. Pulvinar
+              elementum integer enim neque volutpat ac
+              tincidunt. Ornare suspendisse sed nisi lacus
+              sed viverra tellus. Purus sit amet volutpat
+              consequat mauris. Elementum eu facilisis sed
+              odio morbi. Euismod lacinia at quis risus sed
+              vulputate odio. Morbi tincidunt ornare massa
+              eget egestas purus viverra accumsan in. In
+              hendrerit gravida rutrum quisque non tellus
+              orci ac. Pellentesque nec nam aliquam sem et
+              tortor. Habitant morbi tristique senectus et.
+              Adipiscing elit duis tristique sollicitudin
+              nibh sit. Ornare aenean euismod elementum nisi
+              quis eleifend. Commodo viverra maecenas
+              accumsan lacus vel facilisis. Nulla posuere
+              sollicitudin aliquam ultrices sagittis orci a.
+            </Typography>{' '}
+            <Typography paragraph>
+              Consequat mauris nunc congue nisi vitae
+              suscipit. Fringilla est ullamcorper eget nulla
+              facilisi etiam dignissim diam. Pulvinar
+              elementum integer enim neque volutpat ac
+              tincidunt. Ornare suspendisse sed nisi lacus
+              sed viverra tellus. Purus sit amet volutpat
+              consequat mauris. Elementum eu facilisis sed
+              odio morbi. Euismod lacinia at quis risus sed
+              vulputate odio. Morbi tincidunt ornare massa
+              eget egestas purus viverra accumsan in. In
+              hendrerit gravida rutrum quisque non tellus
+              orci ac. Pellentesque nec nam aliquam sem et
+              tortor. Habitant morbi tristique senectus et.
+              Adipiscing elit duis tristique sollicitudin
+              nibh sit. Ornare aenean euismod elementum nisi
+              quis eleifend. Commodo viverra maecenas
+              accumsan lacus vel facilisis. Nulla posuere
+              sollicitudin aliquam ultrices sagittis orci a.
+            </Typography>
+          </div>
+
+          <Divider />
+          <div id="blog">
+            <SectionTitle
+              title="Blog"
+              backgroundColor="#485A6A"
+            />
+            <Typography paragraph>
+              Consequat mauris nunc congue nisi vitae
+              suscipit. Fringilla est ullamcorper eget nulla
+              facilisi etiam dignissim diam. Pulvinar
+              elementum integer enim neque volutpat ac
+              tincidunt. Ornare suspendisse sed nisi lacus
+              sed viverra tellus. Purus sit amet volutpat
+              consequat mauris. Elementum eu facilisis sed
+              odio morbi. Euismod lacinia at quis risus sed
+              vulputate odio. Morbi tincidunt ornare massa
+              eget egestas purus viverra accumsan in. In
+              hendrerit gravida rutrum quisque non tellus
+              orci ac. Pellentesque nec nam aliquam sem et
+              tortor. Habitant morbi tristique senectus et.
+              Adipiscing elit duis tristique sollicitudin
+              nibh sit. Ornare aenean euismod elementum nisi
+              quis eleifend. Commodo viverra maecenas
+              accumsan lacus vel facilisis. Nulla posuere
+              sollicitudin aliquam ultrices sagittis orci a.
+            </Typography>{' '}
+            <Typography paragraph>
+              Consequat mauris nunc congue nisi vitae
+              suscipit. Fringilla est ullamcorper eget nulla
+              facilisi etiam dignissim diam. Pulvinar
+              elementum integer enim neque volutpat ac
+              tincidunt. Ornare suspendisse sed nisi lacus
+              sed viverra tellus. Purus sit amet volutpat
+              consequat mauris. Elementum eu facilisis sed
+              odio morbi. Euismod lacinia at quis risus sed
+              vulputate odio. Morbi tincidunt ornare massa
+              eget egestas purus viverra accumsan in. In
+              hendrerit gravida rutrum quisque non tellus
+              orci ac. Pellentesque nec nam aliquam sem et
+              tortor. Habitant morbi tristique senectus et.
+              Adipiscing elit duis tristique sollicitudin
+              nibh sit. Ornare aenean euismod elementum nisi
+              quis eleifend. Commodo viverra maecenas
+              accumsan lacus vel facilisis. Nulla posuere
+              sollicitudin aliquam ultrices sagittis orci a.
+            </Typography>{' '}
             <Typography paragraph>
               Consequat mauris nunc congue nisi vitae
               suscipit. Fringilla est ullamcorper eget nulla
