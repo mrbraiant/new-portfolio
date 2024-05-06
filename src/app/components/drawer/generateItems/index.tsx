@@ -19,9 +19,14 @@ export const GenerateItems = ({
   return (
     <ListItemButton
       href={`#${route}`}
-      // style={{ scrollBehavior: 'smooth' }}
+      style={{ scrollBehavior: 'smooth' }}
     >
-      <ListItemIcon sx={{ paddingLeft: '0.3rem' }}>
+      <ListItemIcon
+        sx={{
+          paddingLeft: '0.3rem',
+          scrollBehavior: 'smooth',
+        }}
+      >
         {icon}
       </ListItemIcon>
       <Text type="subtitle2">{text}</Text>
