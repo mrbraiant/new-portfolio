@@ -27,6 +27,9 @@ export const GenerateItems = ({
             ? '#24394C'
             : '#485A6A',
           color: '#DADEE1',
+          ['svg']: {
+            color: '#DADEE1',
+          },
         },
       }}
     >
