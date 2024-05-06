@@ -140,6 +140,7 @@ export const MiniDrawer = () => {
     <Box
       sx={{
         display: 'flex',
+        width: '100%',
       }}
     >
       <CssBaseline />
@@ -269,7 +270,7 @@ export const MiniDrawer = () => {
           src={'/images/background.png'}
           priority
           loading="eager"
-          sizes="100vw"
+          // sizes="100vw"
           width={1100}
           height={600}
           style={{
