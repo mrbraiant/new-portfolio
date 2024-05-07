@@ -425,7 +425,9 @@ export const MiniDrawer = () => {
           <div id="about">
             <SectionTitle title="About" />
             <Typography
-              variant={isMobileVersion ? 'body2' : 'body1'}
+              variant={
+                /* isMobileVersion ? 'body2' :  */ 'body1'
+              }
             >
               Lorem ipsum dolor sit amet, consectetur
               adipiscing elit, sed do eiusmod tempor
@@ -449,7 +451,9 @@ export const MiniDrawer = () => {
               ac.
             </Typography>
             <Typography
-              variant={isMobileVersion ? 'body2' : 'body1'}
+              variant={
+                /* isMobileVersion ? 'body2' :  */ 'body1'
+              }
             >
               Consequat mauris nunc congue nisi vitae
               suscipit. Fringilla est ullamcorper eget nulla
@@ -479,7 +483,9 @@ export const MiniDrawer = () => {
               backgroundColor="#24394C"
             />
             <Typography
-              variant={isMobileVersion ? 'body2' : 'body1'}
+              variant={
+                /* isMobileVersion ? 'body2' :  */ 'body1'
+              }
             >
               Lorem ipsum dolor sit amet, consectetur
               adipiscing elit, sed do eiusmod tempor
@@ -503,7 +509,9 @@ export const MiniDrawer = () => {
               ac.
             </Typography>
             <Typography
-              variant={isMobileVersion ? 'body2' : 'body1'}
+              variant={
+                /* isMobileVersion ? 'body2' :  */ 'body1'
+              }
             >
               Consequat mauris nunc congue nisi vitae
               suscipit. Fringilla est ullamcorper eget nulla
@@ -533,7 +541,9 @@ export const MiniDrawer = () => {
               backgroundColor="#485A6A"
             />
             <Typography
-              variant={isMobileVersion ? 'body2' : 'body1'}
+              variant={
+                /* isMobileVersion ? 'body2' :  */ 'body1'
+              }
             >
               Lorem ipsum dolor sit amet, consectetur
               adipiscing elit, sed do eiusmod tempor
@@ -557,7 +567,9 @@ export const MiniDrawer = () => {
               ac.
             </Typography>
             <Typography
-              variant={isMobileVersion ? 'body2' : 'body1'}
+              variant={
+                /* isMobileVersion ? 'body2' :  */ 'body1'
+              }
             >
               Consequat mauris nunc congue nisi vitae
               suscipit. Fringilla est ullamcorper eget nulla
@@ -587,7 +599,9 @@ export const MiniDrawer = () => {
               backgroundColor="#6D7B88"
             />
             <Typography
-              variant={isMobileVersion ? 'body2' : 'body1'}
+              variant={
+                /* isMobileVersion ? 'body2' :  */ 'body1'
+              }
             >
               Consequat mauris nunc congue nisi vitae
               suscipit. Fringilla est ullamcorper eget nulla
@@ -609,7 +623,9 @@ export const MiniDrawer = () => {
               sollicitudin aliquam ultrices sagittis orci a.
             </Typography>
             <Typography
-              variant={isMobileVersion ? 'body2' : 'body1'}
+              variant={
+                /* isMobileVersion ? 'body2' :  */ 'body1'
+              }
             >
               Consequat mauris nunc congue nisi vitae
               suscipit. Fringilla est ullamcorper eget nulla
@@ -639,7 +655,9 @@ export const MiniDrawer = () => {
               backgroundColor="#919CA5"
             />
             <Typography
-              variant={isMobileVersion ? 'body2' : 'body1'}
+              variant={
+                /* isMobileVersion ? 'body2' :  */ 'body1'
+              }
             >
               Consequat mauris nunc congue nisi vitae
               suscipit. Fringilla est ullamcorper eget nulla
@@ -661,7 +679,9 @@ export const MiniDrawer = () => {
               sollicitudin aliquam ultrices sagittis orci a.
             </Typography>
             <Typography
-              variant={isMobileVersion ? 'body2' : 'body1'}
+              variant={
+                /* isMobileVersion ? 'body2' :  */ 'body1'
+              }
             >
               Consequat mauris nunc congue nisi vitae
               suscipit. Fringilla est ullamcorper eget nulla
@@ -691,7 +711,9 @@ export const MiniDrawer = () => {
               backgroundColor="#6D7B88"
             />
             <Typography
-              variant={isMobileVersion ? 'body2' : 'body1'}
+              variant={
+                /* isMobileVersion ? 'body2' :  */ 'body1'
+              }
             >
               Consequat mauris nunc congue nisi vitae
               suscipit. Fringilla est ullamcorper eget nulla
@@ -713,7 +735,9 @@ export const MiniDrawer = () => {
               sollicitudin aliquam ultrices sagittis orci a.
             </Typography>
             <Typography
-              variant={isMobileVersion ? 'body2' : 'body1'}
+              variant={
+                /* isMobileVersion ? 'body2' :  */ 'body1'
+              }
             >
               Consequat mauris nunc congue nisi vitae
               suscipit. Fringilla est ullamcorper eget nulla
@@ -743,7 +767,9 @@ export const MiniDrawer = () => {
               backgroundColor="#485A6A"
             />
             <Typography
-              variant={isMobileVersion ? 'body2' : 'body1'}
+              variant={
+                /* isMobileVersion ? 'body2' :  */ 'body1'
+              }
             >
               Consequat mauris nunc congue nisi vitae
               suscipit. Fringilla est ullamcorper eget nulla
@@ -765,7 +791,9 @@ export const MiniDrawer = () => {
               sollicitudin aliquam ultrices sagittis orci a.
             </Typography>
             <Typography
-              variant={isMobileVersion ? 'body2' : 'body1'}
+              variant={
+                /* isMobileVersion ? 'body2' :  */ 'body1'
+              }
             >
               Consequat mauris nunc congue nisi vitae
               suscipit. Fringilla est ullamcorper eget nulla

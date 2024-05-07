@@ -23,22 +23,22 @@ export default function Home() {
         fontSize: 34,
       },
       h5: {
-        fontSize: 24,
+        fontSize: 26,
       },
       h6: {
-        fontSize: 22,
+        fontSize: 24,
       },
       subtitle1: {
-        fontSize: 20,
+        fontSize: 22,
       },
       subtitle2: {
-        fontSize: 18,
-      },
-      body1: {
         fontSize: 20,
       },
+      body1: {
+        fontSize: 22,
+      },
       body2: {
-        fontSize: 18,
+        fontSize: 20,
       },
     },
   });
