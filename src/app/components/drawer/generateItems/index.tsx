@@ -2,7 +2,9 @@ import { Text } from '@components/text';
 import {
   ListItemButton,
   ListItemIcon,
+  useMediaQuery,
 } from '@mui/material';
+import { useTheme } from '@mui/material/styles';
 import { ReactNode } from 'react';
 
 type GenerateItemProps = {
@@ -18,6 +20,12 @@ export const GenerateItems = ({
   route,
   botomIcons = false,
 }: GenerateItemProps) => {
+  const theme = useTheme();
+
+  const isMobileVersion = useMediaQuery(
+    theme.breakpoints.down('sm'),
+  );
+
   return (
     <ListItemButton
       href={`#${route}`}
@@ -34,7 +42,11 @@ export const GenerateItems = ({
       }}
     >
       <ListItemIcon>{icon}</ListItemIcon>
-      <Text type="subtitle2">{text}</Text>
+      <Text
+        type={isMobileVersion ? 'caption' : 'subtitle2'}
+      >
+        {text}
+      </Text>
     </ListItemButton>
   );
 };
