@@ -276,14 +276,14 @@ export const MiniDrawer = () => {
             width: '100%',
             height: '95vh',
             objectFit: 'cover',
-            borderRadius: '0 0 5px 5px',
+            zIndex: 1,
           }}
         >
           <Image
             alt="main-image"
             id="home"
             src={'/images/background.gif'}
-            priority
+            // priority
             unoptimized
             // sizes="100vw"
             width={1100}
@@ -292,7 +292,6 @@ export const MiniDrawer = () => {
               width: '100%',
               height: '95vh',
               objectFit: 'cover',
-              borderRadius: '0 0 5px 5px',
             }}
           />
         </Paper>
@@ -301,7 +300,7 @@ export const MiniDrawer = () => {
           sx={{
             flexGrow: 1,
             p: 3,
-            // backgroundColor: '#DADEE1',
+            backgroundColor: '#DADEE1',
           }}
         >
           {/* <DrawerHeader /> */}
