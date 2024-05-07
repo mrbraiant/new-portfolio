@@ -131,7 +131,9 @@ export const MiniDrawer = () => {
               // height: '300px',
               // opacity: 0.8,
               // position: 'fixed',
-              top: '12%',
+              top: '50%',
+              left: 0,
+              transform: 'translate(0%, -50%)',
               borderRadius: '0 15px 15px 0',
 
               // zIndex: 2,
