@@ -1,5 +1,6 @@
 import { Text } from '@components/text';
 import { TitleWrapper } from './styles';
+import { useMediaQuery, useTheme } from '@mui/material';
 
 type SectionTitleProps = {
   title: string;
@@ -17,17 +18,22 @@ export const SectionTitle = ({
   title,
   backgroundColor = '#00192F',
 }: SectionTitleProps) => {
+  const theme = useTheme();
+  const isMobileVersion = useMediaQuery(
+    theme.breakpoints.down('sm'),
+  );
+
   return (
     <TitleWrapper
       elevation={3}
       sx={{ backgroundColor: backgroundColor }}
     >
       <Text
-        type="h5"
+        type={isMobileVersion ? 'h5' : 'h4'}
         sx={{ color: '#DADEE1' }}
         textAlign="center"
       >
-        {title}
+        <strong>{title}</strong>
       </Text>
     </TitleWrapper>
   );
