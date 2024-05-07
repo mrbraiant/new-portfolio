@@ -40,13 +40,16 @@ import Image from 'next/image';
 import { Text } from '@components/text';
 import { SectionTitle } from '@components/sectionTitle';
 import { Paper, useMediaQuery } from '@mui/material';
+import { useRouter } from 'next/router';
 
 const drawerWidth = 180;
 const iconColor = '#00192F';
 
 export const MiniDrawer = () => {
-  const theme = useTheme();
   const [open, setOpen] = useState(false);
+
+  const router = useRouter();
+  const theme = useTheme();
 
   const isMobileVersion = useMediaQuery(
     theme.breakpoints.down('sm'),
@@ -163,6 +166,7 @@ export const MiniDrawer = () => {
                     src={'/images/logo.png'}
                     width={50}
                     height={50}
+                    onClick={() => router.push('/#home')}
                   />
                   <IconButton onClick={handleDrawerClose}>
                     <ChevronLeftIcon
@@ -283,6 +287,8 @@ export const MiniDrawer = () => {
                     src={'/images/logo.png'}
                     width={50}
                     height={50}
+                    onClick={() => router.push('/#home')}
+                    style={{ cursor: 'pointer' }}
                   />
                   <IconButton onClick={handleDrawerClose}>
                     <ChevronLeftIcon
