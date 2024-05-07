@@ -402,7 +402,7 @@ export const MiniDrawer = () => {
             id="home"
             src={
               isMobileVersion
-                ? '/images/background-mobile.gif'
+                ? '/images/background-mobile-nf.gif'
                 : '/images/background.gif'
             }
             // priority
