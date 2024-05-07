@@ -26,19 +26,19 @@ export default function Home() {
         fontSize: 24,
       },
       h6: {
-        fontSize: 20,
+        fontSize: 22,
       },
       subtitle1: {
-        fontSize: 18,
+        fontSize: 20,
       },
       subtitle2: {
-        fontSize: 16,
+        fontSize: 18,
       },
       body1: {
         fontSize: 20,
       },
       body2: {
-        fontSize: 16,
+        fontSize: 18,
       },
     },
   });
