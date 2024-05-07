@@ -10,15 +10,6 @@ export default function App({
     <>
       <Head>
         <title>Braiant Dev</title>
-        <link
-          rel="preconnect"
-          href="https://fonts.googleapis.com"
-        />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
 
         <meta
           name="description"

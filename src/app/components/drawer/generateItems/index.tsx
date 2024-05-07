@@ -42,10 +42,8 @@ export const GenerateItems = ({
       }}
     >
       <ListItemIcon>{icon}</ListItemIcon>
-      <Text
-        type={isMobileVersion ? 'caption' : 'subtitle2'}
-      >
-        {text}
+      <Text type={isMobileVersion ? 'subtitle1' : 'body1'}>
+        <strong>{text}</strong>
       </Text>
     </ListItemButton>
   );

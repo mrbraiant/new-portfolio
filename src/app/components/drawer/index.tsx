@@ -171,11 +171,8 @@ export const MiniDrawer = () => {
                   </IconButton>
                 </div>
               ) : (
-                <IconButton>
-                  <MenuIcon
-                    onClick={handleDrawerOpen}
-                    sx={{ color: iconColor }}
-                  />
+                <IconButton onClick={handleDrawerOpen}>
+                  <MenuIcon sx={{ color: iconColor }} />
                 </IconButton>
               )}
             </div>
@@ -287,19 +284,15 @@ export const MiniDrawer = () => {
                     width={50}
                     height={50}
                   />
-                  <IconButton>
+                  <IconButton onClick={handleDrawerClose}>
                     <ChevronLeftIcon
-                      onClick={handleDrawerClose}
                       sx={{ color: iconColor }}
                     />
                   </IconButton>
                 </>
               ) : (
-                <IconButton>
-                  <MenuIcon
-                    onClick={handleDrawerOpen}
-                    sx={{ color: iconColor }}
-                  />
+                <IconButton onClick={handleDrawerOpen}>
+                  <MenuIcon sx={{ color: iconColor }} />
                 </IconButton>
               )}
             </div>
@@ -405,7 +398,7 @@ export const MiniDrawer = () => {
                 ? '/images/background-mobile-nf.gif'
                 : '/images/background.gif'
             }
-            // priority
+            priority
             unoptimized
             // sizes="100vw"
             width={1100}
@@ -431,7 +424,9 @@ export const MiniDrawer = () => {
 
           <div id="about">
             <SectionTitle title="About" />
-            <Typography paragraph>
+            <Typography
+              variant={isMobileVersion ? 'body2' : 'body1'}
+            >
               Lorem ipsum dolor sit amet, consectetur
               adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua.
@@ -453,7 +448,9 @@ export const MiniDrawer = () => {
               Lorem donec massa sapien faucibus et molestie
               ac.
             </Typography>
-            <Typography paragraph>
+            <Typography
+              variant={isMobileVersion ? 'body2' : 'body1'}
+            >
               Consequat mauris nunc congue nisi vitae
               suscipit. Fringilla est ullamcorper eget nulla
               facilisi etiam dignissim diam. Pulvinar
@@ -481,7 +478,9 @@ export const MiniDrawer = () => {
               title="Experience"
               backgroundColor="#24394C"
             />
-            <Typography paragraph>
+            <Typography
+              variant={isMobileVersion ? 'body2' : 'body1'}
+            >
               Lorem ipsum dolor sit amet, consectetur
               adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua.
@@ -503,7 +502,9 @@ export const MiniDrawer = () => {
               Lorem donec massa sapien faucibus et molestie
               ac.
             </Typography>
-            <Typography paragraph>
+            <Typography
+              variant={isMobileVersion ? 'body2' : 'body1'}
+            >
               Consequat mauris nunc congue nisi vitae
               suscipit. Fringilla est ullamcorper eget nulla
               facilisi etiam dignissim diam. Pulvinar
@@ -531,7 +532,9 @@ export const MiniDrawer = () => {
               title="Projects"
               backgroundColor="#485A6A"
             />
-            <Typography paragraph>
+            <Typography
+              variant={isMobileVersion ? 'body2' : 'body1'}
+            >
               Lorem ipsum dolor sit amet, consectetur
               adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua.
@@ -553,7 +556,9 @@ export const MiniDrawer = () => {
               Lorem donec massa sapien faucibus et molestie
               ac.
             </Typography>
-            <Typography paragraph>
+            <Typography
+              variant={isMobileVersion ? 'body2' : 'body1'}
+            >
               Consequat mauris nunc congue nisi vitae
               suscipit. Fringilla est ullamcorper eget nulla
               facilisi etiam dignissim diam. Pulvinar
@@ -581,7 +586,9 @@ export const MiniDrawer = () => {
               title="Skills"
               backgroundColor="#6D7B88"
             />
-            <Typography paragraph>
+            <Typography
+              variant={isMobileVersion ? 'body2' : 'body1'}
+            >
               Consequat mauris nunc congue nisi vitae
               suscipit. Fringilla est ullamcorper eget nulla
               facilisi etiam dignissim diam. Pulvinar
@@ -601,7 +608,9 @@ export const MiniDrawer = () => {
               accumsan lacus vel facilisis. Nulla posuere
               sollicitudin aliquam ultrices sagittis orci a.
             </Typography>
-            <Typography paragraph>
+            <Typography
+              variant={isMobileVersion ? 'body2' : 'body1'}
+            >
               Consequat mauris nunc congue nisi vitae
               suscipit. Fringilla est ullamcorper eget nulla
               facilisi etiam dignissim diam. Pulvinar
@@ -629,7 +638,9 @@ export const MiniDrawer = () => {
               title="Education"
               backgroundColor="#919CA5"
             />
-            <Typography paragraph>
+            <Typography
+              variant={isMobileVersion ? 'body2' : 'body1'}
+            >
               Consequat mauris nunc congue nisi vitae
               suscipit. Fringilla est ullamcorper eget nulla
               facilisi etiam dignissim diam. Pulvinar
@@ -649,7 +660,9 @@ export const MiniDrawer = () => {
               accumsan lacus vel facilisis. Nulla posuere
               sollicitudin aliquam ultrices sagittis orci a.
             </Typography>
-            <Typography paragraph>
+            <Typography
+              variant={isMobileVersion ? 'body2' : 'body1'}
+            >
               Consequat mauris nunc congue nisi vitae
               suscipit. Fringilla est ullamcorper eget nulla
               facilisi etiam dignissim diam. Pulvinar
@@ -677,7 +690,9 @@ export const MiniDrawer = () => {
               title="Contact"
               backgroundColor="#6D7B88"
             />
-            <Typography paragraph>
+            <Typography
+              variant={isMobileVersion ? 'body2' : 'body1'}
+            >
               Consequat mauris nunc congue nisi vitae
               suscipit. Fringilla est ullamcorper eget nulla
               facilisi etiam dignissim diam. Pulvinar
@@ -697,7 +712,9 @@ export const MiniDrawer = () => {
               accumsan lacus vel facilisis. Nulla posuere
               sollicitudin aliquam ultrices sagittis orci a.
             </Typography>
-            <Typography paragraph>
+            <Typography
+              variant={isMobileVersion ? 'body2' : 'body1'}
+            >
               Consequat mauris nunc congue nisi vitae
               suscipit. Fringilla est ullamcorper eget nulla
               facilisi etiam dignissim diam. Pulvinar
@@ -725,7 +742,9 @@ export const MiniDrawer = () => {
               title="Blog"
               backgroundColor="#485A6A"
             />
-            <Typography paragraph>
+            <Typography
+              variant={isMobileVersion ? 'body2' : 'body1'}
+            >
               Consequat mauris nunc congue nisi vitae
               suscipit. Fringilla est ullamcorper eget nulla
               facilisi etiam dignissim diam. Pulvinar
@@ -745,7 +764,9 @@ export const MiniDrawer = () => {
               accumsan lacus vel facilisis. Nulla posuere
               sollicitudin aliquam ultrices sagittis orci a.
             </Typography>
-            <Typography paragraph>
+            <Typography
+              variant={isMobileVersion ? 'body2' : 'body1'}
+            >
               Consequat mauris nunc congue nisi vitae
               suscipit. Fringilla est ullamcorper eget nulla
               facilisi etiam dignissim diam. Pulvinar
