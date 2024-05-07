@@ -33,13 +33,7 @@ export const GenerateItems = ({
         },
       }}
     >
-      <ListItemIcon
-        sx={{
-          paddingLeft: '0.3rem',
-        }}
-      >
-        {icon}
-      </ListItemIcon>
+      <ListItemIcon>{icon}</ListItemIcon>
       <Text type="subtitle2">{text}</Text>
     </ListItemButton>
   );

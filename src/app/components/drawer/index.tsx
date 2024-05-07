@@ -9,9 +9,6 @@ import {
 } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
-import MuiAppBar, {
-  AppBarProps as MuiAppBarProps,
-} from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import List from '@mui/material/List';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -42,7 +39,7 @@ import {
 import Image from 'next/image';
 import { Text } from '@components/text';
 import { SectionTitle } from '@components/sectionTitle';
-import { Paper } from '@mui/material';
+import { Paper, useMediaQuery } from '@mui/material';
 
 const drawerWidth = 180;
 const iconColor = '#00192F';
@@ -50,6 +47,10 @@ const iconColor = '#00192F';
 export const MiniDrawer = () => {
   const theme = useTheme();
   const [open, setOpen] = useState(false);
+
+  const isMobileVersion = useMediaQuery(
+    theme.breakpoints.down('sm'),
+  );
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -60,7 +61,7 @@ export const MiniDrawer = () => {
   };
 
   const openedMixin = (theme: Theme): CSSObject => ({
-    width: drawerWidth,
+    width: isMobileVersion ? drawerWidth - 30 : drawerWidth,
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
@@ -75,9 +76,9 @@ export const MiniDrawer = () => {
     }),
     overflowX: 'hidden',
     width: `calc(${theme.spacing(7)} + 1px)`,
-    [theme.breakpoints.up('sm')]: {
-      width: `calc(${theme.spacing(8)} + 1px)`,
-    },
+    // [theme.breakpoints.up('sm')]: {
+    //   width: `calc(${theme.spacing(7)} + 1px)`,
+    // },
   });
 
   const DrawerHeader = styled('div')(({ theme }) => ({
@@ -87,35 +88,6 @@ export const MiniDrawer = () => {
     padding: theme.spacing(0, 1),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
-  }));
-
-  interface AppBarProps extends MuiAppBarProps {
-    open?: boolean;
-  }
-
-  const AppBar = styled(MuiAppBar, {
-    shouldForwardProp: (prop) => prop !== 'open',
-  })<AppBarProps>(({ theme, open }) => ({
-    zIndex: theme.zIndex.drawer + 1,
-    transition: theme.transitions.create(
-      ['width', 'margin'],
-      {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.leavingScreen,
-      },
-    ),
-    ...(open && {
-      marginLeft: drawerWidth,
-      width: `calc(100% - ${drawerWidth}px)`,
-      transition: theme.transitions.create(
-        ['width', 'margin'],
-        {
-          easing: theme.transitions.easing.sharp,
-          duration:
-            theme.transitions.duration.enteringScreen,
-        },
-      ),
-    }),
   }));
 
   const Drawer = styled(MuiDrawer, {
@@ -145,124 +117,271 @@ export const MiniDrawer = () => {
       }}
     >
       <CssBaseline />
-      <Drawer
-        variant="permanent"
-        // onMouseMove={handleDrawerOpen}
-        // onMouseLeave={handleDrawerClose}
-        open={open}
-        PaperProps={{
-          sx: {
-            background:
-              'linear-gradient(to top, #00192F 0%, #B6BDC3 100%)',
-          },
-        }}
-      >
-        <DrawerHeader>
-          {/* <IconButton onClick={handleDrawerClose}> */}
-          <div
-            style={{
-              width: drawerWidth - 35,
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-            }}
-          >
-            {open ? (
-              <>
-                <Image
-                  alt="logo"
-                  src={'/images/logo.png'}
-                  width={50}
-                  height={50}
-                />
+      {isMobileVersion ? (
+        <Drawer
+          variant="permanent"
+          // onMouseMove={handleDrawerOpen}
+          // onMouseLeave={handleDrawerClose}
+          open={open}
+          PaperProps={{
+            sx: {
+              background: '#B6BDC3',
+              height: '410px',
+              width: '50px',
+              // height: '300px',
+              // opacity: 0.8,
+              // position: 'fixed',
+              top: '12%',
+              borderRadius: '0 15px 15px 0',
+
+              // zIndex: 2,
+            },
+          }}
+          style={{
+            zIndex: 2,
+            backgroundColor: '#DADEE1',
+          }}
+        >
+          <DrawerHeader>
+            <div
+              style={{
+                width: drawerWidth - 55,
+                // display: 'flex',
+                // justifyContent: 'space-between',
+                // alignItems: 'center',
+              }}
+            >
+              {open ? (
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    alignItems: 'center',
+                  }}
+                >
+                  <Image
+                    alt="logo"
+                    src={'/images/logo.png'}
+                    width={50}
+                    height={50}
+                  />
+                  <IconButton onClick={handleDrawerClose}>
+                    <ChevronLeftIcon
+                      sx={{ color: iconColor }}
+                    />
+                  </IconButton>
+                </div>
+              ) : (
                 <IconButton>
-                  <ChevronLeftIcon
-                    onClick={handleDrawerClose}
+                  <MenuIcon
+                    onClick={handleDrawerOpen}
                     sx={{ color: iconColor }}
                   />
                 </IconButton>
-              </>
-            ) : (
-              <IconButton>
-                <MenuIcon
-                  onClick={handleDrawerOpen}
-                  sx={{ color: iconColor }}
-                />
-              </IconButton>
-            )}
-          </div>
-        </DrawerHeader>
-        <Divider />
-        <List>
-          <ListItem
-            disablePadding
-            sx={{
-              display: 'block',
-            }}
-          >
-            <GenerateItems
-              icon={<Cottage sx={{ color: iconColor }} />}
-              route="home"
-              text="Home"
-            />
-            <GenerateItems
-              icon={
-                <EmojiPeople sx={{ color: iconColor }} />
-              }
-              route="about"
-              text="About"
-            />
-            <GenerateItems
-              icon={
-                <Leaderboard sx={{ color: iconColor }} />
-              }
-              route="experience"
-              text="Experience"
-            />
-            <GenerateItems
-              icon={
-                <TableChart sx={{ color: iconColor }} />
-              }
-              route="projects"
-              text="Projects"
-            />
-            <GenerateItems
-              icon={
-                <TipsAndUpdates sx={{ color: iconColor }} />
-              }
-              route="skills"
-              text="Skills"
-            />
-          </ListItem>
-        </List>
+              )}
+            </div>
+          </DrawerHeader>
+          <Divider />
+          <List>
+            <ListItem
+              disablePadding
+              sx={{
+                display: 'block',
+              }}
+            >
+              <GenerateItems
+                icon={<Cottage sx={{ color: iconColor }} />}
+                route="home"
+                text="Home"
+              />
+              <GenerateItems
+                icon={
+                  <EmojiPeople sx={{ color: iconColor }} />
+                }
+                route="about"
+                text="About"
+              />
+              <GenerateItems
+                icon={
+                  <Leaderboard sx={{ color: iconColor }} />
+                }
+                route="experience"
+                text="Experience"
+              />
+              <GenerateItems
+                icon={
+                  <TableChart sx={{ color: iconColor }} />
+                }
+                route="projects"
+                text="Projects"
+              />
+              <GenerateItems
+                icon={
+                  <TipsAndUpdates
+                    sx={{ color: iconColor }}
+                  />
+                }
+                route="skills"
+                text="Skills"
+              />
+            </ListItem>
+          </List>
 
-        <Divider />
-        <List>
-          <ListItem
-            disablePadding
-            sx={{ display: 'block' }}
-          >
-            <GenerateItems
-              icon={<School sx={{ color: iconColor }} />}
-              route="education"
-              text="Education"
-              botomIcons
-            />
-            <GenerateItems
-              icon={<Message sx={{ color: iconColor }} />}
-              route="contact"
-              text="Contact"
-              botomIcons
-            />
-            <GenerateItems
-              icon={<Newspaper sx={{ color: iconColor }} />}
-              route="blog"
-              text="Blog"
-              botomIcons
-            />
-          </ListItem>
-        </List>
-      </Drawer>
+          <Divider />
+          <List>
+            <ListItem
+              disablePadding
+              sx={{ display: 'block' }}
+            >
+              <GenerateItems
+                icon={<School sx={{ color: iconColor }} />}
+                route="education"
+                text="Education"
+                botomIcons
+              />
+              <GenerateItems
+                icon={<Message sx={{ color: iconColor }} />}
+                route="contact"
+                text="Contact"
+                botomIcons
+              />
+              <GenerateItems
+                icon={
+                  <Newspaper sx={{ color: iconColor }} />
+                }
+                route="blog"
+                text="Blog"
+                botomIcons
+              />
+            </ListItem>
+          </List>
+        </Drawer>
+      ) : (
+        // Not Mobile version
+        <Drawer
+          variant="permanent"
+          // onMouseMove={handleDrawerOpen}
+          // onMouseLeave={handleDrawerClose}
+          open={open}
+          PaperProps={{
+            sx: {
+              background:
+                'linear-gradient(to top, #00192F 0%, #B6BDC3 100%)',
+            },
+          }}
+        >
+          <DrawerHeader>
+            {/* <IconButton onClick={handleDrawerClose}> */}
+            <div
+              style={{
+                width: drawerWidth - 25,
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+              }}
+            >
+              {open ? (
+                <>
+                  <Image
+                    alt="logo"
+                    src={'/images/logo.png'}
+                    width={50}
+                    height={50}
+                  />
+                  <IconButton>
+                    <ChevronLeftIcon
+                      onClick={handleDrawerClose}
+                      sx={{ color: iconColor }}
+                    />
+                  </IconButton>
+                </>
+              ) : (
+                <IconButton>
+                  <MenuIcon
+                    onClick={handleDrawerOpen}
+                    sx={{ color: iconColor }}
+                  />
+                </IconButton>
+              )}
+            </div>
+          </DrawerHeader>
+          <Divider />
+          <List>
+            <ListItem
+              disablePadding
+              sx={{
+                display: 'block',
+              }}
+            >
+              <GenerateItems
+                icon={<Cottage sx={{ color: iconColor }} />}
+                route="home"
+                text="Home"
+              />
+              <GenerateItems
+                icon={
+                  <EmojiPeople sx={{ color: iconColor }} />
+                }
+                route="about"
+                text="About"
+              />
+              <GenerateItems
+                icon={
+                  <Leaderboard sx={{ color: iconColor }} />
+                }
+                route="experience"
+                text="Experience"
+              />
+              <GenerateItems
+                icon={
+                  <TableChart sx={{ color: iconColor }} />
+                }
+                route="projects"
+                text="Projects"
+              />
+              <GenerateItems
+                icon={
+                  <TipsAndUpdates
+                    sx={{ color: iconColor }}
+                  />
+                }
+                route="skills"
+                text="Skills"
+              />
+            </ListItem>
+          </List>
+
+          <Divider />
+          <List>
+            <ListItem
+              disablePadding
+              sx={{ display: 'block' }}
+            >
+              <GenerateItems
+                icon={<School sx={{ color: iconColor }} />}
+                route="education"
+                text="Education"
+                botomIcons
+              />
+              <GenerateItems
+                icon={<Message sx={{ color: iconColor }} />}
+                route="contact"
+                text="Contact"
+                botomIcons
+              />
+              <GenerateItems
+                icon={
+                  <Newspaper sx={{ color: iconColor }} />
+                }
+                route="blog"
+                text="Blog"
+                botomIcons
+              />
+            </ListItem>
+          </List>
+        </Drawer>
+      )}
+
       <div
         style={{
           display: 'flex',
@@ -295,6 +414,7 @@ export const MiniDrawer = () => {
             }}
           />
         </Paper>
+
         <Box
           component="main"
           sx={{
@@ -308,48 +428,6 @@ export const MiniDrawer = () => {
 
           <div id="about">
             <SectionTitle title="About" />
-            <Typography paragraph>
-              Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua.
-              Rhoncus dolor purus non enim praesent
-              elementum facilisis leo vel. Risus at ultrices
-              mi tempus imperdiet. Semper risus in hendrerit
-              gravida rutrum quisque non tellus. Convallis
-              convallis tellus id interdum velit laoreet id
-              donec ultrices. Odio morbi quis commodo odio
-              aenean sed adipiscing. Amet nisl suscipit
-              adipiscing bibendum est ultricies integer
-              quis. Cursus euismod quis viverra nibh cras.
-              Metus vulputate eu scelerisque felis imperdiet
-              proin fermentum leo. Mauris commodo quis
-              imperdiet massa tincidunt. Cras tincidunt
-              lobortis feugiat vivamus at augue. At augue
-              eget arcu dictum varius duis at consectetur
-              lorem. Velit sed ullamcorper morbi tincidunt.
-              Lorem donec massa sapien faucibus et molestie
-              ac.
-            </Typography>
-            <Typography paragraph>
-              Consequat mauris nunc congue nisi vitae
-              suscipit. Fringilla est ullamcorper eget nulla
-              facilisi etiam dignissim diam. Pulvinar
-              elementum integer enim neque volutpat ac
-              tincidunt. Ornare suspendisse sed nisi lacus
-              sed viverra tellus. Purus sit amet volutpat
-              consequat mauris. Elementum eu facilisis sed
-              odio morbi. Euismod lacinia at quis risus sed
-              vulputate odio. Morbi tincidunt ornare massa
-              eget egestas purus viverra accumsan in. In
-              hendrerit gravida rutrum quisque non tellus
-              orci ac. Pellentesque nec nam aliquam sem et
-              tortor. Habitant morbi tristique senectus et.
-              Adipiscing elit duis tristique sollicitudin
-              nibh sit. Ornare aenean euismod elementum nisi
-              quis eleifend. Commodo viverra maecenas
-              accumsan lacus vel facilisis. Nulla posuere
-              sollicitudin aliquam ultrices sagittis orci a.
-            </Typography>
             <Typography paragraph>
               Lorem ipsum dolor sit amet, consectetur
               adipiscing elit, sed do eiusmod tempor
@@ -492,90 +570,6 @@ export const MiniDrawer = () => {
               accumsan lacus vel facilisis. Nulla posuere
               sollicitudin aliquam ultrices sagittis orci a.
             </Typography>
-            <Typography paragraph>
-              Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua.
-              Rhoncus dolor purus non enim praesent
-              elementum facilisis leo vel. Risus at ultrices
-              mi tempus imperdiet. Semper risus in hendrerit
-              gravida rutrum quisque non tellus. Convallis
-              convallis tellus id interdum velit laoreet id
-              donec ultrices. Odio morbi quis commodo odio
-              aenean sed adipiscing. Amet nisl suscipit
-              adipiscing bibendum est ultricies integer
-              quis. Cursus euismod quis viverra nibh cras.
-              Metus vulputate eu scelerisque felis imperdiet
-              proin fermentum leo. Mauris commodo quis
-              imperdiet massa tincidunt. Cras tincidunt
-              lobortis feugiat vivamus at augue. At augue
-              eget arcu dictum varius duis at consectetur
-              lorem. Velit sed ullamcorper morbi tincidunt.
-              Lorem donec massa sapien faucibus et molestie
-              ac.
-            </Typography>
-            <Typography paragraph>
-              Consequat mauris nunc congue nisi vitae
-              suscipit. Fringilla est ullamcorper eget nulla
-              facilisi etiam dignissim diam. Pulvinar
-              elementum integer enim neque volutpat ac
-              tincidunt. Ornare suspendisse sed nisi lacus
-              sed viverra tellus. Purus sit amet volutpat
-              consequat mauris. Elementum eu facilisis sed
-              odio morbi. Euismod lacinia at quis risus sed
-              vulputate odio. Morbi tincidunt ornare massa
-              eget egestas purus viverra accumsan in. In
-              hendrerit gravida rutrum quisque non tellus
-              orci ac. Pellentesque nec nam aliquam sem et
-              tortor. Habitant morbi tristique senectus et.
-              Adipiscing elit duis tristique sollicitudin
-              nibh sit. Ornare aenean euismod elementum nisi
-              quis eleifend. Commodo viverra maecenas
-              accumsan lacus vel facilisis. Nulla posuere
-              sollicitudin aliquam ultrices sagittis orci a.
-            </Typography>
-            <Typography paragraph>
-              Lorem ipsum dolor sit amet, consectetur
-              adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua.
-              Rhoncus dolor purus non enim praesent
-              elementum facilisis leo vel. Risus at ultrices
-              mi tempus imperdiet. Semper risus in hendrerit
-              gravida rutrum quisque non tellus. Convallis
-              convallis tellus id interdum velit laoreet id
-              donec ultrices. Odio morbi quis commodo odio
-              aenean sed adipiscing. Amet nisl suscipit
-              adipiscing bibendum est ultricies integer
-              quis. Cursus euismod quis viverra nibh cras.
-              Metus vulputate eu scelerisque felis imperdiet
-              proin fermentum leo. Mauris commodo quis
-              imperdiet massa tincidunt. Cras tincidunt
-              lobortis feugiat vivamus at augue. At augue
-              eget arcu dictum varius duis at consectetur
-              lorem. Velit sed ullamcorper morbi tincidunt.
-              Lorem donec massa sapien faucibus et molestie
-              ac.
-            </Typography>
-            <Typography paragraph>
-              Consequat mauris nunc congue nisi vitae
-              suscipit. Fringilla est ullamcorper eget nulla
-              facilisi etiam dignissim diam. Pulvinar
-              elementum integer enim neque volutpat ac
-              tincidunt. Ornare suspendisse sed nisi lacus
-              sed viverra tellus. Purus sit amet volutpat
-              consequat mauris. Elementum eu facilisis sed
-              odio morbi. Euismod lacinia at quis risus sed
-              vulputate odio. Morbi tincidunt ornare massa
-              eget egestas purus viverra accumsan in. In
-              hendrerit gravida rutrum quisque non tellus
-              orci ac. Pellentesque nec nam aliquam sem et
-              tortor. Habitant morbi tristique senectus et.
-              Adipiscing elit duis tristique sollicitudin
-              nibh sit. Ornare aenean euismod elementum nisi
-              quis eleifend. Commodo viverra maecenas
-              accumsan lacus vel facilisis. Nulla posuere
-              sollicitudin aliquam ultrices sagittis orci a.
-            </Typography>
           </div>
 
           <Divider />
@@ -603,27 +597,7 @@ export const MiniDrawer = () => {
               quis eleifend. Commodo viverra maecenas
               accumsan lacus vel facilisis. Nulla posuere
               sollicitudin aliquam ultrices sagittis orci a.
-            </Typography>{' '}
-            <Typography paragraph>
-              Consequat mauris nunc congue nisi vitae
-              suscipit. Fringilla est ullamcorper eget nulla
-              facilisi etiam dignissim diam. Pulvinar
-              elementum integer enim neque volutpat ac
-              tincidunt. Ornare suspendisse sed nisi lacus
-              sed viverra tellus. Purus sit amet volutpat
-              consequat mauris. Elementum eu facilisis sed
-              odio morbi. Euismod lacinia at quis risus sed
-              vulputate odio. Morbi tincidunt ornare massa
-              eget egestas purus viverra accumsan in. In
-              hendrerit gravida rutrum quisque non tellus
-              orci ac. Pellentesque nec nam aliquam sem et
-              tortor. Habitant morbi tristique senectus et.
-              Adipiscing elit duis tristique sollicitudin
-              nibh sit. Ornare aenean euismod elementum nisi
-              quis eleifend. Commodo viverra maecenas
-              accumsan lacus vel facilisis. Nulla posuere
-              sollicitudin aliquam ultrices sagittis orci a.
-            </Typography>{' '}
+            </Typography>
             <Typography paragraph>
               Consequat mauris nunc congue nisi vitae
               suscipit. Fringilla est ullamcorper eget nulla
@@ -671,27 +645,7 @@ export const MiniDrawer = () => {
               quis eleifend. Commodo viverra maecenas
               accumsan lacus vel facilisis. Nulla posuere
               sollicitudin aliquam ultrices sagittis orci a.
-            </Typography>{' '}
-            <Typography paragraph>
-              Consequat mauris nunc congue nisi vitae
-              suscipit. Fringilla est ullamcorper eget nulla
-              facilisi etiam dignissim diam. Pulvinar
-              elementum integer enim neque volutpat ac
-              tincidunt. Ornare suspendisse sed nisi lacus
-              sed viverra tellus. Purus sit amet volutpat
-              consequat mauris. Elementum eu facilisis sed
-              odio morbi. Euismod lacinia at quis risus sed
-              vulputate odio. Morbi tincidunt ornare massa
-              eget egestas purus viverra accumsan in. In
-              hendrerit gravida rutrum quisque non tellus
-              orci ac. Pellentesque nec nam aliquam sem et
-              tortor. Habitant morbi tristique senectus et.
-              Adipiscing elit duis tristique sollicitudin
-              nibh sit. Ornare aenean euismod elementum nisi
-              quis eleifend. Commodo viverra maecenas
-              accumsan lacus vel facilisis. Nulla posuere
-              sollicitudin aliquam ultrices sagittis orci a.
-            </Typography>{' '}
+            </Typography>
             <Typography paragraph>
               Consequat mauris nunc congue nisi vitae
               suscipit. Fringilla est ullamcorper eget nulla
@@ -739,27 +693,7 @@ export const MiniDrawer = () => {
               quis eleifend. Commodo viverra maecenas
               accumsan lacus vel facilisis. Nulla posuere
               sollicitudin aliquam ultrices sagittis orci a.
-            </Typography>{' '}
-            <Typography paragraph>
-              Consequat mauris nunc congue nisi vitae
-              suscipit. Fringilla est ullamcorper eget nulla
-              facilisi etiam dignissim diam. Pulvinar
-              elementum integer enim neque volutpat ac
-              tincidunt. Ornare suspendisse sed nisi lacus
-              sed viverra tellus. Purus sit amet volutpat
-              consequat mauris. Elementum eu facilisis sed
-              odio morbi. Euismod lacinia at quis risus sed
-              vulputate odio. Morbi tincidunt ornare massa
-              eget egestas purus viverra accumsan in. In
-              hendrerit gravida rutrum quisque non tellus
-              orci ac. Pellentesque nec nam aliquam sem et
-              tortor. Habitant morbi tristique senectus et.
-              Adipiscing elit duis tristique sollicitudin
-              nibh sit. Ornare aenean euismod elementum nisi
-              quis eleifend. Commodo viverra maecenas
-              accumsan lacus vel facilisis. Nulla posuere
-              sollicitudin aliquam ultrices sagittis orci a.
-            </Typography>{' '}
+            </Typography>
             <Typography paragraph>
               Consequat mauris nunc congue nisi vitae
               suscipit. Fringilla est ullamcorper eget nulla
@@ -807,27 +741,7 @@ export const MiniDrawer = () => {
               quis eleifend. Commodo viverra maecenas
               accumsan lacus vel facilisis. Nulla posuere
               sollicitudin aliquam ultrices sagittis orci a.
-            </Typography>{' '}
-            <Typography paragraph>
-              Consequat mauris nunc congue nisi vitae
-              suscipit. Fringilla est ullamcorper eget nulla
-              facilisi etiam dignissim diam. Pulvinar
-              elementum integer enim neque volutpat ac
-              tincidunt. Ornare suspendisse sed nisi lacus
-              sed viverra tellus. Purus sit amet volutpat
-              consequat mauris. Elementum eu facilisis sed
-              odio morbi. Euismod lacinia at quis risus sed
-              vulputate odio. Morbi tincidunt ornare massa
-              eget egestas purus viverra accumsan in. In
-              hendrerit gravida rutrum quisque non tellus
-              orci ac. Pellentesque nec nam aliquam sem et
-              tortor. Habitant morbi tristique senectus et.
-              Adipiscing elit duis tristique sollicitudin
-              nibh sit. Ornare aenean euismod elementum nisi
-              quis eleifend. Commodo viverra maecenas
-              accumsan lacus vel facilisis. Nulla posuere
-              sollicitudin aliquam ultrices sagittis orci a.
-            </Typography>{' '}
+            </Typography>
             <Typography paragraph>
               Consequat mauris nunc congue nisi vitae
               suscipit. Fringilla est ullamcorper eget nulla
