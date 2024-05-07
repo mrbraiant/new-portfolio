@@ -42,6 +42,7 @@ import {
 import Image from 'next/image';
 import { Text } from '@components/text';
 import { SectionTitle } from '@components/sectionTitle';
+import { Paper } from '@mui/material';
 
 const drawerWidth = 180;
 const iconColor = '#00192F';
@@ -158,34 +159,38 @@ export const MiniDrawer = () => {
       >
         <DrawerHeader>
           {/* <IconButton onClick={handleDrawerClose}> */}
-          <IconButton>
+          <div
+            style={{
+              width: drawerWidth - 35,
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+            }}
+          >
             {open ? (
-              <div
-                style={{
-                  width: drawerWidth - 35,
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  alignItems: 'center',
-                }}
-              >
+              <>
                 <Image
                   alt="logo"
                   src={'/images/logo.png'}
                   width={50}
                   height={50}
                 />
-                <ChevronLeftIcon
-                  onClick={handleDrawerClose}
+                <IconButton>
+                  <ChevronLeftIcon
+                    onClick={handleDrawerClose}
+                    sx={{ color: iconColor }}
+                  />
+                </IconButton>
+              </>
+            ) : (
+              <IconButton>
+                <MenuIcon
+                  onClick={handleDrawerOpen}
                   sx={{ color: iconColor }}
                 />
-              </div>
-            ) : (
-              <MenuIcon
-                onClick={handleDrawerOpen}
-                sx={{ color: iconColor }}
-              />
+              </IconButton>
             )}
-          </IconButton>
+          </div>
         </DrawerHeader>
         <Divider />
         <List>
@@ -264,27 +269,39 @@ export const MiniDrawer = () => {
           flexDirection: 'column',
         }}
       >
-        <Image
-          alt="main-image"
-          id="home"
-          src={'/images/background.png'}
-          priority
-          loading="eager"
-          // sizes="100vw"
-          width={1100}
-          height={600}
+        <Paper
+          elevation={8}
+          variant="elevation"
           style={{
             width: '100%',
             height: '95vh',
             objectFit: 'cover',
+            borderRadius: '0 0 5px 5px',
           }}
-        />
+        >
+          <Image
+            alt="main-image"
+            id="home"
+            src={'/images/background.gif'}
+            priority
+            unoptimized
+            // sizes="100vw"
+            width={1100}
+            height={600}
+            style={{
+              width: '100%',
+              height: '95vh',
+              objectFit: 'cover',
+              borderRadius: '0 0 5px 5px',
+            }}
+          />
+        </Paper>
         <Box
           component="main"
           sx={{
             flexGrow: 1,
             p: 3,
-            backgroundColor: '#DADEE1',
+            // backgroundColor: '#DADEE1',
           }}
         >
           {/* <DrawerHeader /> */}
