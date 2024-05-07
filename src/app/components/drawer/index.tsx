@@ -61,7 +61,7 @@ export const MiniDrawer = () => {
   };
 
   const openedMixin = (theme: Theme): CSSObject => ({
-    width: isMobileVersion ? drawerWidth - 30 : drawerWidth,
+    width: isMobileVersion ? drawerWidth - 15 : drawerWidth,
     transition: theme.transitions.create('width', {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.enteringScreen,
@@ -144,7 +144,7 @@ export const MiniDrawer = () => {
           <DrawerHeader>
             <div
               style={{
-                width: drawerWidth - 55,
+                width: drawerWidth - 40,
                 // display: 'flex',
                 // justifyContent: 'space-between',
                 // alignItems: 'center',
