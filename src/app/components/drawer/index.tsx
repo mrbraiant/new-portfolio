@@ -401,7 +401,11 @@ export const MiniDrawer = () => {
           <Image
             alt="main-image"
             id="home"
-            src={'/images/background.gif'}
+            src={
+              isMobileVersion
+                ? '/images/background-mobile.gif'
+                : '/images/background.gif'
+            }
             // priority
             unoptimized
             // sizes="100vw"
