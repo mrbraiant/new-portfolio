@@ -126,7 +126,7 @@ export const MiniDrawer = () => {
           PaperProps={{
             sx: {
               background: '#B6BDC3',
-              height: '410px',
+              height: 'fit-content',
               width: '50px',
               top: '50%',
               left: 0,
