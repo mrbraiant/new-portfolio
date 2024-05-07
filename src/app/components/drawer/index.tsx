@@ -110,8 +110,6 @@ export const MiniDrawer = () => {
     }),
   }));
 
-  console.log('open', open);
-
   return (
     <Box
       sx={{
