@@ -41,9 +41,8 @@ import { Text } from '@components/text';
 import { SectionTitle } from '@components/sectionTitle';
 import { Paper, useMediaQuery } from '@mui/material';
 import { useRouter } from 'next/router';
-
-const drawerWidth = 180;
-const iconColor = '#00192F';
+import { DrawerMobile } from './drawerMobile';
+import { DrawerPc } from './drawerPc';
 
 export const MiniDrawer = () => {
   const [open, setOpen] = useState(false);
@@ -63,52 +62,43 @@ export const MiniDrawer = () => {
     setOpen(false);
   };
 
-  const openedMixin = (theme: Theme): CSSObject => ({
-    width: isMobileVersion ? drawerWidth - 15 : drawerWidth,
-    transition: theme.transitions.create('width', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.enteringScreen,
-    }),
-    overflowX: 'hidden',
-  });
+  // const openedMixin = (theme: Theme): CSSObject => ({
+  //   width: isMobileVersion ? drawerWidth - 15 : drawerWidth,
+  //   transition: theme.transitions.create('width', {
+  //     easing: theme.transitions.easing.sharp,
+  //     duration: theme.transitions.duration.enteringScreen,
+  //   }),
+  //   overflowX: 'hidden',
+  // });
 
-  const closedMixin = (theme: Theme): CSSObject => ({
-    transition: theme.transitions.create('width', {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
-    }),
-    overflowX: 'hidden',
-    width: `calc(${theme.spacing(7)} + 1px)`,
-    // [theme.breakpoints.up('sm')]: {
-    //   width: `calc(${theme.spacing(7)} + 1px)`,
-    // },
-  });
+  // const closedMixin = (theme: Theme): CSSObject => ({
+  //   transition: theme.transitions.create('width', {
+  //     easing: theme.transitions.easing.sharp,
+  //     duration: theme.transitions.duration.leavingScreen,
+  //   }),
+  //   overflowX: 'hidden',
+  //   width: `calc(${theme.spacing(7)} + 1px)`,
+  //   // [theme.breakpoints.up('sm')]: {
+  //   //   width: `calc(${theme.spacing(7)} + 1px)`,
+  //   // },
+  // });
 
-  const DrawerHeader = styled('div')(({ theme }) => ({
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'flex-end',
-    padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
-    ...theme.mixins.toolbar,
-  }));
-
-  const Drawer = styled(MuiDrawer, {
-    shouldForwardProp: (prop) => prop !== 'open',
-  })(({ theme, open }) => ({
-    width: drawerWidth,
-    flexShrink: 0,
-    whiteSpace: 'nowrap',
-    boxSizing: 'border-box',
-    ...(open && {
-      ...openedMixin(theme),
-      '& .MuiDrawer-paper': openedMixin(theme),
-    }),
-    ...(!open && {
-      ...closedMixin(theme),
-      '& .MuiDrawer-paper': closedMixin(theme),
-    }),
-  }));
+  // const Drawer = styled(MuiDrawer, {
+  //   shouldForwardProp: (prop) => prop !== 'open',
+  // })(({ theme, open }) => ({
+  //   width: drawerWidth,
+  //   flexShrink: 0,
+  //   whiteSpace: 'nowrap',
+  //   boxSizing: 'border-box',
+  //   ...(open && {
+  //     ...openedMixin(theme),
+  //     '& .MuiDrawer-paper': openedMixin(theme),
+  //   }),
+  //   ...(!open && {
+  //     ...closedMixin(theme),
+  //     '& .MuiDrawer-paper': closedMixin(theme),
+  //   }),
+  // }));
 
   return (
     <Box
@@ -119,263 +109,18 @@ export const MiniDrawer = () => {
     >
       <CssBaseline />
       {isMobileVersion ? (
-        <Drawer
-          variant="permanent"
-          // onMouseMove={handleDrawerOpen}
-          // onMouseLeave={handleDrawerClose}
+        <DrawerMobile
           open={open}
-          PaperProps={{
-            sx: {
-              background: '#B6BDC3',
-              height: 'fit-content',
-              width: '50px',
-              top: '50%',
-              left: 0,
-              transform: 'translate(0%, -50%)',
-              borderRadius: '0 15px 15px 0',
-
-              // zIndex: 2,
-            },
-          }}
-          style={{
-            zIndex: 2,
-            backgroundColor: '#DADEE1',
-          }}
-        >
-          <DrawerHeader>
-            <div
-              style={{
-                width: drawerWidth - 40,
-                // display: 'flex',
-                // justifyContent: 'space-between',
-                // alignItems: 'center',
-              }}
-            >
-              {open ? (
-                <div
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                  }}
-                >
-                  <Image
-                    alt="logo"
-                    src={'/images/logo.png'}
-                    width={50}
-                    height={50}
-                    onClick={() => router.push('/#home')}
-                  />
-                  <IconButton onClick={handleDrawerClose}>
-                    <ChevronLeftIcon
-                      sx={{ color: iconColor }}
-                    />
-                  </IconButton>
-                </div>
-              ) : (
-                <IconButton onClick={handleDrawerOpen}>
-                  <MenuIcon sx={{ color: iconColor }} />
-                </IconButton>
-              )}
-            </div>
-          </DrawerHeader>
-          <Divider />
-          <List>
-            <ListItem
-              disablePadding
-              sx={{
-                display: 'block',
-              }}
-            >
-              <GenerateItems
-                icon={<Cottage sx={{ color: iconColor }} />}
-                route="home"
-                text="Home"
-              />
-              <GenerateItems
-                icon={
-                  <EmojiPeople sx={{ color: iconColor }} />
-                }
-                route="about"
-                text="About"
-              />
-              <GenerateItems
-                icon={
-                  <Leaderboard sx={{ color: iconColor }} />
-                }
-                route="experience"
-                text="Experience"
-              />
-              <GenerateItems
-                icon={
-                  <TableChart sx={{ color: iconColor }} />
-                }
-                route="projects"
-                text="Projects"
-              />
-              <GenerateItems
-                icon={
-                  <TipsAndUpdates
-                    sx={{ color: iconColor }}
-                  />
-                }
-                route="skills"
-                text="Skills"
-              />
-            </ListItem>
-          </List>
-
-          <Divider />
-          <List>
-            <ListItem
-              disablePadding
-              sx={{ display: 'block' }}
-            >
-              <GenerateItems
-                icon={<School sx={{ color: iconColor }} />}
-                route="education"
-                text="Education"
-                botomIcons
-              />
-              <GenerateItems
-                icon={<Message sx={{ color: iconColor }} />}
-                route="contact"
-                text="Contact"
-                botomIcons
-              />
-              <GenerateItems
-                icon={
-                  <Newspaper sx={{ color: iconColor }} />
-                }
-                route="blog"
-                text="Blog"
-                botomIcons
-              />
-            </ListItem>
-          </List>
-        </Drawer>
+          handleDrawerOpen={handleDrawerOpen}
+          handleDrawerClose={handleDrawerClose}
+        />
       ) : (
         // Not Mobile version
-        <Drawer
-          variant="permanent"
-          // onMouseMove={handleDrawerOpen}
-          // onMouseLeave={handleDrawerClose}
+        <DrawerPc
           open={open}
-          PaperProps={{
-            sx: {
-              background:
-                'linear-gradient(to top, #00192F 0%, #B6BDC3 100%)',
-            },
-          }}
-        >
-          <DrawerHeader>
-            {/* <IconButton onClick={handleDrawerClose}> */}
-            <div
-              style={{
-                width: drawerWidth - 25,
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center',
-              }}
-            >
-              {open ? (
-                <>
-                  <Image
-                    alt="logo"
-                    src={'/images/logo.png'}
-                    width={50}
-                    height={50}
-                    onClick={() => router.push('/#home')}
-                    style={{ cursor: 'pointer' }}
-                  />
-                  <IconButton onClick={handleDrawerClose}>
-                    <ChevronLeftIcon
-                      sx={{ color: iconColor }}
-                    />
-                  </IconButton>
-                </>
-              ) : (
-                <IconButton onClick={handleDrawerOpen}>
-                  <MenuIcon sx={{ color: iconColor }} />
-                </IconButton>
-              )}
-            </div>
-          </DrawerHeader>
-          <Divider />
-          <List>
-            <ListItem
-              disablePadding
-              sx={{
-                display: 'block',
-              }}
-            >
-              <GenerateItems
-                icon={<Cottage sx={{ color: iconColor }} />}
-                route="home"
-                text="Home"
-              />
-              <GenerateItems
-                icon={
-                  <EmojiPeople sx={{ color: iconColor }} />
-                }
-                route="about"
-                text="About"
-              />
-              <GenerateItems
-                icon={
-                  <Leaderboard sx={{ color: iconColor }} />
-                }
-                route="experience"
-                text="Experience"
-              />
-              <GenerateItems
-                icon={
-                  <TableChart sx={{ color: iconColor }} />
-                }
-                route="projects"
-                text="Projects"
-              />
-              <GenerateItems
-                icon={
-                  <TipsAndUpdates
-                    sx={{ color: iconColor }}
-                  />
-                }
-                route="skills"
-                text="Skills"
-              />
-            </ListItem>
-          </List>
-
-          <Divider />
-          <List>
-            <ListItem
-              disablePadding
-              sx={{ display: 'block' }}
-            >
-              <GenerateItems
-                icon={<School sx={{ color: iconColor }} />}
-                route="education"
-                text="Education"
-                botomIcons
-              />
-              <GenerateItems
-                icon={<Message sx={{ color: iconColor }} />}
-                route="contact"
-                text="Contact"
-                botomIcons
-              />
-              <GenerateItems
-                icon={
-                  <Newspaper sx={{ color: iconColor }} />
-                }
-                route="blog"
-                text="Blog"
-                botomIcons
-              />
-            </ListItem>
-          </List>
-        </Drawer>
+          handleDrawerOpen={handleDrawerOpen}
+          handleDrawerClose={handleDrawerClose}
+        />
       )}
 
       <div
