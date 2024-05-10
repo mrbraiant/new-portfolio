@@ -39,13 +39,30 @@ import {
 import Image from 'next/image';
 import { Text } from '@components/text';
 import { SectionTitle } from '@components/sectionTitle';
-import { Paper, useMediaQuery } from '@mui/material';
+import {
+  Button,
+  Paper,
+  TextField,
+  useMediaQuery,
+} from '@mui/material';
 import { useRouter } from 'next/router';
 import { DrawerMobile } from './drawerMobile';
 import { DrawerPc } from './drawerPc';
+import { Form, Formik } from 'formik';
+import * as Yup from 'yup';
+import axios from 'axios';
+
+type inputType = {
+  question: string;
+};
+
+const gptKey =
+  'sk-proj-8fmazzVi8szno79M33QlT3BlbkFJgt5Xin5WSZoP1MGpvTai';
 
 export const MiniDrawer = () => {
   const [open, setOpen] = useState(false);
+  const [gptTextResponse, setGptTextResponse] =
+    useState<string>();
 
   const router = useRouter();
   const theme = useTheme();
@@ -53,6 +70,22 @@ export const MiniDrawer = () => {
   const isMobileVersion = useMediaQuery(
     theme.breakpoints.down('sm'),
   );
+
+  const client = axios.create({
+    headers: {
+      Authorization: 'Bearer ' + gptKey,
+    },
+  });
+
+  const schema = Yup.object().shape({
+    question: Yup.string().required(
+      'Please write your question',
+    ),
+  });
+
+  const initialValues = {
+    question: '',
+  };
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -62,6 +95,26 @@ export const MiniDrawer = () => {
     setOpen(false);
   };
 
+  const handleSubmit = async (values: inputType) => {
+    console.log('values', values);
+
+    const params = {
+      prompt: values.question,
+      model: 'gpt-3.5-turbo-instruct',
+      max_tokens: 10,
+      temperature: 0,
+    };
+
+    await client
+      .post('https://api.openai.com/v1/completions', params)
+      .then((result) => {
+        console.log('res', result.data.choices[0].text);
+        setGptTextResponse(result.data.choices[0].text);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   // const openedMixin = (theme: Theme): CSSObject => ({
   //   width: isMobileVersion ? drawerWidth - 15 : drawerWidth,
   //   transition: theme.transitions.create('width', {
@@ -459,54 +512,46 @@ export const MiniDrawer = () => {
               title="Contact"
               backgroundColor="#6D7B88"
             />
-            <Typography
-              variant={
-                /* isMobileVersion ? 'body2' :  */ 'body1'
-              }
+            <Formik
+              initialValues={initialValues}
+              onSubmit={(values) => handleSubmit(values)}
+              validationSchema={schema}
             >
-              Consequat mauris nunc congue nisi vitae
-              suscipit. Fringilla est ullamcorper eget nulla
-              facilisi etiam dignissim diam. Pulvinar
-              elementum integer enim neque volutpat ac
-              tincidunt. Ornare suspendisse sed nisi lacus
-              sed viverra tellus. Purus sit amet volutpat
-              consequat mauris. Elementum eu facilisis sed
-              odio morbi. Euismod lacinia at quis risus sed
-              vulputate odio. Morbi tincidunt ornare massa
-              eget egestas purus viverra accumsan in. In
-              hendrerit gravida rutrum quisque non tellus
-              orci ac. Pellentesque nec nam aliquam sem et
-              tortor. Habitant morbi tristique senectus et.
-              Adipiscing elit duis tristique sollicitudin
-              nibh sit. Ornare aenean euismod elementum nisi
-              quis eleifend. Commodo viverra maecenas
-              accumsan lacus vel facilisis. Nulla posuere
-              sollicitudin aliquam ultrices sagittis orci a.
-            </Typography>
-            <Typography
-              variant={
-                /* isMobileVersion ? 'body2' :  */ 'body1'
-              }
-            >
-              Consequat mauris nunc congue nisi vitae
-              suscipit. Fringilla est ullamcorper eget nulla
-              facilisi etiam dignissim diam. Pulvinar
-              elementum integer enim neque volutpat ac
-              tincidunt. Ornare suspendisse sed nisi lacus
-              sed viverra tellus. Purus sit amet volutpat
-              consequat mauris. Elementum eu facilisis sed
-              odio morbi. Euismod lacinia at quis risus sed
-              vulputate odio. Morbi tincidunt ornare massa
-              eget egestas purus viverra accumsan in. In
-              hendrerit gravida rutrum quisque non tellus
-              orci ac. Pellentesque nec nam aliquam sem et
-              tortor. Habitant morbi tristique senectus et.
-              Adipiscing elit duis tristique sollicitudin
-              nibh sit. Ornare aenean euismod elementum nisi
-              quis eleifend. Commodo viverra maecenas
-              accumsan lacus vel facilisis. Nulla posuere
-              sollicitudin aliquam ultrices sagittis orci a.
-            </Typography>
+              {({ errors, handleChange }) => (
+                <Form>
+                  <div
+                    style={{ display: 'flex', gap: '1rem' }}
+                  >
+                    <TextField
+                      id="question"
+                      name="question"
+                      label="Write your question to my A.I."
+                      type="text"
+                      variant="outlined"
+                      onChange={handleChange}
+                      defaultValue={initialValues.question}
+                      error={Boolean(errors.question)}
+                      size="small"
+                      multiline
+                      rows={2}
+                      maxRows={3}
+                      fullWidth
+                    />
+                    <Button
+                      variant="contained"
+                      type="submit"
+                      size="large"
+                    >
+                      Ask
+                    </Button>
+                  </div>
+                </Form>
+              )}
+            </Formik>
+            <Text type="h6">
+              <strong>Answer: </strong>
+            </Text>
+            <Text type="body1">{gptTextResponse}</Text>
           </div>
 
           <Divider />
