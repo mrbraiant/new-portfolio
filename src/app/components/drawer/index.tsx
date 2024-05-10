@@ -56,8 +56,6 @@ type inputType = {
   question: string;
 };
 
-const gptKey = process.env.CLIENT_KEY;
-
 export const MiniDrawer = () => {
   const [open, setOpen] = useState(false);
   const [gptTextResponse, setGptTextResponse] =
@@ -65,6 +63,7 @@ export const MiniDrawer = () => {
 
   const router = useRouter();
   const theme = useTheme();
+  const gptKey = process.env.CLIENT_KEY;
 
   const isMobileVersion = useMediaQuery(
     theme.breakpoints.down('sm'),
