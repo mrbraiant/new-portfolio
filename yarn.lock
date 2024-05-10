@@ -363,7 +363,7 @@
     prop-types "^15.8.1"
     react-is "^18.2.0"
 
-"@next/env@14.2.3":
+"@next/env@14.2.3", "@next/env@^14.2.3":
   version "14.2.3"
   resolved "https://registry.yarnpkg.com/@next/env/-/env-14.2.3.tgz#d6def29d1c763c0afb397343a15a82e7d92353a0"
   integrity sha512-W7fd7IbkfmeeY2gXrzJYDx8D2lWKbVoTIj1o1ScPHNzvp30s1AuoEFSdr39bC5sjxJaxTtq3OTCZboNp0lNWHA==
