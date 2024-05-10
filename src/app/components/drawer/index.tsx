@@ -69,12 +69,6 @@ export const MiniDrawer = () => {
     theme.breakpoints.down('sm'),
   );
 
-  const client = axios.create({
-    headers: {
-      Authorization: 'Bearer ' + gptKey,
-    },
-  });
-
   const schema = Yup.object().shape({
     question: Yup.string().required(
       'Please write your question',
@@ -95,6 +89,12 @@ export const MiniDrawer = () => {
 
   const handleSubmit = async (values: inputType) => {
     console.log('values', values);
+
+    const client = axios.create({
+      headers: {
+        Authorization: 'Bearer ' + gptKey,
+      },
+    });
 
     const params = {
       prompt: values.question,
