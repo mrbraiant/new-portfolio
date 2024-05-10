@@ -56,8 +56,7 @@ type inputType = {
   question: string;
 };
 
-const gptKey =
-  'sk-proj-8fmazzVi8szno79M33QlT3BlbkFJgt5Xin5WSZoP1MGpvTai';
+const gptKey = process.env.CLIENT_KEY;
 
 export const MiniDrawer = () => {
   const [open, setOpen] = useState(false);
@@ -66,6 +65,8 @@ export const MiniDrawer = () => {
 
   const router = useRouter();
   const theme = useTheme();
+
+  console.log('gptKey', gptKey);
 
   const isMobileVersion = useMediaQuery(
     theme.breakpoints.down('sm'),
