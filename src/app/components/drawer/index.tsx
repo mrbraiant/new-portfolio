@@ -66,8 +66,6 @@ export const MiniDrawer = () => {
   const router = useRouter();
   const theme = useTheme();
 
-  console.log('gptKey', gptKey);
-
   const isMobileVersion = useMediaQuery(
     theme.breakpoints.down('sm'),
   );
@@ -535,7 +533,6 @@ export const MiniDrawer = () => {
                       size="small"
                       multiline
                       rows={2}
-                      maxRows={3}
                       fullWidth
                     />
                     <Button
