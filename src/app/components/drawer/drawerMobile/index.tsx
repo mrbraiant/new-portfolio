@@ -1,5 +1,3 @@
-import Image from 'next/image';
-import { useRouter } from 'next/router';
 import MuiDrawer from '@mui/material/Drawer';
 import {
   Divider,
@@ -30,6 +28,7 @@ import {
   drawerWidth,
   iconColor,
 } from '../drawerPc';
+import { Logo } from '@components/layout/images/logo';
 
 type DrawerMobileProps = {
   open: boolean;
@@ -45,8 +44,6 @@ export const DrawerMobile = ({
   handleDrawerOpen,
   handleDrawerClose,
 }: DrawerMobileProps) => {
-  const router = useRouter();
-
   const openedMixin = (theme: Theme): CSSObject => ({
     width: mobileMixinWidth,
     transition: theme.transitions.create('width', {
@@ -126,13 +123,7 @@ export const DrawerMobile = ({
                 alignItems: 'center',
               }}
             >
-              <Image
-                alt="logo"
-                src={'/images/logo.png'}
-                width={50}
-                height={50}
-                onClick={() => router.push('/#home')}
-              />
+              <Logo />
               <IconButton onClick={handleDrawerClose}>
                 <ChevronRight sx={{ color: iconColor }} />
               </IconButton>

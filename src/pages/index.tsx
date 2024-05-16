@@ -1,6 +1,6 @@
 // import styles from "./page.module.css";
 
-import { MiniDrawer } from '@components/drawer';
+import { Layout } from '@components/layout';
 import { ThemeProvider, createTheme } from '@mui/material';
 
 export default function Home() {
@@ -46,7 +46,7 @@ export default function Home() {
   return (
     <main>
       <ThemeProvider theme={theme}>
-        <MiniDrawer />
+        <Layout />
       </ThemeProvider>
     </main>
   );

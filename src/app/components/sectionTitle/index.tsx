@@ -2,7 +2,7 @@ import { Text } from '@components/text';
 import { TitleWrapper } from './styles';
 import { useMediaQuery, useTheme } from '@mui/material';
 
-type SectionTitleProps = {
+export type SectionTitleProps = {
   title: string;
   backgroundColor?:
     | '#00192F'
