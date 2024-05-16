@@ -1,9 +1,8 @@
 import { MiniDrawer } from '@components/drawer';
 import { Section } from '@components/homeSection';
 import { Text } from '@components/text';
-import { Button, Paper, TextField } from '@mui/material';
+import { Button, TextField } from '@mui/material';
 import { Form, Formik } from 'formik';
-import Image from 'next/image';
 import { useState } from 'react';
 import * as Yup from 'yup';
 import axios from 'axios';
