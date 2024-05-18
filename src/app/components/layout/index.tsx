@@ -7,7 +7,7 @@ import { useState } from 'react';
 import * as Yup from 'yup';
 import axios from 'axios';
 import { BlogCard } from '@components/blog/blogCard';
-import { Posts } from 'src/pages/utils/posts';
+import { Posts } from '@utils/posts';
 import Image from 'next/image';
 
 // type LayoutProps = {};
@@ -176,6 +176,7 @@ export const Layout = () => {
               <BlogCard
                 key={post.id}
                 id={post.id}
+                image={post.image}
                 title={post.title}
                 intro={post.intro}
               />

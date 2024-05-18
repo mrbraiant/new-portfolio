@@ -8,12 +8,14 @@ type BlogCardProps = {
   title: string;
   intro: string;
   id: number;
+  image: string;
 };
 
 export const BlogCard = ({
   title,
   intro,
   id,
+  image,
 }: BlogCardProps) => {
   const router = useRouter();
 
@@ -38,7 +40,7 @@ export const BlogCard = ({
       >
         <Image
           alt="paper-image"
-          src={'/images/background.png'}
+          src={image}
           width={250}
           height={250}
           style={{ borderRadius: '5px 5px 0 0' }}

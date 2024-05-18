@@ -2,7 +2,7 @@ export const Posts = [
   {
     id: 1,
     title: 'Experiences',
-    image: '',
+    image: '/images/blog/1.jpeg',
     intro:
       'Nostrud minim aliquip sint aliqua. Voluptate irure do duis excepteur ullamco sunt ipsum commodo sunt excepteur. Anim magna est deserunt velit voluptate excepteur voluptate aliqua pariatur in velit duis anim aliquip. Do ex cupidatat sint sint aute enim aute velit est laboris. Anim ad labore ut cillum dolor et ullamco occaecat occaecat esse non.',
     content:
@@ -11,7 +11,7 @@ export const Posts = [
   {
     id: 2,
     title: 'Development',
-    image: '',
+    image: '/images/blog/2.jpeg',
     intro:
       'Nostrud minim aliquip sint aliqua. Voluptate irure do duis excepteur ullamco sunt ipsum commodo sunt excepteur. Anim magna est deserunt velit voluptate excepteur voluptate aliqua pariatur in velit duis anim aliquip. Do ex cupidatat sint sint aute enim aute velit est laboris. Anim ad labore ut cillum dolor et ullamco occaecat occaecat esse non.',
     content:
@@ -20,7 +20,7 @@ export const Posts = [
   {
     id: 3,
     title: 'Studies',
-    image: '',
+    image: '/images/blog/3.jpeg',
     intro:
       'Nostrud minim aliquip sint aliqua. Voluptate irure do duis excepteur ullamco sunt ipsum commodo sunt excepteur. Anim magna est deserunt velit voluptate excepteur voluptate aliqua pariatur in velit duis anim aliquip. Do ex cupidatat sint sint aute enim aute velit est laboris. Anim ad labore ut cillum dolor et ullamco occaecat occaecat esse non.',
     content:
@@ -29,7 +29,7 @@ export const Posts = [
   {
     id: 4,
     title: 'AI Development',
-    image: '',
+    image: '/images/blog/4.jpeg',
     intro:
       'Nostrud minim aliquip sint aliqua. Voluptate irure do duis excepteur ullamco sunt ipsum commodo sunt excepteur. Anim magna est deserunt velit voluptate excepteur voluptate aliqua pariatur in velit duis anim aliquip. Do ex cupidatat sint sint aute enim aute velit est laboris. Anim ad labore ut cillum dolor et ullamco occaecat occaecat esse non.',
     content:

@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { Posts } from '../utils/posts';
+import { Posts } from '../../app/utils/posts';
 import Image from 'next/image';
 
 export default function Post() {
@@ -15,12 +15,14 @@ export default function Post() {
 
   return (
     <>
-      {postContent.image && (
+      {postContent.image !== undefined && (
         <Image
           alt={`post-image-${postContent.title}`}
           src={postContent.image}
           width={800}
           height={400}
+          style={{ width: '100%', objectFit: 'cover' }}
+          priority
         />
       )}
       <h2>
