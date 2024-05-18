@@ -15,23 +15,33 @@ export default function Post() {
 
   return (
     <>
-      {postContent.image !== undefined && (
-        <Image
-          alt={`post-image-${postContent.title}`}
-          src={postContent.image}
-          width={800}
-          height={400}
-          style={{ width: '100%', objectFit: 'cover' }}
-          priority
-        />
+      {postContent !== undefined ? (
+        <>
+          {postContent.image !== undefined ? (
+            <Image
+              alt={`post-image-${postContent.title}`}
+              src={postContent.image}
+              width={800}
+              height={400}
+              style={{ width: '100%', objectFit: 'cover' }}
+              priority
+            />
+          ) : null}
+          <h2>
+            <strong>{postContent.title}</strong>
+          </h2>
+          <br />
+          <h4>{postContent.intro}</h4>
+          <br />
+          <h5>{postContent.content}</h5>
+        </>
+      ) : (
+        <>
+          <h2>Sorry</h2>
+          <br />
+          <h4>No posts found</h4>
+        </>
       )}
-      <h2>
-        <strong>{postContent.title}</strong>
-      </h2>
-      <br />
-      <h4>{postContent.intro}</h4>
-      <br />
-      <h5>{postContent.content}</h5>
     </>
   );
 }
