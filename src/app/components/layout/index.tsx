@@ -7,6 +7,7 @@ import { useState } from 'react';
 import * as Yup from 'yup';
 import axios from 'axios';
 import { BlogCard } from '@components/blog/blogCard';
+import { Posts } from 'src/pages/utils/posts';
 
 // type LayoutProps = {};
 type inputType = {
@@ -137,30 +138,14 @@ export const Layout = () => {
               gap: '1rem',
             }}
           >
-            <BlogCard
-              title="Experiences"
-              intro="Nostrud minim aliquip sint aliqua. Voluptate irure do duis excepteur ullamco sunt ipsum commodo sunt excepteur. Anim magna est deserunt velit voluptate excepteur voluptate aliqua pariatur in velit duis anim aliquip. Do ex cupidatat sint sint aute enim aute velit est laboris. Anim ad labore ut cillum dolor et ullamco occaecat occaecat esse non."
-            />
-            <BlogCard
-              title="Development"
-              intro="Nostrud minim aliquip sint aliqua. Voluptate irure do duis excepteur ullamco sunt ipsum commodo sunt excepteur. Anim magna est deserunt velit voluptate excepteur voluptate aliqua pariatur in velit duis anim aliquip. Do ex cupidatat sint sint aute enim aute velit est laboris. Anim ad labore ut cillum dolor et ullamco occaecat occaecat esse non."
-            />
-            <BlogCard
-              title="Studies"
-              intro="Nostrud minim aliquip sint aliqua. Voluptate irure do duis excepteur ullamco sunt ipsum commodo sunt excepteur. Anim magna est deserunt velit voluptate excepteur voluptate aliqua pariatur in velit duis anim aliquip. Do ex cupidatat sint sint aute enim aute velit est laboris. Anim ad labore ut cillum dolor et ullamco occaecat occaecat esse non."
-            />
-            <BlogCard
-              title="AI Development"
-              intro="Nostrud minim aliquip sint aliqua. Voluptate irure do duis excepteur ullamco sunt ipsum commodo sunt excepteur. Anim magna est deserunt velit voluptate excepteur voluptate aliqua pariatur in velit duis anim aliquip. Do ex cupidatat sint sint aute enim aute velit est laboris. Anim ad labore ut cillum dolor et ullamco occaecat occaecat esse non."
-            />
-            <BlogCard
-              title="AI Development"
-              intro="Nostrud minim aliquip sint aliqua. Voluptate irure do duis excepteur ullamco sunt ipsum commodo sunt excepteur. Anim magna est deserunt velit voluptate excepteur voluptate aliqua pariatur in velit duis anim aliquip. Do ex cupidatat sint sint aute enim aute velit est laboris. Anim ad labore ut cillum dolor et ullamco occaecat occaecat esse non."
-            />
-            <BlogCard
-              title="AI Development"
-              intro="Nostrud minim aliquip sint aliqua. Voluptate irure do duis excepteur ullamco sunt ipsum commodo sunt excepteur. Anim magna est deserunt velit voluptate excepteur voluptate aliqua pariatur in velit duis anim aliquip. Do ex cupidatat sint sint aute enim aute velit est laboris. Anim ad labore ut cillum dolor et ullamco occaecat occaecat esse non."
-            />
+            {Posts.map((post) => (
+              <BlogCard
+                key={post.id}
+                id={post.id}
+                title={post.title}
+                intro={post.intro}
+              />
+            ))}
           </div>
         </Section>
       </MiniDrawer>
