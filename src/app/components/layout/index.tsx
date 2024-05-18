@@ -8,6 +8,7 @@ import * as Yup from 'yup';
 import axios from 'axios';
 import { BlogCard } from '@components/blog/blogCard';
 import { Posts } from 'src/pages/utils/posts';
+import Image from 'next/image';
 
 // type LayoutProps = {};
 type inputType = {
@@ -18,7 +19,7 @@ export const Layout = () => {
   const [gptTextResponse, setGptTextResponse] =
     useState<string>();
 
-  const gptKey = process.env.CLIENT_KEY;
+  // const gptKey = process.env.CLIENT_KEY;
 
   const schema = Yup.object().shape({
     question: Yup.string().required(
@@ -31,34 +32,45 @@ export const Layout = () => {
   };
 
   const handleSubmit = async (values: inputType) => {
-    console.log('values', values);
-
-    const client = axios.create({
-      headers: {
-        Authorization: 'Bearer ' + gptKey,
-      },
-    });
-
-    const params = {
-      prompt: values.question,
-      model: 'gpt-3.5-turbo-instruct',
-      max_tokens: 10,
-      temperature: 0,
-    };
-
-    await client
-      .post('https://api.openai.com/v1/completions', params)
-      .then((result) => {
-        console.log('res', result.data.choices[0].text);
-        setGptTextResponse(result.data.choices[0].text);
-      })
-      .catch((err) => {
-        console.log(err);
+    try {
+      const client = axios.create({
+        headers: {
+          Authorization:
+            'Bearer ' +
+            'sk-proj-rIZZh1LOoC26cSAefbdpT3BlbkFJimiPYIXOdV7X058dMHqv',
+        },
       });
+      console.log('values', values);
+
+      const params = {
+        prompt: values.question,
+        model: 'gpt-3.5-turbo-instruct',
+        max_tokens: 10,
+        temperature: 0,
+      };
+
+      await client
+        .post(
+          'https://api.openai.com/v1/completions',
+          params,
+        )
+        .then((result) => {
+          console.log('res', result.data.choices[0].text);
+          setGptTextResponse(result.data.choices[0].text);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    } catch (error) {
+      if (error instanceof Error) {
+        console.log('Error:', error.message);
+      }
+    }
   };
 
   return (
     <>
+      {/* TODO: CREATE ONE COMPONENT JUST TO USE AS LAYOUT TO PASS PROPS AS CHILDREN */}
       <MiniDrawer>
         <Section sectionName="About" />
 
@@ -86,45 +98,67 @@ export const Layout = () => {
           sectionName="Contact"
           titleBackgroundColor="#6D7B88"
         >
-          <Formik
-            initialValues={initialValues}
-            onSubmit={(values) => handleSubmit(values)}
-            validationSchema={schema}
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'row',
+              gap: '1rem',
+              width: '100%',
+            }}
           >
-            {({ errors, handleChange }) => (
-              <Form>
-                <div
-                  style={{ display: 'flex', gap: '1rem' }}
-                >
-                  <TextField
-                    id="question"
-                    name="question"
-                    label="Write your question to my A.I."
-                    type="text"
-                    variant="outlined"
-                    onChange={handleChange}
-                    defaultValue={initialValues.question}
-                    error={Boolean(errors.question)}
-                    size="small"
-                    multiline
-                    rows={2}
-                    fullWidth
-                  />
-                  <Button
-                    variant="contained"
-                    type="submit"
-                    size="large"
+            <Image
+              alt="bot-image"
+              src={'/images/bot.png'}
+              width={300}
+              height={300}
+              style={{ borderRadius: '10px' }}
+            />
+
+            <Formik
+              initialValues={initialValues}
+              onSubmit={(values) => handleSubmit(values)}
+              validationSchema={schema}
+            >
+              {({ errors, handleChange }) => (
+                <Form>
+                  <div
+                    style={{
+                      display: 'flex',
+                      gap: '1rem',
+                      flexDirection: 'column',
+                      // width: '100%',
+                    }}
                   >
-                    Ask
-                  </Button>
-                </div>
-              </Form>
-            )}
-          </Formik>
-          <Text type="h6">
-            <strong>Answer: </strong>
-          </Text>
-          <Text type="body1">{gptTextResponse}</Text>
+                    <TextField
+                      id="question"
+                      name="question"
+                      label="Write your question to my A.I."
+                      type="text"
+                      variant="outlined"
+                      onChange={handleChange}
+                      defaultValue={initialValues.question}
+                      error={Boolean(errors.question)}
+                      size="small"
+                      multiline
+                      rows={2}
+                      fullWidth
+                    />
+                    <Button
+                      variant="contained"
+                      type="submit"
+                      size="large"
+                    >
+                      Ask
+                    </Button>
+                  </div>
+                </Form>
+              )}
+            </Formik>
+            <Text type="h6">
+              <strong>Answer: </strong>
+            </Text>
+            <Text type="body1">{gptTextResponse}</Text>
+          </div>
         </Section>
 
         <Section
