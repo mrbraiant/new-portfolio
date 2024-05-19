@@ -6,7 +6,7 @@ export const ContactContent = styled(Paper)({
   alignItems: 'center',
   padding: '0.5rem',
   borderRadius: '15px',
-  marginBottom: '2rem',
+  marginBottom: '0.5rem',
   width: 'fit-content',
 });
 

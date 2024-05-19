@@ -4,12 +4,12 @@ import { Text } from '@components/text';
 export const AboutSection = () => {
   return (
     <Section sectionName="About">
-      <Text textAlign="justify">
+      <Text>
         I&apos;m <strong>Front End Developer</strong>, my
         main skills are{' '}
         <strong>JavaScript/TypeScript</strong>, Front End
         libs <strong>React/Next/Angular</strong> and{' '}
-        <strong>Node/Express/Firebase</strong> however
+        <strong>Node/Express/Firebase</strong> however{' '}
         <strong>
           I&apos;m able to learn quickly any development
           languages and frameworks

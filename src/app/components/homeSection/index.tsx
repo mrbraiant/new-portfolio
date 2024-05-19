@@ -19,7 +19,10 @@ export const Section = ({
 }: SectionProps) => {
   return (
     <>
-      <div id={String(sectionName).toLowerCase()}>
+      <div
+        id={String(sectionName).toLowerCase()}
+        style={{ marginBottom: '1.5rem' }}
+      >
         <SectionTitle
           title={sectionName}
           backgroundColor={titleBackgroundColor}
