@@ -1,10 +1,13 @@
-import { styled } from '@mui/material';
+import { Paper, styled } from '@mui/material';
 
-export const ContactContent = styled('div')({
+export const ContactContent = styled(Paper)({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
+  padding: '0.5rem',
+  borderRadius: '15px',
   marginBottom: '2rem',
+  width: 'fit-content',
 });
 
 export const ContactBox = styled('div')({
@@ -12,4 +15,9 @@ export const ContactBox = styled('div')({
   alignItems: 'center',
   gap: '0.5rem',
   width: '180px',
+  ['a']: {
+    '&:hover': {
+      textDecoration: 'underline',
+    },
+  },
 });
