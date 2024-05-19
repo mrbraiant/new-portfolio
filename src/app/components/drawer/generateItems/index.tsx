@@ -28,7 +28,7 @@ export const GenerateItems = ({
 
   return (
     <ListItemButton
-      href={`#${route}`}
+      href={`/#${route}`}
       sx={{
         '&:hover': {
           backgroundColor: botomIcons

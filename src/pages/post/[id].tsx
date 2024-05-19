@@ -1,6 +1,11 @@
 import { useRouter } from 'next/router';
 import { Posts } from '../../app/utils/posts';
 import Image from 'next/image';
+import { IconButton } from '@mui/material';
+import { ArrowBack } from '@mui/icons-material';
+import { PalletColor } from '@utils/palletColor';
+import { Layout } from '@components/layout';
+import { Text } from '@components/text';
 
 export default function Post() {
   const router = useRouter();
@@ -11,32 +16,57 @@ export default function Post() {
   );
   const postContent = post[0];
 
-  console.log('post', post);
-
   return (
     <>
       {postContent !== undefined ? (
-        <>
+        <Layout showMainBackgroundImage={false}>
           {postContent.image !== undefined ? (
-            <Image
-              alt={`post-image-${postContent.title}`}
-              src={postContent.image}
-              width={800}
-              height={400}
-              style={{ width: '100%', objectFit: 'cover' }}
-              priority
-            />
+            <div>
+              <Image
+                alt={`post-image-${postContent.title}`}
+                src={postContent.image}
+                width={800}
+                height={400}
+                style={{
+                  width: '100%',
+                  objectFit: 'cover',
+                  borderRadius: '15px',
+                }}
+                priority
+              />
+              <IconButton
+                title="Back to blog section"
+                sx={{
+                  position: 'absolute',
+                  top: 45,
+                  left: 100,
+                  backgroundColor: PalletColor.darkMidnight,
+                  '&:hover': {
+                    backgroundColor: PalletColor.midnight,
+                  },
+                }}
+                onClick={() => router.push('/#blog')}
+              >
+                <ArrowBack
+                  sx={{
+                    color: PalletColor.auraWhite,
+                  }}
+                />
+              </IconButton>
+            </div>
           ) : null}
-          <h2>
+
+          <Text type="h3" textAlign="center">
             <strong>{postContent.title}</strong>
-          </h2>
+          </Text>
           <br />
-          <h4>{postContent.intro}</h4>
+          <Text type="h5">{postContent.intro}</Text>
           <br />
-          <h5>{postContent.content}</h5>
-        </>
+          <Text type="body1">{postContent.content}</Text>
+        </Layout>
       ) : (
         <>
+          {/* TODO: create component to no found page */}
           <h2>Sorry</h2>
           <br />
           <h4>No posts found</h4>

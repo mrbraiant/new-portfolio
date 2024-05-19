@@ -14,13 +14,16 @@ import { DrawerMobile } from './drawerMobile';
 import { DrawerPc } from './drawerPc';
 
 import { MainImage } from '@components/layout/images/mainImage';
+import { PalletColor } from '@utils/palletColor';
 
 type MiniDrawerProps = {
   children: ReactNode;
+  showMainBackgroundImage?: boolean;
 };
 
 export const MiniDrawer = ({
   children,
+  showMainBackgroundImage = true,
 }: MiniDrawerProps) => {
   const [open, setOpen] = useState(false);
 
@@ -107,25 +110,27 @@ export const MiniDrawer = ({
           width: '100%',
         }}
       >
-        <Paper
-          elevation={8}
-          variant="elevation"
-          style={{
-            width: '100%',
-            height: '95vh',
-            objectFit: 'cover',
-            zIndex: 1,
-          }}
-        >
-          <MainImage />
-        </Paper>
+        {showMainBackgroundImage ? (
+          <Paper
+            elevation={8}
+            variant="elevation"
+            style={{
+              width: '100%',
+              height: '95vh',
+              objectFit: 'cover',
+              zIndex: 1,
+            }}
+          >
+            <MainImage />
+          </Paper>
+        ) : null}
 
         <Box
           component="main"
           sx={{
             flexGrow: 1,
             p: 3,
-            backgroundColor: '#DADEE1',
+            backgroundColor: PalletColor.auraWhite,
           }}
         >
           {/* <DrawerHeader /> */}
