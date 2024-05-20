@@ -49,13 +49,17 @@ export const AboutCard = () => {
             }}
           />
           <TitleBox>
-            <Text>
+            <Text
+              type={isMobileVersion ? 'body2' : 'caption'}
+            >
               <strong>Front End Developer</strong>
             </Text>
             <Code />
           </TitleBox>
           <JobDescriptionBox>
-            <Text type="body2">
+            <Text
+              type={isMobileVersion ? 'body2' : 'caption'}
+            >
               Leading multiple projects, code reviewing,
               providing support to newcomers and colleagues,
               creating tasks, coding and developing custom

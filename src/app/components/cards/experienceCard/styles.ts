@@ -64,6 +64,6 @@ export const YearsTab = styled('div')({
   padding: '0px 0.5rem',
   width: 'fit-content',
   alignSelf: 'self-end',
-  marginTop: '-20px',
+  // marginTop: '-2px',
   marginBottom: '0.5rem',
 });

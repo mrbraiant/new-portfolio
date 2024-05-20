@@ -70,7 +70,9 @@ export const ExperienceCard = ({
             }}
           />
           <TitleBox>
-            <Text>
+            <Text
+              type={isMobileVersion ? 'body2' : 'caption'}
+            >
               <strong>{jobTitle}</strong>
             </Text>
             <JobTypeBox>
