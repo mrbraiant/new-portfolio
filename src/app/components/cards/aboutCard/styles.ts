@@ -9,7 +9,7 @@ export const AboutCardPaper = styled(Paper)(
       'linear-gradient(#00192F 0%, #6D7B88 100%);',
     padding: '15px',
     [theme.breakpoints.down('sm')]: {
-      width: '300px',
+      width: '250px',
     },
   }),
 );

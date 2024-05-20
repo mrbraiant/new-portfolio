@@ -9,7 +9,7 @@ export const ExperienceCardPaper = styled(Paper)(
     padding: '15px',
     borderRadius: '10px',
     [theme.breakpoints.down('sm')]: {
-      width: '300px',
+      width: '250px',
     },
   }),
 );

@@ -43,7 +43,7 @@ export const AboutCard = () => {
             height={150}
             style={{
               objectFit: 'cover',
-              width: isMobileVersion ? '270px' : '320px',
+              width: isMobileVersion ? '220px' : '320px',
               height: '150px',
               border: 'thick double darkblue',
             }}
