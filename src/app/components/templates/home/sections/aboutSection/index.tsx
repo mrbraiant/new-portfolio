@@ -1,13 +1,7 @@
+import { AboutCard } from '@components/cards/aboutCard';
 import { Section } from '@components/homeSection';
 import { Text } from '@components/text';
-import {
-  Code,
-  EmojiPeople,
-  LogoDev,
-} from '@mui/icons-material';
-import { Paper } from '@mui/material';
-import { PalletColor } from '@utils/palletColor';
-import Image from 'next/image';
+import { EmojiPeople } from '@mui/icons-material';
 
 export const AboutSection = () => {
   return (
@@ -51,90 +45,7 @@ export const AboutSection = () => {
           justifyContent: 'center',
         }}
       >
-        <Paper
-          elevation={8}
-          sx={{
-            // display: 'flex',
-            // flexDirection: 'column',
-            // alignItems: 'center',
-            // padding: '1rem',
-            width: '350px',
-            // height: '400px',
-            border: '20px solid #00192F',
-            borderRadius: '10px',
-          }}
-        >
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              // padding: '1rem',
-            }}
-          >
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                width: '100%',
-                padding: '0px 0.5rem',
-                backgroundColor: PalletColor.auraWhite,
-                border: 'thick double darkblue',
-              }}
-            >
-              <Text>Braiant Malta</Text>
-              <LogoDev />
-            </div>
-            <Image
-              alt="avatar"
-              src={'/images/exp/br.png'}
-              width={310}
-              height={300}
-              style={{
-                objectFit: 'cover',
-                width: '310px',
-                height: '150px',
-                border: 'thick double darkblue',
-              }}
-            />
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                width: '100%',
-                padding: '0px 0.5rem',
-                backgroundColor: PalletColor.auraWhite,
-                border: 'thick double darkblue',
-              }}
-            >
-              <Text>Front End Developer</Text>
-              <Code />
-            </div>
-            <div
-              style={{
-                display: 'flex',
-                // alignItems: 'center',
-                // justifyContent: 'space-between',
-                width: '100%',
-                padding: '0px 0.5rem',
-                backgroundColor: '#fafafa',
-                border: 'thick double darkblue',
-              }}
-            >
-              <Text type="body2">
-                Leading multiple projects, code reviewing,
-                providing support to newcomers and
-                colleagues, creating tasks, coding and
-                developing custom Systems, Landing Pages,
-                Dashboards, APIs, etc… (2 Years working
-                remotely) Portfolios (more than 2 years
-                developing as freelancer)
-              </Text>
-            </div>
-          </div>
-        </Paper>
+        <AboutCard />
       </div>
     </Section>
   );
