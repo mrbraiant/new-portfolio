@@ -34,11 +34,7 @@ export const Section = ({
           children
         ) : (
           <>
-            <Text
-              type={
-                /* isMobileVersion ? 'body2' :  */ 'body1'
-              }
-            >
+            <Text type={'body1'}>
               Lorem ipsum dolor sit amet, consectetur
               adipiscing elit, sed do eiusmod tempor
               incididunt ut labore et dolore magna aliqua.
@@ -60,11 +56,7 @@ export const Section = ({
               Lorem donec massa sapien faucibus et molestie
               ac.
             </Text>
-            <Text
-              type={
-                /* isMobileVersion ? 'body2' :  */ 'body1'
-              }
-            >
+            <Text type={'body1'}>
               Consequat mauris nunc congue nisi vitae
               suscipit. Fringilla est ullamcorper eget nulla
               facilisi etiam dignissim diam. Pulvinar

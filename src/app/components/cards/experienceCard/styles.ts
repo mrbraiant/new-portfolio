@@ -4,7 +4,6 @@ import { PalletColor } from '@utils/palletColor';
 export const ExperienceCardPaper = styled(Paper)(
   ({ theme }) => ({
     width: '350px',
-    // height: '434px',
     border: '15px solid #24394C',
     borderRadius: '10px',
     [theme.breakpoints.down('sm')]: {
@@ -39,8 +38,6 @@ export const JobTypeBox = styled('div')({
 export const JobDescriptionBox = styled('div')({
   display: 'flex',
   flexDirection: 'column',
-  // alignItems: 'center',
-  // justifyContent: 'space-between',
   width: '100%',
   padding: '0px 0.5rem',
   backgroundColor: '#fafafa',

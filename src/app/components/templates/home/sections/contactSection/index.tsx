@@ -59,7 +59,6 @@ export const ContactSection = () => {
           <ContactBox>
             <GitHub
               sx={{
-                // backgroundColor: '#333',
                 color: '#333',
                 borderRadius: '25px',
               }}

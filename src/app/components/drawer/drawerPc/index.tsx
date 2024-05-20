@@ -67,9 +67,6 @@ export const DrawerPc = ({
     }),
     overflowX: 'hidden',
     width: `calc(${theme.spacing(7)} + 1px)`,
-    // [theme.breakpoints.up('sm')]: {
-    //   width: `calc(${theme.spacing(7)} + 1px)`,
-    // },
   });
 
   const Drawer = styled(MuiDrawer, {
@@ -92,8 +89,8 @@ export const DrawerPc = ({
   return (
     <Drawer
       variant="permanent"
-      // onMouseMove={handleDrawerOpen}
-      // onMouseLeave={handleDrawerClose}
+      onMouseMove={handleDrawerOpen}
+      onMouseLeave={handleDrawerClose}
       open={open}
       PaperProps={{
         sx: {
@@ -103,7 +100,6 @@ export const DrawerPc = ({
       }}
     >
       <DrawerHeader>
-        {/* <IconButton onClick={handleDrawerClose}> */}
         <div
           style={{
             width: drawerWidth - 25,

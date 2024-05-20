@@ -60,9 +60,6 @@ export const DrawerMobile = ({
     }),
     overflowX: 'hidden',
     width: `calc(${theme.spacing(7)} + 1px)`,
-    // [theme.breakpoints.up('sm')]: {
-    //   width: `calc(${theme.spacing(7)} + 1px)`,
-    // },
   });
 
   const Drawer = styled(MuiDrawer, {
@@ -85,8 +82,6 @@ export const DrawerMobile = ({
   return (
     <Drawer
       variant="permanent"
-      // onMouseMove={handleDrawerOpen}
-      // onMouseLeave={handleDrawerClose}
       open={open}
       PaperProps={{
         sx: {
@@ -97,7 +92,6 @@ export const DrawerMobile = ({
           left: 0,
           transform: 'translate(0%, -50%)',
           borderRadius: '0 15px 15px 0',
-
           // zIndex: 2,
         },
       }}
@@ -110,9 +104,6 @@ export const DrawerMobile = ({
         <div
           style={{
             width: mobileDrawerWidth,
-            // display: 'flex',
-            // justifyContent: 'space-between',
-            // alignItems: 'center',
           }}
         >
           {open ? (

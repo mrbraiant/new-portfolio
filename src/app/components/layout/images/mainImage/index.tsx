@@ -20,7 +20,6 @@ export const MainImage = () => {
         }
         priority
         unoptimized
-        // sizes="100vw"
         width={1100}
         height={600}
         style={{
