@@ -44,7 +44,7 @@ export const AboutCard = () => {
             style={{
               objectFit: 'cover',
               width: isMobileVersion ? '220px' : '320px',
-              height: '150px',
+              height: '200px',
               border: 'thick double darkblue',
             }}
           />

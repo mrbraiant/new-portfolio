@@ -65,7 +65,7 @@ export const ExperienceCard = ({
             style={{
               objectFit: 'cover',
               width: isMobileVersion ? '220px' : '320px',
-              height: '150px',
+              height: isMobileVersion ? '200px' : '150px',
               border: 'thick double darkblue',
             }}
           />
