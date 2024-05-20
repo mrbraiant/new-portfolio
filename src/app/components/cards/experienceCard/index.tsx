@@ -6,9 +6,11 @@ import {
   ExperienceCardWrapper,
   JobDescriptionBox,
   JobTypeBox,
+  MainTitleBox,
   TitleBox,
   YearsTab,
 } from './styles';
+import { motion } from 'framer-motion';
 
 type ExperienceCardProps = {
   title: string;
@@ -34,51 +36,60 @@ export const ExperienceCard = ({
   );
 
   return (
-    <ExperienceCardPaper elevation={8}>
-      <ExperienceCardWrapper>
-        <TitleBox>
-          <Text>
-            <strong>{title}</strong>
-          </Text>
+    <motion.div
+      whileHover={{ scale: 1.02 }}
+      transition={{
+        type: 'spring',
+        stiffness: 400,
+        damping: 10,
+      }}
+    >
+      <ExperienceCardPaper elevation={8}>
+        <ExperienceCardWrapper>
+          <MainTitleBox>
+            <Text>
+              <strong>{title}</strong>
+            </Text>
+            <Image
+              alt="exp-logo-1"
+              src={titleLogo}
+              width={40}
+              height={40}
+            />
+          </MainTitleBox>
           <Image
-            alt="exp-logo-1"
-            src={titleLogo}
-            width={40}
-            height={40}
+            alt="avatar"
+            src={cardImage}
+            width={310}
+            height={300}
+            style={{
+              objectFit: 'cover',
+              width: isMobileVersion ? '270px' : '320px',
+              height: '150px',
+              border: 'thick double darkblue',
+            }}
           />
-        </TitleBox>
-        <Image
-          alt="avatar"
-          src={cardImage}
-          width={310}
-          height={300}
-          style={{
-            objectFit: 'cover',
-            width: isMobileVersion ? '270px' : '320px',
-            height: '150px',
-            border: 'thick double darkblue',
-          }}
-        />
-        <TitleBox>
-          <Text>
-            <strong>{jobTitle}</strong>
-          </Text>
-          <JobTypeBox>
-            <Text type="body2">
-              <strong>{jobType}</strong>
+          <TitleBox>
+            <Text>
+              <strong>{jobTitle}</strong>
             </Text>
-          </JobTypeBox>
-        </TitleBox>
-        <JobDescriptionBox>
-          <Text type="body2">{jobDescription}</Text>
+            <JobTypeBox>
+              <Text type="body2">
+                <strong>{jobType}</strong>
+              </Text>
+            </JobTypeBox>
+          </TitleBox>
+          <JobDescriptionBox>
+            <Text type="body2">{jobDescription}</Text>
 
-          <YearsTab>
-            <Text type="body2">
-              <strong>2years+</strong>
-            </Text>
-          </YearsTab>
-        </JobDescriptionBox>
-      </ExperienceCardWrapper>
-    </ExperienceCardPaper>
+            <YearsTab>
+              <Text type="body2">
+                <strong>2years+</strong>
+              </Text>
+            </YearsTab>
+          </JobDescriptionBox>
+        </ExperienceCardWrapper>
+      </ExperienceCardPaper>
+    </motion.div>
   );
 };

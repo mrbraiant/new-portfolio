@@ -4,7 +4,9 @@ import { PalletColor } from '@utils/palletColor';
 export const ExperienceCardPaper = styled(Paper)(
   ({ theme }) => ({
     width: '350px',
-    border: '15px solid #24394C',
+    background:
+      'linear-gradient(#24394C 0%, #B6BDC3 100%);',
+    padding: '15px',
     borderRadius: '10px',
     [theme.breakpoints.down('sm')]: {
       width: '300px',
@@ -16,6 +18,17 @@ export const ExperienceCardWrapper = styled('div')({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
+});
+
+export const MainTitleBox = styled('div')({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  width: '100%',
+  padding: '0px 0.5rem',
+  backgroundColor: PalletColor.auraWhite,
+  border: 'thick double darkblue',
+  borderRadius: '10px 10px 0px 0px',
 });
 
 export const TitleBox = styled('div')({
@@ -42,6 +55,7 @@ export const JobDescriptionBox = styled('div')({
   padding: '0px 0.5rem',
   backgroundColor: '#fafafa',
   border: 'thick double darkblue',
+  borderRadius: '0px 0px 10px 10px',
 });
 
 export const YearsTab = styled('div')({
