@@ -1,5 +1,6 @@
-import { BlogCard } from '@components/blog/blogCard';
+import { BlogCard } from '@components/cards/blogCard';
 import { Section } from '@components/homeSection';
+import { Newspaper } from '@mui/icons-material';
 import { useMediaQuery, useTheme } from '@mui/material';
 import { Posts } from '@utils/posts';
 
@@ -13,6 +14,7 @@ export const BlogSection = () => {
     <Section
       sectionName="Blog"
       titleBackgroundColor="#485A6A"
+      iconTitle={<Newspaper />}
     >
       <div
         style={{

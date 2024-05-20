@@ -10,12 +10,14 @@ type SectionProps = {
   sectionName: string;
   titleBackgroundColor?: SectionTitleProps['backgroundColor'];
   children?: ReactNode;
+  iconTitle?: ReactNode;
 };
 
 export const Section = ({
   sectionName,
   titleBackgroundColor,
   children,
+  iconTitle,
 }: SectionProps) => {
   return (
     <>
@@ -26,6 +28,7 @@ export const Section = ({
         <SectionTitle
           title={sectionName}
           backgroundColor={titleBackgroundColor}
+          iconTitle={iconTitle}
         />
         {children ? (
           children

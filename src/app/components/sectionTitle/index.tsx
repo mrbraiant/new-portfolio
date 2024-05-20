@@ -1,6 +1,8 @@
 import { Text } from '@components/text';
 import { TitleWrapper } from './styles';
 import { useMediaQuery, useTheme } from '@mui/material';
+import { PalletColor } from '@utils/palletColor';
+import { ReactNode } from 'react';
 
 export type SectionTitleProps = {
   title: string;
@@ -12,11 +14,13 @@ export type SectionTitleProps = {
     | '#919CA5'
     | '#B6BDC3'
     | '#DADEE1';
+  iconTitle?: ReactNode;
 };
 
 export const SectionTitle = ({
   title,
   backgroundColor = '#00192F',
+  iconTitle,
 }: SectionTitleProps) => {
   const theme = useTheme();
   const isMobileVersion = useMediaQuery(
@@ -28,9 +32,10 @@ export const SectionTitle = ({
       elevation={3}
       sx={{ backgroundColor: backgroundColor }}
     >
+      {iconTitle}
       <Text
         type={isMobileVersion ? 'h5' : 'h4'}
-        sx={{ color: '#DADEE1' }}
+        sx={{ color: PalletColor.auraWhite }}
         textAlign="center"
       >
         <strong>{title}</strong>

@@ -4,6 +4,7 @@ import {
   Email,
   GitHub,
   LinkedIn,
+  Message,
   WhatsApp,
 } from '@mui/icons-material';
 import { PalletColor } from '@utils/palletColor';
@@ -15,6 +16,7 @@ export const ContactSection = () => {
     <Section
       sectionName="Contact"
       titleBackgroundColor="#6D7B88"
+      iconTitle={<Message />}
     >
       <div
         style={{
