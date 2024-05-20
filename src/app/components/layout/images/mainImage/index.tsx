@@ -13,13 +13,13 @@ export const MainImage = () => {
       <Image
         alt="main-image"
         id="home"
+        priority
         src={
           isMobileVersion
             ? '/images/background-mobile-nf.gif'
             : '/images/background.gif'
         }
-        priority
-        unoptimized
+        // unoptimized
         width={1100}
         height={600}
         style={{

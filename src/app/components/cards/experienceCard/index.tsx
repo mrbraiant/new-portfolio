@@ -60,8 +60,8 @@ export const ExperienceCard = ({
           <Image
             alt="avatar"
             src={cardImage}
-            width={310}
-            height={300}
+            width={320}
+            height={150}
             style={{
               objectFit: 'cover',
               width: isMobileVersion ? '270px' : '320px',
