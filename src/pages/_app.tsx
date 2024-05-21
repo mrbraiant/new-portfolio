@@ -43,6 +43,9 @@ export default function App({
       body2: {
         fontSize: 20,
       },
+      caption: {
+        fontSize: 18,
+      },
     },
   });
   return (

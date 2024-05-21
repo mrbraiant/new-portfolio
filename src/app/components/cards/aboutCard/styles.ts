@@ -10,6 +10,7 @@ export const AboutCardPaper = styled(Paper)(
     padding: '15px',
     [theme.breakpoints.down('sm')]: {
       width: '250px',
+      padding: '10px',
     },
   }),
 );

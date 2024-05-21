@@ -11,6 +11,7 @@ import {
   YearsTab,
 } from './styles';
 import { motion } from 'framer-motion';
+import { PalletColor } from '@utils/palletColor';
 
 type ExperienceCardProps = {
   title: string;
@@ -64,28 +65,37 @@ export const ExperienceCard = ({
             height={150}
             style={{
               objectFit: 'cover',
-              width: isMobileVersion ? '220px' : '320px',
-              height: isMobileVersion ? '200px' : '150px',
+              width: isMobileVersion ? '230px' : '320px',
+              height: '150px',
+              backgroundColor: PalletColor.auraWhite,
               border: 'thick double darkblue',
             }}
           />
           <TitleBox>
             <Text
-              type={isMobileVersion ? 'body2' : 'caption'}
+              type={isMobileVersion ? 'caption' : 'body2'}
             >
               <strong>{jobTitle}</strong>
             </Text>
             <JobTypeBox>
-              <Text type="body2">
+              <Text
+                type={isMobileVersion ? 'caption' : 'body2'}
+              >
                 <strong>{jobType}</strong>
               </Text>
             </JobTypeBox>
           </TitleBox>
           <JobDescriptionBox>
-            <Text type="body2">{jobDescription}</Text>
+            <Text
+              type={isMobileVersion ? 'caption' : 'body2'}
+            >
+              {jobDescription}
+            </Text>
 
             <YearsTab>
-              <Text type="body2">
+              <Text
+                type={isMobileVersion ? 'caption' : 'body2'}
+              >
                 <strong>2years+</strong>
               </Text>
             </YearsTab>

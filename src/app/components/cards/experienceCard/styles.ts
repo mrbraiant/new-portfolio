@@ -10,6 +10,7 @@ export const ExperienceCardPaper = styled(Paper)(
     borderRadius: '10px',
     [theme.breakpoints.down('sm')]: {
       width: '250px',
+      padding: '10px',
     },
   }),
 );
@@ -59,11 +60,11 @@ export const JobDescriptionBox = styled('div')({
 });
 
 export const YearsTab = styled('div')({
-  backgroundColor: 'orange',
+  backgroundColor: PalletColor.midnight,
   borderRadius: '15px',
   padding: '0px 0.5rem',
   width: 'fit-content',
   alignSelf: 'self-end',
-  // marginTop: '-2px',
   marginBottom: '0.5rem',
+  color: PalletColor.auraWhite,
 });

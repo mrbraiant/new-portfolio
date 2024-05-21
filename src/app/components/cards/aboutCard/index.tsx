@@ -10,6 +10,7 @@ import { Code, LogoDev } from '@mui/icons-material';
 import Image from 'next/image';
 import { useMediaQuery, useTheme } from '@mui/material';
 import { motion } from 'framer-motion';
+import { PalletColor } from '@utils/palletColor';
 
 export const AboutCard = () => {
   const theme = useTheme();
@@ -43,14 +44,15 @@ export const AboutCard = () => {
             height={150}
             style={{
               objectFit: 'cover',
-              width: isMobileVersion ? '220px' : '320px',
-              height: '200px',
+              width: isMobileVersion ? '230px' : '320px',
+              height: '150px',
+              backgroundColor: PalletColor.auraWhite,
               border: 'thick double darkblue',
             }}
           />
           <TitleBox>
             <Text
-              type={isMobileVersion ? 'body2' : 'caption'}
+              type={isMobileVersion ? 'caption' : 'body2'}
             >
               <strong>Front End Developer</strong>
             </Text>
@@ -58,14 +60,12 @@ export const AboutCard = () => {
           </TitleBox>
           <JobDescriptionBox>
             <Text
-              type={isMobileVersion ? 'body2' : 'caption'}
+              type={isMobileVersion ? 'caption' : 'body2'}
             >
               Leading multiple projects, code reviewing,
               providing support to newcomers and colleagues,
               creating tasks, coding and developing custom
               Systems, Landing Pages, Dashboards, APIs, etc…
-              (2 Years working remotely) Portfolios (more
-              than 2 years developing as freelancer)
             </Text>
           </JobDescriptionBox>
         </AboutCardWrapper>
