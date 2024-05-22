@@ -64,7 +64,7 @@ export const SkillsSection = () => {
                   borderRightWidth: '3px',
                 }}
               />
-              <Text type="body2">4 Years Coding</Text>
+              <Text type="body2">4+ Years Coding</Text>
             </ContentBox>
           </PaperTitle>
 
@@ -125,7 +125,9 @@ export const SkillsSection = () => {
             />
 
             <SkillsContentBox>
-              <Text type="h5">Main Languages</Text>
+              <Text type="h5">
+                <strong>Main Languages</strong>
+              </Text>
               <LanguagesContentBox>
                 {MainLanguages.map((language, index) => (
                   <SkillCell key={index} variant="outlined">
@@ -141,7 +143,9 @@ export const SkillsSection = () => {
                 ))}
               </LanguagesContentBox>
 
-              <Text type="h5">Main Frameworks</Text>
+              <Text type="h5">
+                <strong>Main Frameworks</strong>
+              </Text>
               <LanguagesContentBox>
                 {MainFrameworks.map((framework, index) => (
                   <SkillCell key={index} variant="outlined">
@@ -157,7 +161,9 @@ export const SkillsSection = () => {
                 ))}
               </LanguagesContentBox>
 
-              <Text type="h5">Main Design Frameworks</Text>
+              <Text type="h5">
+                <strong>Main Design Frameworks</strong>
+              </Text>
               <LanguagesContentBox>
                 {MainDesignFrameworks.map(
                   (design, index) => (
@@ -178,7 +184,9 @@ export const SkillsSection = () => {
                 )}
               </LanguagesContentBox>
 
-              <Text type="h5">Production Frameworks</Text>
+              <Text type="h5">
+                <strong>Production Frameworks</strong>
+              </Text>
               <LanguagesContentBox>
                 {ProductionLanguages.map(
                   (production, index) => (
