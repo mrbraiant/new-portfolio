@@ -1,30 +1,50 @@
-import { Section } from '@components/homeSection';
-import { ContactBox, ContactContent } from './styles';
+import { ContactBox } from '@components/templates/home/sections/contactSection/styles';
+import { Text } from '@components/text';
 import {
   Email,
   GitHub,
   LinkedIn,
-  Message,
   WhatsApp,
 } from '@mui/icons-material';
 import { PalletColor } from '@utils/palletColor';
-import { Text } from '@components/text';
+import { SocialMediaBox } from './styles';
+import { Logo } from '../images/logo';
 import { StyledLink } from '@components/styledLink';
 
-export const ContactSection = () => {
+export const Footer = () => {
   return (
-    <Section
-      sectionName="Contact"
-      titleBackgroundColor="#6D7B88"
-      iconTitle={<Message />}
-    >
+    <footer>
       <div
         style={{
+          backgroundColor: PalletColor.darkMidnight,
+          height: 'fit-content',
+          padding: '1rem 1.5rem',
           display: 'flex',
-          justifyContent: 'center',
+          justifyContent: 'space-between',
         }}
       >
-        <ContactContent elevation={2}>
+        <div style={{ alignSelf: 'center' }}>
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+            }}
+          >
+            <Logo />
+            <Text style={{ color: PalletColor.auraWhite }}>
+              <strong>Braiant Dev ®</strong>
+            </Text>
+          </div>
+          <Text
+            type="caption"
+            style={{ color: PalletColor.auraWhite }}
+          >
+            Developed with much &#9749; and ♥
+          </Text>
+        </div>
+
+        <SocialMediaBox>
           <ContactBox>
             <Email
               sx={{
@@ -90,8 +110,8 @@ export const ContactSection = () => {
               Text me
             </StyledLink>
           </ContactBox>
-        </ContactContent>
+        </SocialMediaBox>
       </div>
-    </Section>
+    </footer>
   );
 };

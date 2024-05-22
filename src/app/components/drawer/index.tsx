@@ -9,6 +9,7 @@ import { DrawerMobile } from './drawerMobile';
 import { DrawerPc } from './drawerPc';
 import { MainImage } from '@components/layout/images/mainImage';
 import { PalletColor } from '@utils/palletColor';
+import { Footer } from '@components/layout/footer';
 
 type MiniDrawerProps = {
   children: ReactNode;
@@ -89,6 +90,7 @@ export const MiniDrawer = ({
         >
           {children}
         </Box>
+        <Footer />
       </div>
     </Box>
   );

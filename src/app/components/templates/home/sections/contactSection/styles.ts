@@ -15,9 +15,9 @@ export const ContactBox = styled('div')({
   alignItems: 'center',
   gap: '0.5rem',
   width: '180px',
-  ['a']: {
-    '&:hover': {
-      textDecoration: 'underline',
-    },
-  },
+  // ['a']: {
+  //   '&:hover': {
+  //     textDecoration: 'underline',
+  //   },
+  // },
 });
