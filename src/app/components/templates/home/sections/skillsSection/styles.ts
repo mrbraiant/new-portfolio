@@ -45,9 +45,6 @@ export const PaperTitle = styled(Paper)({
   width: '100%',
   padding: '0.2rem',
   borderRadius: '5px',
-  // padding: '0px 0.5rem',
-  zIndex: 2,
-  position: 'relative',
   opacity: 0.9,
 });
 

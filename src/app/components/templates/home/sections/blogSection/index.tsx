@@ -1,15 +1,15 @@
 import { BlogCard } from '@components/cards/blogCard';
 import { Section } from '@components/homeSection';
 import { Newspaper } from '@mui/icons-material';
-import { useMediaQuery, useTheme } from '@mui/material';
+// import { useMediaQuery, useTheme } from '@mui/material';
 import { Posts } from '@utils/posts';
 
 export const BlogSection = () => {
-  const theme = useTheme();
+  // const theme = useTheme();
 
-  const isMobileVersion = useMediaQuery(
-    theme.breakpoints.down('md'),
-  );
+  // const isMobileVersion = useMediaQuery(
+  //   theme.breakpoints.down('md'),
+  // );
   return (
     <Section
       sectionName="Blog"
@@ -21,9 +21,11 @@ export const BlogSection = () => {
           display: 'flex',
           flexWrap: 'wrap',
           gap: '1rem',
-          justifyContent: isMobileVersion
-            ? 'center'
-            : undefined,
+          justifyContent: 'center',
+
+          // justifyContent: isMobileVersion
+          //   ? 'center'
+          //   : undefined,
         }}
       >
         {Posts.map((post) => (

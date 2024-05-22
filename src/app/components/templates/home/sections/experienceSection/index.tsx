@@ -3,16 +3,16 @@ import { Section } from '@components/homeSection';
 import { Leaderboard } from '@mui/icons-material';
 import {
   Paper,
-  useMediaQuery,
-  useTheme,
+  // useMediaQuery,
+  // useTheme,
 } from '@mui/material';
 
 export const ExperienceSection = () => {
-  const theme = useTheme();
+  // const theme = useTheme();
 
-  const isMobileVersion = useMediaQuery(
-    theme.breakpoints.down('md'),
-  );
+  // const isMobileVersion = useMediaQuery(
+  //   theme.breakpoints.down('md'),
+  // );
 
   return (
     <Section
@@ -48,9 +48,10 @@ export const ExperienceSection = () => {
         style={{
           display: 'flex',
           flexWrap: 'wrap',
-          justifyContent: isMobileVersion
-            ? 'center'
-            : undefined,
+          justifyContent: 'center',
+          // justifyContent: isMobileVersion
+          //   ? 'center'
+          //   : undefined,
           gap: '1rem',
         }}
       >

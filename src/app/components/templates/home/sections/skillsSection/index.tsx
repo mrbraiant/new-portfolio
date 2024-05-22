@@ -40,9 +40,9 @@ export const SkillsSection = () => {
       titleBackgroundColor="#6D7B88"
       iconTitle={<TipsAndUpdates />}
     >
-      <PaperContainer elevation={2}>
+      <PaperContainer elevation={1}>
         <LeftSideContent>
-          <PaperTitle elevation={2}>
+          <PaperTitle elevation={1}>
             <TitleBox>
               <Text type="h4">
                 <strong>B</strong>raiant <strong>M</strong>
@@ -77,11 +77,8 @@ export const SkillsSection = () => {
             height={350}
             style={{
               objectFit: 'cover',
-              // position: 'relative',
-              // top: '-15px',
-              margin: isMobileVersion ? '0.5rem' : '0px',
+              margin: 'auto',
               width: isMobileVersion ? '230px' : '310px',
-              // zIndex: 1,
               borderRadius: 1000,
             }}
           />
