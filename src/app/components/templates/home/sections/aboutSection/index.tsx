@@ -1,4 +1,5 @@
 import { AboutCard } from '@components/cards/aboutCard';
+import { FlipCard } from '@components/cards/flipCard';
 import { Section } from '@components/homeSection';
 import { Text } from '@components/text';
 import { EmojiPeople } from '@mui/icons-material';
@@ -45,7 +46,10 @@ export const AboutSection = () => {
           justifyContent: 'center',
         }}
       >
-        <AboutCard />
+        <FlipCard
+          frontContent={<AboutCard />}
+          showBackImage
+        />
       </div>
     </Section>
   );
