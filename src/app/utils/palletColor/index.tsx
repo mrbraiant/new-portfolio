@@ -17,4 +17,10 @@ export const PalletColor = {
     main: '#ea4335',
     white: '#F2F2F2',
   },
+  skillColor: {
+    main: '#B08643',
+    secondary: '#eae0c8',
+    background: '#f3eddd',
+    boxBackground: '#E6D9B7',
+  },
 };
