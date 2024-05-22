@@ -19,11 +19,13 @@ import {
   SkillsContentBox,
   LanguagesContentBox,
   SkillCell,
+  MainSkillCell,
 } from './styles';
 import { MainLanguages } from '@utils/skills/mainLanguages';
 import { MainFrameworks } from '@utils/skills/mainFrameworks';
 import { MainDesignFrameworks } from '@utils/skills/mainDesignLibs';
 import { ProductionLanguages } from '@utils/skills/productionLanguages';
+import { MainSkills } from '@utils/skills/mainSkills';
 
 export const SkillsSection = () => {
   const theme = useTheme();
@@ -69,17 +71,47 @@ export const SkillsSection = () => {
           <Image
             alt="skill-image"
             src={'/images/exp/br-1.png'}
+            // width={250}
+            // height={250}
             width={310}
-            height={400}
+            height={350}
             style={{
               objectFit: 'cover',
-              position: 'relative',
-              top: '-15px',
+              // position: 'relative',
+              // top: '-15px',
+              margin: isMobileVersion ? '0.5rem' : '0px',
               width: isMobileVersion ? '230px' : '310px',
-              zIndex: 1,
-              borderRadius: '10px',
+              // zIndex: 1,
+              borderRadius: 1000,
             }}
           />
+
+          <SkillsBox>
+            <TitleBox>
+              <Text type="h4">
+                <strong>M</strong>ain <strong>S</strong>
+                kills
+              </Text>
+            </TitleBox>
+            <Divider
+              sx={{
+                // backgroundColor: 'red',
+                borderBottomWidth: '3px',
+              }}
+            />
+
+            <SkillsContentBox>
+              <LanguagesContentBox>
+                {MainSkills.map((mainSkill, index) => (
+                  <div key={index}>
+                    <MainSkillCell variant="outlined">
+                      <Text>{mainSkill.skill}</Text>
+                    </MainSkillCell>
+                  </div>
+                ))}
+              </LanguagesContentBox>
+            </SkillsContentBox>
+          </SkillsBox>
         </LeftSideContent>
 
         <RightSideContent>
@@ -169,30 +201,6 @@ export const SkillsSection = () => {
                   ),
                 )}
               </LanguagesContentBox>
-            </SkillsContentBox>
-          </SkillsBox>
-
-          <SkillsBox>
-            <TitleBox>
-              <Text type="h4">
-                <strong>M</strong>ain <strong>S</strong>
-                kills
-              </Text>
-            </TitleBox>
-            <Divider
-              sx={{
-                // backgroundColor: 'red',
-                borderBottomWidth: '3px',
-              }}
-            />
-            <SkillsContentBox>
-              <Text>
-                Patterns Agile Projects Front-End Clean Code
-                Project Documentation Flexibility Web
-                Responsive Apps Version control Work in
-                multiple projects Problem solving and
-                dynamic team spirit
-              </Text>
             </SkillsContentBox>
           </SkillsBox>
         </RightSideContent>

@@ -6,7 +6,8 @@ export const PaperContainer = styled(Paper)(
     display: 'flex',
     flexDirection: 'row',
     gap: '1rem',
-    backgroundColor: PalletColor.auraWhite,
+    backgroundColor: '#fafafa',
+    // backgroundColor: PalletColor.auraWhite,
     padding: '1rem',
     borderRadius: '10px',
     width: '100%',
@@ -16,17 +17,29 @@ export const PaperContainer = styled(Paper)(
   }),
 );
 
-export const LeftSideContent = styled('div')({
-  display: 'flex',
-  flexDirection: 'column',
-  alignItems: 'center',
-});
+export const LeftSideContent = styled('div')(
+  ({ theme }) => ({
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+    width: '50%',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+    },
+  }),
+);
 
-export const RightSideContent = styled('div')({
-  display: 'flex',
-  flexDirection: 'column',
-  gap: '1rem',
-});
+export const RightSideContent = styled('div')(
+  ({ theme }) => ({
+    display: 'flex',
+    flexDirection: 'column',
+    gap: '1rem',
+    width: '50%',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+    },
+  }),
+);
 
 export const PaperTitle = styled(Paper)({
   width: '100%',
@@ -65,9 +78,10 @@ export const LanguagesContentBox = styled('div')({
 });
 
 export const SkillsBox = styled(Paper)({
-  width: 'fit-content',
+  // width: 'fit-content',
   padding: '0.2rem 0.2rem 1rem',
   borderRadius: '5px',
+  // height: 'fit-content',
 });
 
 export const SkillCell = styled(Paper)({
@@ -75,4 +89,11 @@ export const SkillCell = styled(Paper)({
   gap: '0.5rem',
   alignItems: 'center',
   padding: '0px 0.5rem 0px 0px',
+});
+
+export const MainSkillCell = styled(Paper)({
+  display: 'flex',
+  gap: '0.5rem',
+  alignItems: 'center',
+  padding: '0px 0.5rem',
 });
