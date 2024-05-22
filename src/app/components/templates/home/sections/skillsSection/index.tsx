@@ -126,7 +126,7 @@ export const SkillsSection = () => {
 
             <SkillsContentBox>
               <Text type="h5">
-                <strong>Main Languages</strong>
+                <strong>Languages</strong>
               </Text>
               <LanguagesContentBox>
                 {MainLanguages.map((language, index) => (
@@ -144,7 +144,7 @@ export const SkillsSection = () => {
               </LanguagesContentBox>
 
               <Text type="h5">
-                <strong>Main Frameworks</strong>
+                <strong>Frameworks</strong>
               </Text>
               <LanguagesContentBox>
                 {MainFrameworks.map((framework, index) => (
@@ -162,7 +162,7 @@ export const SkillsSection = () => {
               </LanguagesContentBox>
 
               <Text type="h5">
-                <strong>Main Design Frameworks</strong>
+                <strong>Design Frameworks</strong>
               </Text>
               <LanguagesContentBox>
                 {MainDesignFrameworks.map(

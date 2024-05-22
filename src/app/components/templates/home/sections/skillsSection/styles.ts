@@ -6,7 +6,8 @@ export const PaperContainer = styled(Paper)(
     display: 'flex',
     flexDirection: 'row',
     gap: '1rem',
-    backgroundColor: '#fafafa',
+    backgroundImage: 'url("/images/old.png")',
+    // backgroundColor: PalletColor.greyBlue,
     // backgroundColor: PalletColor.auraWhite,
     padding: '1rem',
     borderRadius: '10px',
@@ -46,11 +47,12 @@ export const PaperTitle = styled(Paper)({
   padding: '0.2rem',
   borderRadius: '5px',
   opacity: 0.9,
+  backgroundColor: '#E6D9B7',
 });
 
 export const TitleBox = styled('div')({
   padding: '0px 1rem',
-  background: `linear-gradient(to right, ${PalletColor.canadianLake} 0%, ${PalletColor.auraWhite} 100%)`,
+  background: `linear-gradient(to right, #B08643 0%, #eae0c8 100%)`,
 });
 
 export const ContentBox = styled('div')({
@@ -58,6 +60,7 @@ export const ContentBox = styled('div')({
   flexDirection: 'row',
   gap: '1rem',
   padding: '0px 1rem',
+  backgroundColor: '#f3eddd',
 });
 
 export const SkillsContentBox = styled('div')({
@@ -79,6 +82,8 @@ export const SkillsBox = styled(Paper)({
   padding: '0.2rem 0.2rem 1rem',
   borderRadius: '5px',
   // height: 'fit-content',
+  backgroundColor: '#E6D9B7',
+  // opacity: '0.9',
 });
 
 export const SkillCell = styled(Paper)({
@@ -86,6 +91,7 @@ export const SkillCell = styled(Paper)({
   gap: '0.5rem',
   alignItems: 'center',
   padding: '0px 0.5rem 0px 0px',
+  backgroundColor: '#f3eddd',
 });
 
 export const MainSkillCell = styled(Paper)({
@@ -93,4 +99,5 @@ export const MainSkillCell = styled(Paper)({
   gap: '0.5rem',
   alignItems: 'center',
   padding: '0px 0.5rem',
+  backgroundColor: '#f3eddd',
 });
