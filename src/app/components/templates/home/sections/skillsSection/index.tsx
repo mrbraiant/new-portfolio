@@ -14,6 +14,8 @@ import {
   PaperTitle,
   NameBox,
   TitleBox,
+  LeftSideContent,
+  RightSideContent,
 } from './styles';
 
 export const SkillsSection = () => {
@@ -30,7 +32,7 @@ export const SkillsSection = () => {
       iconTitle={<TipsAndUpdates />}
     >
       <PaperContainer elevation={2}>
-        <div style={{ width: '100%' }}>
+        <LeftSideContent>
           <PaperTitle elevation={2}>
             <NameBox>
               <Text type="h4">
@@ -71,9 +73,9 @@ export const SkillsSection = () => {
               borderRadius: '10px',
             }}
           />
-        </div>
+        </LeftSideContent>
 
-        <div style={{ width: '100%' }}>
+        <RightSideContent>
           <Paper
             elevation={2}
             sx={{
@@ -131,7 +133,7 @@ export const SkillsSection = () => {
               Problem solving and dynamic team spirit
             </Text>
           </Paper>
-        </div>
+        </RightSideContent>
       </PaperContainer>
     </Section>
   );

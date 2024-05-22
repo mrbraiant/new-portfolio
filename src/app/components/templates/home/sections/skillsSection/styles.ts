@@ -16,6 +16,14 @@ export const PaperContainer = styled(Paper)(
   }),
 );
 
+export const LeftSideContent = styled('div')({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+});
+
+export const RightSideContent = styled('div')({});
+
 export const PaperTitle = styled(Paper)({
   width: '100%',
   padding: '0.2rem',
