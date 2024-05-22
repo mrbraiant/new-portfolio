@@ -3,20 +3,27 @@ import { Text } from '@components/text';
 import { TipsAndUpdates } from '@mui/icons-material';
 import {
   Divider,
-  Paper,
   useMediaQuery,
   useTheme,
 } from '@mui/material';
-import { PalletColor } from '@utils/palletColor';
+
 import Image from 'next/image';
 import {
   PaperContainer,
   PaperTitle,
-  NameBox,
   TitleBox,
   LeftSideContent,
   RightSideContent,
+  ContentBox,
+  SkillsBox,
+  SkillsContentBox,
+  LanguagesContentBox,
+  SkillCell,
 } from './styles';
+import { MainLanguages } from '@utils/skills/mainLanguages';
+import { MainFrameworks } from '@utils/skills/mainFrameworks';
+import { MainDesignFrameworks } from '@utils/skills/mainDesignLibs';
+import { ProductionLanguages } from '@utils/skills/productionLanguages';
 
 export const SkillsSection = () => {
   const theme = useTheme();
@@ -34,12 +41,12 @@ export const SkillsSection = () => {
       <PaperContainer elevation={2}>
         <LeftSideContent>
           <PaperTitle elevation={2}>
-            <NameBox>
+            <TitleBox>
               <Text type="h4">
                 <strong>B</strong>raiant <strong>M</strong>
                 alta
               </Text>
-            </NameBox>
+            </TitleBox>
             <Divider
               sx={{
                 // backgroundColor: 'red',
@@ -47,7 +54,7 @@ export const SkillsSection = () => {
               }}
             />
 
-            <TitleBox>
+            <ContentBox>
               <Text type="body2">Front End Developer</Text>
               <Divider
                 sx={{
@@ -56,7 +63,7 @@ export const SkillsSection = () => {
                 }}
               />
               <Text type="body2">4 Years Coding</Text>
-            </TitleBox>
+            </ContentBox>
           </PaperTitle>
 
           <Image
@@ -76,63 +83,118 @@ export const SkillsSection = () => {
         </LeftSideContent>
 
         <RightSideContent>
-          <Paper
-            elevation={2}
-            sx={{
-              width: 'fit-content',
-              padding: '0.2rem',
-              borderRadius: '5px',
-              // padding: '0px 0.5rem',
-            }}
-          >
-            <div
-              style={{
-                padding: '0px 1rem',
-                background: `linear-gradient(to right, ${PalletColor.canadianLake} 0%, ${PalletColor.auraWhite} 100%)`,
-              }}
-            >
+          <SkillsBox>
+            <TitleBox>
               <Text type="h4">
                 <strong>S</strong>kills
               </Text>
-            </div>
+            </TitleBox>
+            <Divider
+              sx={{
+                borderBottomWidth: '3px',
+              }}
+            />
+
+            <SkillsContentBox>
+              <Text type="h5">Main Languages</Text>
+              <LanguagesContentBox>
+                {MainLanguages.map((language, index) => (
+                  <SkillCell key={index} variant="outlined">
+                    <Image
+                      alt={language.imageAlt}
+                      src={language.image}
+                      title={language.imageAlt}
+                      width={45}
+                      height={45}
+                    />
+                    <Text>{language.title}</Text>
+                  </SkillCell>
+                ))}
+              </LanguagesContentBox>
+
+              <Text type="h5">Main Frameworks</Text>
+              <LanguagesContentBox>
+                {MainFrameworks.map((framework, index) => (
+                  <SkillCell key={index} variant="outlined">
+                    <Image
+                      alt={framework.imageAlt}
+                      src={framework.image}
+                      title={framework.imageAlt}
+                      width={45}
+                      height={45}
+                    />
+                    <Text>{framework.title}</Text>
+                  </SkillCell>
+                ))}
+              </LanguagesContentBox>
+
+              <Text type="h5">Main Design Frameworks</Text>
+              <LanguagesContentBox>
+                {MainDesignFrameworks.map(
+                  (design, index) => (
+                    <SkillCell
+                      key={index}
+                      variant="outlined"
+                    >
+                      <Image
+                        alt={design.imageAlt}
+                        src={design.image}
+                        title={design.imageAlt}
+                        width={45}
+                        height={45}
+                      />
+                      <Text>{design.title}</Text>
+                    </SkillCell>
+                  ),
+                )}
+              </LanguagesContentBox>
+
+              <Text type="h5">Production Frameworks</Text>
+              <LanguagesContentBox>
+                {ProductionLanguages.map(
+                  (production, index) => (
+                    <SkillCell
+                      key={index}
+                      variant="outlined"
+                    >
+                      <Image
+                        alt={production.imageAlt}
+                        src={production.image}
+                        title={production.imageAlt}
+                        width={45}
+                        height={45}
+                      />
+                      <Text>{production.title}</Text>
+                    </SkillCell>
+                  ),
+                )}
+              </LanguagesContentBox>
+            </SkillsContentBox>
+          </SkillsBox>
+
+          <SkillsBox>
+            <TitleBox>
+              <Text type="h4">
+                <strong>M</strong>ain <strong>S</strong>
+                kills
+              </Text>
+            </TitleBox>
             <Divider
               sx={{
                 // backgroundColor: 'red',
                 borderBottomWidth: '3px',
               }}
             />
-
-            <div
-              style={{
-                display: 'flex',
-                gap: '1rem',
-                padding: '0px 1rem',
-              }}
-            >
-              <Text type="body2">HTML</Text>
-              <Divider
-                sx={{
-                  // backgroundColor: 'red',
-                  borderRightWidth: '3px',
-                }}
-              />
-              <Text type="body2">Javascript</Text>
-            </div>
-            <Text>
-              ♦ SKILLS
-              <br />
-              JavaScript / EcmaScript / TypeScript HTML /
-              CSS / PHP Design Patterns Agile Projects React
-              / Next / Angular / Vue.js Node / GraphQL /
-              Express / Firebase Materialize / Material UI /
-              Bootstrap Strapi / Figma
-              <br />♦ MAIN SKILLS
-              <br /> Front-End Clean Code Project
-              Documentation Flexibility Web Responsive Apps
-              Version control Work in multiple projects
-              Problem solving and dynamic team spirit
-            </Text>
-          </Paper>
+            <SkillsContentBox>
+              <Text>
+                Patterns Agile Projects Front-End Clean Code
+                Project Documentation Flexibility Web
+                Responsive Apps Version control Work in
+                multiple projects Problem solving and
+                dynamic team spirit
+              </Text>
+            </SkillsContentBox>
+          </SkillsBox>
         </RightSideContent>
       </PaperContainer>
     </Section>
