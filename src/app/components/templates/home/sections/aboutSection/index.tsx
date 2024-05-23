@@ -1,5 +1,3 @@
-import { AboutCard } from '@components/cards/aboutCard';
-import { FlipCard } from '@components/cards/flipCard';
 import { Section } from '@components/homeSection';
 import { Text } from '@components/text';
 import { EmojiPeople } from '@mui/icons-material';
@@ -38,19 +36,6 @@ export const AboutSection = () => {
         productive. I&apos;m also studying more about
         backend using mongoDb.
       </Text>
-      <br />
-
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-        }}
-      >
-        <FlipCard
-          frontContent={<AboutCard />}
-          showBackImage
-        />
-      </div>
     </Section>
   );
 };

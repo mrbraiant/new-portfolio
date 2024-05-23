@@ -4,7 +4,8 @@ import { PalletColor } from '@utils/palletColor';
 export const CardContainer = styled('div')({
   display: 'flex',
   justifyContent: 'center',
-  marginTop: '30px',
+  // marginTop: '30px',
+  marginBottom: '50px',
   perspective: '500px',
 
   ['&:hover > div:first-of-type']: {
@@ -17,7 +18,7 @@ export const Card = styled('div')(({ theme }) => ({
   borderRadius: '10px',
   height: '415px',
   width: '350px',
-  position: 'relative',
+  // position: 'relative',
   transition: 'transform 1500ms',
   transformStyle: 'preserve-3d',
   [theme.breakpoints.down('sm')]: {

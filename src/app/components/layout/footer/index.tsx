@@ -24,9 +24,7 @@ export const Footer = () => {
           <div style={{ alignSelf: 'center' }}>
             <LogoBox>
               <Logo />
-              <Text
-                style={{ color: PalletColor.auraWhite }}
-              >
+              <Text color={PalletColor.auraWhite}>
                 <strong>Braiant Dev ®</strong>
               </Text>
             </LogoBox>
@@ -105,7 +103,7 @@ export const Footer = () => {
         <Text
           type="caption"
           textAlign="center"
-          style={{ color: PalletColor.auraWhite }}
+          color={PalletColor.auraWhite}
         >
           Developed with much &#9749; and ♥
         </Text>

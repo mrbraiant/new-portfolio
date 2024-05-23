@@ -40,12 +40,15 @@ export const FlipCard = ({
                 alt="back-card-image"
                 src={'/images/b-back-card.png'}
                 width={350}
-                height={415}
+                height={460}
                 style={{
                   borderRadius: '20px',
                   width: isMobileVersion
                     ? '250px'
                     : '350px',
+                  height: isMobileVersion
+                    ? '495px'
+                    : '460px',
                 }}
               />
             ) : (

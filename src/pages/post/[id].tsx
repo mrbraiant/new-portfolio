@@ -6,6 +6,7 @@ import { ArrowBack } from '@mui/icons-material';
 import { PalletColor } from '@utils/palletColor';
 import { Layout } from '@components/layout';
 import { Text } from '@components/text';
+import ReactMarkdown from 'react-markdown';
 
 export default function Post() {
   const router = useRouter();
@@ -62,7 +63,10 @@ export default function Post() {
           <br />
           <Text type="h5">{postContent.intro}</Text>
           <br />
-          <Text type="body1">{postContent.content}</Text>
+          <ReactMarkdown>
+            {postContent.content}
+          </ReactMarkdown>
+          {/* <Text type="body1">{postContent.content}</Text> */}
         </Layout>
       ) : (
         <>
