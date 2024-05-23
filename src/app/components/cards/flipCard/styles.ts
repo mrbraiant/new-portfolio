@@ -5,7 +5,8 @@ export const CardContainer = styled('div')({
   display: 'flex',
   justifyContent: 'center',
   // marginTop: '30px',
-  marginBottom: '50px',
+  // marginBottom: '50px',
+  height: '494px',
   perspective: '500px',
 
   ['&:hover > div:first-of-type']: {

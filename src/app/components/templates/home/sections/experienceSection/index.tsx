@@ -68,7 +68,7 @@ export const ExperienceSection = () => {
               jobDescription="Leading multiple projects, code reviewing,
             providing support to newcomers and colleagues,
             creating tasks, coding and developing custom
-            Systems, Landing Pages, Dashboards, APIs, etc…"
+            Systems, Landing Pages, Dashboards, APIs"
             />
           }
         />
