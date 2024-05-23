@@ -44,27 +44,30 @@ export const SkillsSection = () => {
         <LeftSideContent>
           <PaperTitle elevation={1}>
             <TitleBox>
-              <Text type="h4">
+              <Text type="h4" color="#122442">
                 <strong>B</strong>raiant <strong>M</strong>
                 alta
               </Text>
             </TitleBox>
             <Divider
               sx={{
-                // backgroundColor: 'red',
                 borderBottomWidth: '3px',
               }}
             />
 
             <ContentBox>
-              <Text type="body2">Front End Developer</Text>
+              <Text type="body2" color="#122442">
+                <strong>Front End Developer</strong>
+              </Text>
               <Divider
                 sx={{
                   // backgroundColor: 'red',
                   borderRightWidth: '3px',
                 }}
               />
-              <Text type="body2">4+ Years Coding</Text>
+              <Text type="body2" color="#122442">
+                <strong>4+ Years Coding</strong>
+              </Text>
             </ContentBox>
           </PaperTitle>
 
@@ -85,7 +88,7 @@ export const SkillsSection = () => {
 
           <SkillsBox>
             <TitleBox>
-              <Text type="h4">
+              <Text type="h4" color="#122442">
                 <strong>M</strong>ain <strong>S</strong>
                 kills
               </Text>
@@ -114,7 +117,7 @@ export const SkillsSection = () => {
         <RightSideContent>
           <SkillsBox>
             <TitleBox>
-              <Text type="h4">
+              <Text type="h4" color="#122442">
                 <strong>S</strong>kills
               </Text>
             </TitleBox>
@@ -125,7 +128,7 @@ export const SkillsSection = () => {
             />
 
             <SkillsContentBox>
-              <Text type="h5">
+              <Text type="h5" color="#122442">
                 <strong>Languages</strong>
               </Text>
               <LanguagesContentBox>
@@ -138,12 +141,14 @@ export const SkillsSection = () => {
                       width={45}
                       height={45}
                     />
-                    <Text>{language.title}</Text>
+                    <Text color="#122442">
+                      {language.title}
+                    </Text>
                   </SkillCell>
                 ))}
               </LanguagesContentBox>
 
-              <Text type="h5">
+              <Text type="h5" color="#122442">
                 <strong>Frameworks</strong>
               </Text>
               <LanguagesContentBox>
@@ -156,12 +161,14 @@ export const SkillsSection = () => {
                       width={45}
                       height={45}
                     />
-                    <Text>{framework.title}</Text>
+                    <Text color="#122442">
+                      {framework.title}
+                    </Text>
                   </SkillCell>
                 ))}
               </LanguagesContentBox>
 
-              <Text type="h5">
+              <Text type="h5" color="#122442">
                 <strong>Design Frameworks</strong>
               </Text>
               <LanguagesContentBox>
@@ -178,13 +185,15 @@ export const SkillsSection = () => {
                         width={45}
                         height={45}
                       />
-                      <Text>{design.title}</Text>
+                      <Text color="#122442">
+                        {design.title}
+                      </Text>
                     </SkillCell>
                   ),
                 )}
               </LanguagesContentBox>
 
-              <Text type="h5">
+              <Text type="h5" color="#122442">
                 <strong>Production Frameworks</strong>
               </Text>
               <LanguagesContentBox>
@@ -201,7 +210,9 @@ export const SkillsSection = () => {
                         width={45}
                         height={45}
                       />
-                      <Text>{production.title}</Text>
+                      <Text color="#122442">
+                        {production.title}
+                      </Text>
                     </SkillCell>
                   ),
                 )}

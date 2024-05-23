@@ -29,6 +29,7 @@ type TextProps = {
     | 'inherit'
     | 'justify';
   paragraph?: boolean;
+  color?: string;
 };
 
 export const Text = ({
@@ -39,6 +40,7 @@ export const Text = ({
   secondary = false,
   textAlign,
   paragraph = false,
+  color,
 }: TextProps) => {
   const theme = useTheme();
 
@@ -53,6 +55,7 @@ export const Text = ({
       sx={sx}
       style={{
         ...style,
+        color,
       }}
     >
       {children}

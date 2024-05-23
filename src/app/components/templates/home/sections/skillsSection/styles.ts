@@ -6,9 +6,8 @@ export const PaperContainer = styled(Paper)(
     display: 'flex',
     flexDirection: 'row',
     gap: '1rem',
-    backgroundImage: 'url("/images/old.png")',
+    backgroundImage: 'url("/images/old-blue.png")',
     // backgroundColor: PalletColor.greyBlue,
-    // backgroundColor: PalletColor.auraWhite,
     padding: '1rem',
     borderRadius: '10px',
     width: '100%',
@@ -52,7 +51,7 @@ export const PaperTitle = styled(Paper)({
 
 export const TitleBox = styled('div')({
   padding: '0px 1rem',
-  background: `linear-gradient(to right, ${PalletColor.skillColor.main} 0%, ${PalletColor.skillColor.secondary} 100%)`,
+  background: `linear-gradient(to left, ${PalletColor.skillColor.main} 0%, ${PalletColor.skillColor.secondary} 100%)`,
 });
 
 export const ContentBox = styled('div')({
