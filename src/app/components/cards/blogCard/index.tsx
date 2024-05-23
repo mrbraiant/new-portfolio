@@ -50,8 +50,8 @@ export const BlogCard = ({
           <Text textAlign="center">
             <strong>{title}</strong>
           </Text>
-          <Text type="body2">
-            {String(intro).substring(0, 50) + '...'}
+          <Text type="caption">
+            {String(intro).substring(0, 60) + '...'}
           </Text>
         </div>
         <Button onClick={() => router.push(`/post/${id}`)}>
