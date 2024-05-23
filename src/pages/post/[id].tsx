@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { Posts } from '../../app/utils/posts';
 import Image from 'next/image';
-import { IconButton } from '@mui/material';
+import { Button, IconButton } from '@mui/material';
 import { ArrowBack } from '@mui/icons-material';
 import { PalletColor } from '@utils/palletColor';
 import { Layout } from '@components/layout';
@@ -10,14 +10,18 @@ import ReactMarkdown from 'react-markdown';
 
 export default function Post() {
   const router = useRouter();
-  const { id } = router.query;
+  const { query, isReady } = router;
+  const { id } = query;
 
   const post = Posts.filter(
     (post) => post.id === Number(id),
   );
   const postContent = post[0];
 
-  return (
+  console.log('post', post);
+  console.log('postContent', postContent);
+
+  return isReady ? (
     <>
       {postContent !== undefined ? (
         <Layout showMainBackgroundImage={false}>
@@ -66,16 +70,47 @@ export default function Post() {
           <ReactMarkdown>
             {postContent.content}
           </ReactMarkdown>
-          {/* <Text type="body1">{postContent.content}</Text> */}
         </Layout>
       ) : (
-        <>
-          {/* TODO: create component to no found page */}
-          <h2>Sorry</h2>
-          <br />
-          <h4>No posts found</h4>
-        </>
+        <Layout showMainBackgroundImage={false}>
+          <div
+            style={{
+              height: '100vh',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Image
+              alt="not-found"
+              src={'/images/blog/not-found.gif'}
+              width={250}
+              height={250}
+              quality={100}
+            />
+            <h2>Sorry</h2>
+            {/* <br /> */}
+            <h4>No posts found</h4>
+            <div style={{ marginTop: '1rem' }}>
+              <Button
+                variant="contained"
+                sx={{
+                  backgroundColor: PalletColor.midnight,
+                  borderRadius: '20px',
+                  '&:hover': {
+                    backgroundColor:
+                      PalletColor.darkMidnight,
+                  },
+                }}
+                onClick={() => router.push('/')}
+              >
+                <strong>Back to Home</strong>
+              </Button>
+            </div>
+          </div>
+        </Layout>
       )}
     </>
-  );
+  ) : null;
 }
