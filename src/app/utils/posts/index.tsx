@@ -185,4 +185,147 @@ In conclusion, the importance of studying trends and the full scope of technolog
   The growing popularity and importance of AI development are undeniable. As AI continues to evolve, its impact on various aspects of life and industry will only deepen. Embracing AI technologies offers immense potential for innovation, efficiency, and problem-solving, making it a cornerstone of future progress. However, it is equally important to navigate the ethical and regulatory landscape to ensure that AI advancements benefit society as a whole. In this dynamic and rapidly changing field, staying informed and adaptive is key to harnessing the full potential of AI.
     `,
   },
+  {
+    id: 5,
+    title: 'Eslint & Prettier setup',
+    image: '/images/blog/eslintprettier.png',
+    intro:
+      'A guide to setup eslint and prettier on next project',
+    content: `
+## Here's a straightforward guide to setting up ESLint and Prettier in a Next.js project:
+
+### Step 1: Create a Next.js Project
+bash
+npx create-next-app@latest your-project-name
+cd your-project-name
+
+
+### Step 2: Install ESLint and Prettier
+bash
+npm install eslint prettier eslint-config-prettier eslint-plugin-prettier --save-dev
+
+
+### Step 3: Set Up ESLint Configuration
+Create an '.eslintrc.json' file in the root of your project with the following content:
+json
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@next/next/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@next/eslint-plugin-next",
+    "prettier"
+  ],
+  "rules": {
+    "prettier/prettier": ["error", { "endOfLine": "auto" }]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
+
+
+### Step 4: Set Up Prettier Configuration
+Create a '.prettierrc' file in the root of your project:
+json
+{
+  "singleQuote": true,
+  "semi": false,
+  "trailingComma": "es5"
+}
+
+
+Create a '.prettierignore' file:
+
+node_modules
+.next
+out
+
+
+### Step 5: Configure Scripts in 'package.json'
+Add the following scripts to your 'package.json':
+json
+"scripts": {
+  "lint": "eslint .",
+  "format": "prettier --write ."
+}
+
+
+### Step 6: Optional - Integrate with VSCode
+Create a '.vscode/settings.json' file with the following content:
+json
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
+
+
+### Step 7: Run Linting and Formatting
+Lint your code:
+bash
+npm run lint
+
+
+Format your code:
+bash
+npm run format
+
+
+### Step 8: Commit Hooks (Optional)
+Install 'husky' and 'lint-staged':
+bash
+npm install husky lint-staged --save-dev
+
+
+Add to 'package.json':
+json
+"husky": {
+  "hooks": {
+    "pre-commit": "lint-staged"
+  }
+},
+"lint-staged": {
+  "src/**/*.{js,jsx,ts,tsx}": [
+    "eslint --fix",
+    "prettier --write"
+  ]
+}
+
+
+Initialize husky:
+bash
+npx husky install
+
+
+### Conclusion
+Following these steps will set up ESLint and Prettier in your Next.js project, ensuring your code is consistently formatted and free of common errors.
+    `,
+  },
 ];

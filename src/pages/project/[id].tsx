@@ -66,6 +66,7 @@ export default function Project() {
             <strong>{projectContent.projectName}</strong>
           </Text>
           <br />
+
           <Text type="h5" textAlign="center">
             <ReactMarkdown>
               {projectContent.projectDescription}
