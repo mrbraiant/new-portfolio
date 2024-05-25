@@ -1,6 +1,10 @@
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import { IconButton } from '@mui/material';
+import {
+  IconButton,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
 import { ArrowBack } from '@mui/icons-material';
 import ReactMarkdown from 'react-markdown';
 import { PalletColor } from '@utils/palletColor';
@@ -10,7 +14,12 @@ import { NotFound } from '@components/templates/notFound';
 import { Projects } from '@utils/projects';
 
 export default function Project() {
+  const theme = useTheme();
   const router = useRouter();
+  const isMobileVersion = useMediaQuery(
+    theme.breakpoints.down('sm'),
+  );
+
   const { query, isReady } = router;
   const { id } = query;
 
@@ -35,7 +44,9 @@ export default function Project() {
                 height={520}
                 style={{
                   width: '100%',
-                  objectFit: 'cover',
+                  objectFit: isMobileVersion
+                    ? 'contain'
+                    : 'cover',
                   borderRadius: '15px',
                 }}
                 unoptimized={true}

@@ -124,7 +124,7 @@ export const ProjectCard = ({
                 router.push(`/project/${projectId}`)
               }
             >
-              Details
+              See More
             </CardButton>
           </JobDescriptionBox>
         </ExperienceCardWrapper>
