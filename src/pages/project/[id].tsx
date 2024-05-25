@@ -39,7 +39,6 @@ export default function Project() {
                   borderRadius: '15px',
                 }}
                 unoptimized={true}
-                // priority
               />
               <IconButton
                 title="Back to blog section"
