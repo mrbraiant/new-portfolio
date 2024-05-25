@@ -5,7 +5,7 @@ export const Projects = [
     projectName: 'Web FB Costa',
     projectType: 'Landing Page',
     projectDescription:
-      'This project I developed using Next.js and Material-UI. I also developed one API to send email.',
+      'This project I developed using **Next.js** and **Material-UI**. I also developed one **API** to send email.',
     projectUrl: 'https://web-fb-costa.vercel.app/',
   },
   {
@@ -14,7 +14,7 @@ export const Projects = [
     projectName: 'Lupit',
     projectType: 'Landing Page / Dashboard',
     projectDescription:
-      'That landing page was developed using Next.js, Material-Ui, GraphQL, Figma as their private dashboard also',
+      'That landing page was developed using **Next.js**, **Material-Ui**, **GraphQL** and **Figma** as their private dashboard also',
     projectUrl: 'https://lupit.io/',
   },
   {
@@ -23,7 +23,7 @@ export const Projects = [
     projectName: 'Inicio Design',
     projectType: 'Landing Page',
     projectDescription:
-      'This landing page was developed using React.Js and Figma as design reference',
+      'This landing page was developed using **React.Js** and **Figma** as design reference',
     projectUrl: 'https://www.iniciodesign.com.br/',
   },
 ];

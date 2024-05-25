@@ -68,6 +68,7 @@ export default function Post() {
           <br />
           <Text type="h5">{postContent.intro}</Text>
           <br />
+
           <ReactMarkdown>
             {postContent.content}
           </ReactMarkdown>

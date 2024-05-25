@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import Image from 'next/image';
 import { IconButton } from '@mui/material';
 import { ArrowBack } from '@mui/icons-material';
+import ReactMarkdown from 'react-markdown';
 import { PalletColor } from '@utils/palletColor';
 import { Layout } from '@components/layout';
 import { Text } from '@components/text';
@@ -66,8 +67,10 @@ export default function Project() {
             <strong>{projectContent.projectName}</strong>
           </Text>
           <br />
-          <Text type="h5">
-            {projectContent.projectDescription}
+          <Text type="h5" textAlign="center">
+            <ReactMarkdown>
+              {projectContent.projectDescription}
+            </ReactMarkdown>
           </Text>
 
           <div
@@ -78,7 +81,7 @@ export default function Project() {
             }}
           >
             <IconButton
-              title="Back to blog section"
+              title="Back to project section"
               sx={{
                 backgroundColor: PalletColor.darkMidnight,
                 '&:hover': {
