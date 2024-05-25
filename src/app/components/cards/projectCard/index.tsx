@@ -6,7 +6,6 @@ import {
 } from '../experienceCard/styles';
 import { Text } from '@components/text';
 import {
-  Button,
   Paper,
   useMediaQuery,
   useTheme,
@@ -16,6 +15,7 @@ import { PalletColor } from '@utils/palletColor';
 import { StyledLink } from '@components/styledLink';
 import { ProjectCardPaper } from './styles';
 import { useRouter } from 'next/router';
+import { CardButton } from '@components/button/cardButton';
 
 type ProjectCardProps = {
   projectImage: string;
@@ -84,12 +84,13 @@ export const ProjectCard = ({
                 width: 'fit-content',
                 padding: '0px 0.5rem',
                 borderRadius: '15px',
+                backgroundColor: PalletColor.auraWhite,
               }}
             >
               <Text
                 type={isMobileVersion ? 'caption' : 'body2'}
               >
-                {projectType}
+                <strong>{projectType}</strong>
               </Text>
             </Paper>
 
@@ -104,13 +105,13 @@ export const ProjectCard = ({
                 {projectUrl}
               </StyledLink>
             </Text>
-            <Button
+            <CardButton
               onClick={() =>
                 router.push(`/project/${projectId}`)
               }
             >
               Details
-            </Button>
+            </CardButton>
           </JobDescriptionBox>
         </ExperienceCardWrapper>
       </ProjectCardPaper>

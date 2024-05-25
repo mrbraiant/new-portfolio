@@ -1,8 +1,9 @@
 import { Text } from '@components/text';
-import { Button, Paper } from '@mui/material';
+import { Paper } from '@mui/material';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useRouter } from 'next/router';
+import { CardButton } from '@components/button/cardButton';
 
 type BlogCardProps = {
   title: string;
@@ -54,9 +55,11 @@ export const BlogCard = ({
             {String(intro).substring(0, 55) + '...'}
           </Text>
         </div>
-        <Button onClick={() => router.push(`/post/${id}`)}>
+        <CardButton
+          onClick={() => router.push(`/post/${id}`)}
+        >
           See More
-        </Button>
+        </CardButton>
       </Paper>
     </motion.div>
   );
