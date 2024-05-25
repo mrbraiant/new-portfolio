@@ -39,7 +39,8 @@ export const FlipCard = ({
               style={{
                 borderRadius: '20px',
                 width: isMobileVersion ? '250px' : '350px',
-                height: isMobileVersion ? '495px' : '460px',
+                height: isMobileVersion ? '100%' : '460px',
+                // height: isMobileVersion ? '495px' : '460px',
               }}
             />
           ) : (
