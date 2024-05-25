@@ -28,8 +28,8 @@ export const Card = styled('div')(({ theme }) => ({
   transformStyle: 'preserve-3d',
   [theme.breakpoints.down('sm')]: {
     width: '250px',
-    // height: '514px',
-    height: '495px',
+    height: '514px',
+    // height: '495px',
     // height: '415px',
   },
 }));
