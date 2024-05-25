@@ -1,7 +1,7 @@
 import { styled } from '@mui/material';
 import { PalletColor } from '@utils/palletColor';
 
-export const CardContainer = styled('div')(({ theme }) => ({
+export const CardContainer = styled('div')({
   display: 'flex',
   justifyContent: 'center',
   // marginTop: '30px',
@@ -16,7 +16,7 @@ export const CardContainer = styled('div')(({ theme }) => ({
   // [theme.breakpoints.down('sm')]: {
   //   height: '514px',
   // },
-}));
+});
 
 export const Card = styled('div')(({ theme }) => ({
   borderRadius: '10px',
