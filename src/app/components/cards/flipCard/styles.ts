@@ -6,7 +6,7 @@ export const CardContainer = styled('div')({
   justifyContent: 'center',
   // marginTop: '30px',
   // marginBottom: '50px',
-  height: '496px',
+  height: '506px',
   perspective: '500px',
 
   ['&:hover > div:first-of-type']: {
@@ -17,8 +17,7 @@ export const CardContainer = styled('div')({
 
 export const Card = styled('div')(({ theme }) => ({
   borderRadius: '10px',
-  // height: '415px',
-  height: '496px',
+  height: '415px',
   width: '350px',
   // position: 'relative',
   transition: 'transform 1500ms',

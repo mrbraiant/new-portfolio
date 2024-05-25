@@ -27,9 +27,11 @@ export const FlipCard = ({
 
   return (
     <div
-      style={{
-        width: 'fit-content',
-      }}
+      style={
+        {
+          // width: 'fit-content',
+        }
+      }
     >
       <CardContainer>
         <Card>
