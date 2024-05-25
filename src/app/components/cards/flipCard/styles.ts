@@ -29,7 +29,7 @@ export const Card = styled('div')(({ theme }) => ({
   [theme.breakpoints.down('sm')]: {
     width: '250px',
     // height: '514px',
-    height: '495px',
+    minHeight: '495px',
     // height: '415px',
   },
 }));
