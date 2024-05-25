@@ -44,7 +44,10 @@ export const BlogCard = ({
           src={image}
           width={250}
           height={250}
-          style={{ borderRadius: '5px 5px 0 0' }}
+          style={{
+            borderRadius: '5px 5px 0 0',
+            objectFit: 'cover',
+          }}
         />
 
         <div style={{ margin: '1rem' }}>
@@ -52,7 +55,9 @@ export const BlogCard = ({
             <strong>{title}</strong>
           </Text>
           <Text type="caption">
-            {String(intro).substring(0, 55) + '...'}
+            {intro.length > 55
+              ? String(intro).substring(0, 55) + '...'
+              : intro}
           </Text>
         </div>
         <CardButton

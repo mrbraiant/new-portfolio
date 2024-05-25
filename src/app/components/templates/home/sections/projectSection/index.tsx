@@ -16,10 +16,11 @@ export const ProjectSection = () => {
           <ProjectCard
             key={index}
             projectId={project.id}
-            projectDescription={project.projectDescription}
+            projectCardImage={project.projectCardImage}
             projectImage={project.projectImage}
             projectName={project.projectName}
             projectType={project.projectType}
+            projectIntro={project.projectIntro}
             projectUrl={project.projectUrl}
           />
         ))}

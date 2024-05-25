@@ -16,24 +16,30 @@ import { StyledLink } from '@components/styledLink';
 import { ProjectCardPaper } from './styles';
 import { useRouter } from 'next/router';
 import { CardButton } from '@components/button/cardButton';
+import { useState } from 'react';
 
 type ProjectCardProps = {
   projectImage: string;
+  projectCardImage: string;
   projectName: string;
   projectType: string;
-  projectDescription: string;
+  projectIntro: string;
   projectUrl: string;
   projectId: number;
 };
 
 export const ProjectCard = ({
   projectImage,
+  projectCardImage,
   projectName,
   projectType,
-  projectDescription,
+  projectIntro,
   projectUrl,
   projectId,
 }: ProjectCardProps) => {
+  const [cardHoverImage, setCardHoverImage] =
+    useState<string>(projectCardImage);
+
   const router = useRouter();
   const theme = useTheme();
 
@@ -50,12 +56,17 @@ export const ProjectCard = ({
         damping: 10,
       }}
     >
-      <ProjectCardPaper>
+      <ProjectCardPaper
+        onMouseEnter={() => setCardHoverImage(projectImage)}
+        onMouseLeave={() =>
+          setCardHoverImage(projectCardImage)
+        }
+      >
         <ExperienceCardWrapper>
-          {projectImage && (
+          {cardHoverImage && (
             <Image
               alt={`project-image-${projectName}`}
-              src={projectImage}
+              src={cardHoverImage}
               width={320}
               height={220}
               style={{
@@ -97,7 +108,10 @@ export const ProjectCard = ({
             <Text
               type={isMobileVersion ? 'caption' : 'body2'}
             >
-              {projectDescription}{' '}
+              {projectIntro.length > 40
+                ? String(projectIntro).substring(0, 40) +
+                  '...'
+                : projectIntro}{' '}
               <StyledLink
                 href={String(projectUrl)}
                 target="_blank"
