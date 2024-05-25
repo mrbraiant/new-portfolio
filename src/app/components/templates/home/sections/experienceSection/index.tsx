@@ -54,7 +54,7 @@ export const ExperienceSection = () => {
           // justifyContent: isMobileVersion
           //   ? 'center'
           //   : undefined,
-          // gap: '1rem',
+          gap: '1rem',
         }}
       >
         {Experiences?.map((experience, index) => (

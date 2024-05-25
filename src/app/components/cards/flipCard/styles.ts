@@ -6,7 +6,7 @@ export const CardContainer = styled('div')({
   justifyContent: 'center',
   // marginTop: '30px',
   // marginBottom: '50px',
-  height: '515px',
+  height: '514px',
   perspective: '500px',
 
   ['&:hover > div:first-of-type']: {
@@ -24,7 +24,7 @@ export const Card = styled('div')(({ theme }) => ({
   transformStyle: 'preserve-3d',
   [theme.breakpoints.down('sm')]: {
     width: '250px',
-    height: '515px',
+    height: '514px',
     // height: '415px',
   },
 }));
