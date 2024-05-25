@@ -26,39 +26,27 @@ export const FlipCard = ({
   );
 
   return (
-    <div
-      style={
-        {
-          // width: 'fit-content',
-        }
-      }
-    >
-      <CardContainer>
-        <Card>
-          <FrontCard>{frontContent}</FrontCard>
-          <BackCard>
-            {showBackImage ? (
-              <Image
-                alt="back-card-image"
-                src={'/images/b-back-card.png'}
-                width={350}
-                height={460}
-                style={{
-                  borderRadius: '20px',
-                  width: isMobileVersion
-                    ? '250px'
-                    : '350px',
-                  height: isMobileVersion
-                    ? '495px'
-                    : '460px',
-                }}
-              />
-            ) : (
-              backContent
-            )}
-          </BackCard>
-        </Card>
-      </CardContainer>
-    </div>
+    <CardContainer>
+      <Card>
+        <FrontCard>{frontContent}</FrontCard>
+        <BackCard>
+          {showBackImage ? (
+            <Image
+              alt="back-card-image"
+              src={'/images/b-back-card.png'}
+              width={350}
+              height={460}
+              style={{
+                borderRadius: '20px',
+                width: isMobileVersion ? '250px' : '350px',
+                height: isMobileVersion ? '495px' : '460px',
+              }}
+            />
+          ) : (
+            backContent
+          )}
+        </BackCard>
+      </Card>
+    </CardContainer>
   );
 };
