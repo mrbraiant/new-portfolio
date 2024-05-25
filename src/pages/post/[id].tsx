@@ -71,6 +71,31 @@ export default function Post() {
           <ReactMarkdown>
             {postContent.content}
           </ReactMarkdown>
+
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              marginTop: '1rem',
+            }}
+          >
+            <IconButton
+              title="Back to blog section"
+              sx={{
+                backgroundColor: PalletColor.darkMidnight,
+                '&:hover': {
+                  backgroundColor: PalletColor.midnight,
+                },
+              }}
+              onClick={() => router.push('/#blog')}
+            >
+              <ArrowBack
+                sx={{
+                  color: PalletColor.auraWhite,
+                }}
+              />
+            </IconButton>
+          </div>
         </Layout>
       ) : (
         <NotFound />

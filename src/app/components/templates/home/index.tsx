@@ -1,12 +1,11 @@
-import { Section } from '@components/homeSection';
 import { Layout } from '@components/layout';
 import { ContactSection } from './sections/contactSection';
 import { BlogSection } from './sections/blogSection';
 import { AboutSection } from './sections/aboutSection';
 import { ExperienceSection } from './sections/experienceSection';
-import { TableChart } from '@mui/icons-material';
 import { SkillsSection } from './sections/skillsSection';
 import { EducationSection } from './sections/educationSection';
+import { ProjectSection } from './sections/projectSection';
 
 export const HomeTemplate = () => {
   return (
@@ -15,11 +14,7 @@ export const HomeTemplate = () => {
 
       <ExperienceSection />
 
-      <Section
-        sectionName="Projects"
-        titleBackgroundColor="#485A6A"
-        iconTitle={<TableChart />}
-      />
+      <ProjectSection />
 
       <SkillsSection />
 

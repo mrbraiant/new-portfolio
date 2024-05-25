@@ -8,6 +8,7 @@ import {
   // useTheme,
 } from '@mui/material';
 import { Experiences } from '@utils/experiences';
+import { ExperienceCardBox } from './styles';
 
 export const ExperienceSection = () => {
   // const theme = useTheme();
@@ -46,17 +47,7 @@ export const ExperienceSection = () => {
           https://apps.idwsolucoes.com.br
         </Text> */}
       </Paper>
-      <div
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-          // justifyContent: isMobileVersion
-          //   ? 'center'
-          //   : undefined,
-          gap: '1rem',
-        }}
-      >
+      <ExperienceCardBox>
         {Experiences?.map((experience, index) => (
           <FlipCard
             key={index}
@@ -73,7 +64,7 @@ export const ExperienceSection = () => {
             }
           />
         ))}
-      </div>
+      </ExperienceCardBox>
     </Section>
   );
 };

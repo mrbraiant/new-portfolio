@@ -89,8 +89,8 @@ export const DrawerPc = ({
   return (
     <Drawer
       variant="permanent"
-      onMouseMove={handleDrawerOpen}
-      onMouseLeave={handleDrawerClose}
+      // onMouseMove={handleDrawerOpen}
+      // onMouseLeave={handleDrawerClose}
       open={open}
       PaperProps={{
         sx: {

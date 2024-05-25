@@ -53,7 +53,7 @@ export const JobDescriptionBox = styled('div')({
   display: 'flex',
   flexDirection: 'column',
   width: '100%',
-  padding: '0px 0.5rem',
+  padding: '0.5rem',
   backgroundColor: '#fafafa',
   border: 'thick double darkblue',
   borderRadius: '0px 0px 10px 10px',
