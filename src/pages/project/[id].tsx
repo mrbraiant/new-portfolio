@@ -29,7 +29,7 @@ export default function Project() {
           {projectContent.projectImage !== undefined ? (
             <div>
               <Image
-                alt={`post-image-${projectContent.projectName}`}
+                alt={`project-image-${projectContent.projectName}`}
                 src={projectContent.projectImage}
                 width={800}
                 height={520}
