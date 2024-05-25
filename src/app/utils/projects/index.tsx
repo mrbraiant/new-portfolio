@@ -18,9 +18,9 @@ export const Projects = [
     projectName: 'Lupit',
     projectType: 'Landing Page / Dashboard',
     projectIntro:
-      'Project developed using Next.js, Mui, GraphQl, Figma, Eslint, Prettier and more',
+      'Project developed using Next.js, Docker, GraphQl, Figma, Strapi, Prettier and more',
     projectDescription:
-      'That landing page was developed using **Next.js**, **Material-Ui**, **GraphQL** and **Figma** as their private dashboard also',
+      'That landing page was developed using **Next.js**, **Material-Ui**, **Strapi**, **Docker**, **GraphQL** and **Figma** as their private dashboard also',
     projectUrl: 'https://lupit.io/',
   },
   {
