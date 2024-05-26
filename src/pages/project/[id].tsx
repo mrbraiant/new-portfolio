@@ -28,9 +28,6 @@ export default function Project() {
   );
   const projectContent = project[0];
 
-  console.log('project', project);
-  console.log('projectContent', projectContent);
-
   return isReady ? (
     <>
       {projectContent !== undefined ? (

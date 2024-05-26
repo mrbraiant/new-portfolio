@@ -19,9 +19,6 @@ export default function Post() {
   );
   const postContent = post[0];
 
-  console.log('post', post);
-  console.log('postContent', postContent);
-
   return isReady ? (
     <>
       {postContent !== undefined ? (
