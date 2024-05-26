@@ -19,7 +19,7 @@ export const MainImage = () => {
             ? '/images/background-mobile-nf.gif'
             : '/images/background.gif'
         }
-        // unoptimized
+        unoptimized={true}
         width={1100}
         height={600}
         style={{
