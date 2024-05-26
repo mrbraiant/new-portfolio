@@ -20,6 +20,10 @@ export const MainImage = () => {
             : '/images/background.gif'
         }
         unoptimized={true}
+        placeholder="blur"
+        blurDataURL={
+          'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYJxUDwABsAEUeRJLjwAAAABJRU5ErkJggg=='
+        }
         width={1100}
         height={600}
         style={{

@@ -30,6 +30,10 @@ export default function Post() {
                 src={postContent.image}
                 width={800}
                 height={400}
+                placeholder="blur"
+                blurDataURL={
+                  'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYJxUDwABsAEUeRJLjwAAAABJRU5ErkJggg=='
+                }
                 style={{
                   width: '100%',
                   objectFit: 'cover',
