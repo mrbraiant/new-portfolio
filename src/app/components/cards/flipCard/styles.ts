@@ -1,27 +1,28 @@
 import { styled } from '@mui/material';
 import { PalletColor } from '@utils/palletColor';
 
-export const CardContainer = styled('div')({
+export const CardContainer = styled('div')(({ theme }) => ({
   display: 'flex',
   justifyContent: 'center',
   // marginTop: '30px',
   // marginBottom: '50px',
   // height: '494px',
+  height: '474px',
   // height: '460px',
   perspective: '500px',
   ['&:hover > div:first-of-type']: {
     cursor: 'pointer',
     transform: 'rotateY(180deg)',
   },
-  // [theme.breakpoints.down('sm')]: {
-  //   height: '514px',
-  // },
-});
+  [theme.breakpoints.down('sm')]: {
+    height: '514px',
+  },
+}));
 
 export const Card = styled('div')(({ theme }) => ({
   borderRadius: '10px',
   // height: '415px',
-  height: '460px',
+  height: '474px',
   width: '350px',
   // position: 'relative',
   transition: 'transform 1500ms',

@@ -19,7 +19,7 @@ export const MainImage = () => {
             ? '/images/background-mobile-nf.gif'
             : '/images/background.gif'
         }
-        unoptimized={true}
+        // unoptimized={true}
         placeholder="blur"
         blurDataURL={
           'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkYJxUDwABsAEUeRJLjwAAAABJRU5ErkJggg=='
