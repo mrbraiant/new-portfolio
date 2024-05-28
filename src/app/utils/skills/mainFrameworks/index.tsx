@@ -48,6 +48,12 @@ export const MainFrameworks = [
       'https://www.svgrepo.com/show/354399/strapi-icon.svg',
   },
   {
+    imageAlt: 'Docker',
+    title: 'Docker',
+    image:
+      'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg',
+  },
+  {
     imageAlt: 'Express',
     title: 'Express',
     image:
