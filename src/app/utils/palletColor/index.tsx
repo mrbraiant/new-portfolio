@@ -20,6 +20,7 @@ export const PalletColor = {
   skillColor: {
     main: '#10203A',
     secondary: '#BACDEC',
+    secondaryBackground: '#BACDEC20',
     background: '#E3EBF7',
     boxBackground: '#F1F5FB',
   },

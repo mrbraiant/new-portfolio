@@ -20,6 +20,7 @@ import {
   LanguagesContentBox,
   SkillCell,
   MainSkillCell,
+  SkillsPaperBox,
 } from './styles';
 import { MainLanguages } from '@utils/skills/mainLanguages';
 import { MainFrameworks } from '@utils/skills/mainFrameworks';
@@ -27,6 +28,7 @@ import { MainDesignFrameworks } from '@utils/skills/mainDesignLibs';
 import { ProductionLanguages } from '@utils/skills/productionLanguages';
 import { MainSkills } from '@utils/skills/mainSkills';
 import { motion } from 'framer-motion';
+import { PalletColor } from '@utils/palletColor';
 
 export const SkillsSection = () => {
   const theme = useTheme();
@@ -137,86 +139,12 @@ export const SkillsSection = () => {
             />
 
             <SkillsContentBox>
-              <Text type="h5" color="#122442">
-                <strong>Languages</strong>
-              </Text>
-              <LanguagesContentBox>
-                {MainLanguages.map((language, index) => (
-                  <motion.div
-                    key={index}
-                    drag
-                    dragConstraints={{
-                      left: 0,
-                      right: 50,
-                      top: 0,
-                      bottom: 20,
-                    }}
-                    whileHover={{ scale: 1.05 }}
-                    transition={{
-                      type: 'spring',
-                      stiffness: 400,
-                      damping: 10,
-                    }}
-                  >
-                    <SkillCell variant="outlined">
-                      <Image
-                        alt={language.imageAlt}
-                        src={language.image}
-                        title={language.imageAlt}
-                        width={45}
-                        height={45}
-                      />
-                      <Text color="#122442">
-                        {language.title}
-                      </Text>
-                    </SkillCell>
-                  </motion.div>
-                ))}
-              </LanguagesContentBox>
-
-              <Text type="h5" color="#122442">
-                <strong>Frameworks</strong>
-              </Text>
-              <LanguagesContentBox>
-                {MainFrameworks.map((framework, index) => (
-                  <motion.div
-                    key={index}
-                    drag
-                    dragConstraints={{
-                      left: 0,
-                      right: 50,
-                      top: 0,
-                      bottom: 20,
-                    }}
-                    whileHover={{ scale: 1.05 }}
-                    transition={{
-                      type: 'spring',
-                      stiffness: 400,
-                      damping: 10,
-                    }}
-                  >
-                    <SkillCell variant="outlined">
-                      <Image
-                        alt={framework.imageAlt}
-                        src={framework.image}
-                        title={framework.imageAlt}
-                        width={45}
-                        height={45}
-                      />
-                      <Text color="#122442">
-                        {framework.title}
-                      </Text>
-                    </SkillCell>
-                  </motion.div>
-                ))}
-              </LanguagesContentBox>
-
-              <Text type="h5" color="#122442">
-                <strong>Design Frameworks</strong>
-              </Text>
-              <LanguagesContentBox>
-                {MainDesignFrameworks.map(
-                  (design, index) => (
+              <SkillsPaperBox variant="outlined">
+                <Text type="h5" color="#122442">
+                  <strong>Languages</strong>
+                </Text>
+                <LanguagesContentBox>
+                  {MainLanguages.map((language, index) => (
                     <motion.div
                       key={index}
                       drag
@@ -233,67 +161,151 @@ export const SkillsSection = () => {
                         damping: 10,
                       }}
                     >
-                      <SkillCell
-                        key={index}
-                        variant="outlined"
-                      >
+                      <SkillCell variant="outlined">
                         <Image
-                          alt={design.imageAlt}
-                          src={design.image}
-                          title={design.imageAlt}
+                          alt={language.imageAlt}
+                          src={language.image}
+                          title={language.imageAlt}
                           width={45}
                           height={45}
                         />
                         <Text color="#122442">
-                          {design.title}
+                          {language.title}
                         </Text>
                       </SkillCell>
                     </motion.div>
-                  ),
-                )}
-              </LanguagesContentBox>
+                  ))}
+                </LanguagesContentBox>
+              </SkillsPaperBox>
 
-              <Text type="h5" color="#122442">
-                <strong>Production Frameworks</strong>
-              </Text>
-              <LanguagesContentBox>
-                {ProductionLanguages.map(
-                  (production, index) => (
-                    <motion.div
-                      key={index}
-                      drag
-                      dragConstraints={{
-                        left: 0,
-                        right: 50,
-                        top: 0,
-                        bottom: 20,
-                      }}
-                      whileHover={{ scale: 1.05 }}
-                      transition={{
-                        type: 'spring',
-                        stiffness: 400,
-                        damping: 10,
-                      }}
-                    >
-                      <SkillCell
+              <SkillsPaperBox variant="outlined">
+                <Text type="h5" color="#122442">
+                  <strong>Frameworks</strong>
+                </Text>
+                <LanguagesContentBox>
+                  {MainFrameworks.map(
+                    (framework, index) => (
+                      <motion.div
                         key={index}
-                        variant="outlined"
+                        drag
+                        dragConstraints={{
+                          left: 0,
+                          right: 50,
+                          top: 0,
+                          bottom: 20,
+                        }}
+                        whileHover={{ scale: 1.05 }}
+                        transition={{
+                          type: 'spring',
+                          stiffness: 400,
+                          damping: 10,
+                        }}
                       >
-                        <Image
-                          alt={production.imageAlt}
-                          src={production.image}
-                          title={production.imageAlt}
-                          width={45}
-                          height={45}
-                        />
-                        <Text color="#122442">
-                          {production.title}
-                        </Text>
-                      </SkillCell>
-                    </motion.div>
-                  ),
-                )}
-              </LanguagesContentBox>
+                        <SkillCell variant="outlined">
+                          <Image
+                            alt={framework.imageAlt}
+                            src={framework.image}
+                            title={framework.imageAlt}
+                            width={45}
+                            height={45}
+                          />
+                          <Text color="#122442">
+                            {framework.title}
+                          </Text>
+                        </SkillCell>
+                      </motion.div>
+                    ),
+                  )}
+                </LanguagesContentBox>
+              </SkillsPaperBox>
+
+              <SkillsPaperBox variant="outlined">
+                <Text type="h5" color="#122442">
+                  <strong>Design Frameworks</strong>
+                </Text>
+                <LanguagesContentBox>
+                  {MainDesignFrameworks.map(
+                    (design, index) => (
+                      <motion.div
+                        key={index}
+                        drag
+                        dragConstraints={{
+                          left: 0,
+                          right: 50,
+                          top: 0,
+                          bottom: 20,
+                        }}
+                        whileHover={{ scale: 1.05 }}
+                        transition={{
+                          type: 'spring',
+                          stiffness: 400,
+                          damping: 10,
+                        }}
+                      >
+                        <SkillCell
+                          key={index}
+                          variant="outlined"
+                        >
+                          <Image
+                            alt={design.imageAlt}
+                            src={design.image}
+                            title={design.imageAlt}
+                            width={45}
+                            height={45}
+                          />
+                          <Text color="#122442">
+                            {design.title}
+                          </Text>
+                        </SkillCell>
+                      </motion.div>
+                    ),
+                  )}
+                </LanguagesContentBox>
+              </SkillsPaperBox>
+
+              <SkillsPaperBox variant="outlined">
+                <Text type="h5" color="#122442">
+                  <strong>Production Frameworks</strong>
+                </Text>
+                <LanguagesContentBox>
+                  {ProductionLanguages.map(
+                    (production, index) => (
+                      <motion.div
+                        key={index}
+                        drag
+                        dragConstraints={{
+                          left: 0,
+                          right: 50,
+                          top: 0,
+                          bottom: 20,
+                        }}
+                        whileHover={{ scale: 1.05 }}
+                        transition={{
+                          type: 'spring',
+                          stiffness: 400,
+                          damping: 10,
+                        }}
+                      >
+                        <SkillCell
+                          key={index}
+                          variant="outlined"
+                        >
+                          <Image
+                            alt={production.imageAlt}
+                            src={production.image}
+                            title={production.imageAlt}
+                            width={45}
+                            height={45}
+                          />
+                          <Text color="#122442">
+                            {production.title}
+                          </Text>
+                        </SkillCell>
+                      </motion.div>
+                    ),
+                  )}
+                </LanguagesContentBox>
+              </SkillsPaperBox>
             </SkillsContentBox>
           </SkillsBox>
         </RightSideContent>

@@ -69,6 +69,16 @@ export const SkillsContentBox = styled('div')({
   padding: '1rem 1rem',
 });
 
+export const SkillsPaperBox = styled(Paper)({
+  padding: '0.5rem',
+  borderRadius: '5px',
+  backgroundColor:
+    PalletColor.skillColor.secondaryBackground,
+  ['h5']: {
+    marginBottom: '0.5rem',
+  },
+});
+
 export const LanguagesContentBox = styled('div')({
   display: 'flex',
   gap: '0.3rem',
