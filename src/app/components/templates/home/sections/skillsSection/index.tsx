@@ -28,7 +28,6 @@ import { MainDesignFrameworks } from '@utils/skills/mainDesignLibs';
 import { ProductionLanguages } from '@utils/skills/productionLanguages';
 import { MainSkills } from '@utils/skills/mainSkills';
 import { motion } from 'framer-motion';
-import { PalletColor } from '@utils/palletColor';
 
 export const SkillsSection = () => {
   const theme = useTheme();
