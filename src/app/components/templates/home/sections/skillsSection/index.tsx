@@ -26,6 +26,7 @@ import { MainFrameworks } from '@utils/skills/mainFrameworks';
 import { MainDesignFrameworks } from '@utils/skills/mainDesignLibs';
 import { ProductionLanguages } from '@utils/skills/productionLanguages';
 import { MainSkills } from '@utils/skills/mainSkills';
+import { motion } from 'framer-motion';
 
 export const SkillsSection = () => {
   const theme = useTheme();
@@ -103,11 +104,19 @@ export const SkillsSection = () => {
             <SkillsContentBox>
               <LanguagesContentBox>
                 {MainSkills.map((mainSkill, index) => (
-                  <div key={index}>
+                  <motion.div
+                    key={index}
+                    whileHover={{ scale: 1.05 }}
+                    transition={{
+                      type: 'spring',
+                      stiffness: 400,
+                      damping: 10,
+                    }}
+                  >
                     <MainSkillCell variant="outlined">
                       <Text>{mainSkill.skill}</Text>
                     </MainSkillCell>
-                  </div>
+                  </motion.div>
                 ))}
               </LanguagesContentBox>
             </SkillsContentBox>
@@ -133,18 +142,35 @@ export const SkillsSection = () => {
               </Text>
               <LanguagesContentBox>
                 {MainLanguages.map((language, index) => (
-                  <SkillCell key={index} variant="outlined">
-                    <Image
-                      alt={language.imageAlt}
-                      src={language.image}
-                      title={language.imageAlt}
-                      width={45}
-                      height={45}
-                    />
-                    <Text color="#122442">
-                      {language.title}
-                    </Text>
-                  </SkillCell>
+                  <motion.div
+                    key={index}
+                    drag
+                    dragConstraints={{
+                      left: 0,
+                      right: 50,
+                      top: 0,
+                      bottom: 20,
+                    }}
+                    whileHover={{ scale: 1.05 }}
+                    transition={{
+                      type: 'spring',
+                      stiffness: 400,
+                      damping: 10,
+                    }}
+                  >
+                    <SkillCell variant="outlined">
+                      <Image
+                        alt={language.imageAlt}
+                        src={language.image}
+                        title={language.imageAlt}
+                        width={45}
+                        height={45}
+                      />
+                      <Text color="#122442">
+                        {language.title}
+                      </Text>
+                    </SkillCell>
+                  </motion.div>
                 ))}
               </LanguagesContentBox>
 
@@ -153,18 +179,35 @@ export const SkillsSection = () => {
               </Text>
               <LanguagesContentBox>
                 {MainFrameworks.map((framework, index) => (
-                  <SkillCell key={index} variant="outlined">
-                    <Image
-                      alt={framework.imageAlt}
-                      src={framework.image}
-                      title={framework.imageAlt}
-                      width={45}
-                      height={45}
-                    />
-                    <Text color="#122442">
-                      {framework.title}
-                    </Text>
-                  </SkillCell>
+                  <motion.div
+                    key={index}
+                    drag
+                    dragConstraints={{
+                      left: 0,
+                      right: 50,
+                      top: 0,
+                      bottom: 20,
+                    }}
+                    whileHover={{ scale: 1.05 }}
+                    transition={{
+                      type: 'spring',
+                      stiffness: 400,
+                      damping: 10,
+                    }}
+                  >
+                    <SkillCell variant="outlined">
+                      <Image
+                        alt={framework.imageAlt}
+                        src={framework.image}
+                        title={framework.imageAlt}
+                        width={45}
+                        height={45}
+                      />
+                      <Text color="#122442">
+                        {framework.title}
+                      </Text>
+                    </SkillCell>
+                  </motion.div>
                 ))}
               </LanguagesContentBox>
 
@@ -174,21 +217,38 @@ export const SkillsSection = () => {
               <LanguagesContentBox>
                 {MainDesignFrameworks.map(
                   (design, index) => (
-                    <SkillCell
+                    <motion.div
                       key={index}
-                      variant="outlined"
+                      drag
+                      dragConstraints={{
+                        left: 0,
+                        right: 50,
+                        top: 0,
+                        bottom: 20,
+                      }}
+                      whileHover={{ scale: 1.05 }}
+                      transition={{
+                        type: 'spring',
+                        stiffness: 400,
+                        damping: 10,
+                      }}
                     >
-                      <Image
-                        alt={design.imageAlt}
-                        src={design.image}
-                        title={design.imageAlt}
-                        width={45}
-                        height={45}
-                      />
-                      <Text color="#122442">
-                        {design.title}
-                      </Text>
-                    </SkillCell>
+                      <SkillCell
+                        key={index}
+                        variant="outlined"
+                      >
+                        <Image
+                          alt={design.imageAlt}
+                          src={design.image}
+                          title={design.imageAlt}
+                          width={45}
+                          height={45}
+                        />
+                        <Text color="#122442">
+                          {design.title}
+                        </Text>
+                      </SkillCell>
+                    </motion.div>
                   ),
                 )}
               </LanguagesContentBox>
@@ -199,21 +259,38 @@ export const SkillsSection = () => {
               <LanguagesContentBox>
                 {ProductionLanguages.map(
                   (production, index) => (
-                    <SkillCell
+                    <motion.div
                       key={index}
-                      variant="outlined"
+                      drag
+                      dragConstraints={{
+                        left: 0,
+                        right: 50,
+                        top: 0,
+                        bottom: 20,
+                      }}
+                      whileHover={{ scale: 1.05 }}
+                      transition={{
+                        type: 'spring',
+                        stiffness: 400,
+                        damping: 10,
+                      }}
                     >
-                      <Image
-                        alt={production.imageAlt}
-                        src={production.image}
-                        title={production.imageAlt}
-                        width={45}
-                        height={45}
-                      />
-                      <Text color="#122442">
-                        {production.title}
-                      </Text>
-                    </SkillCell>
+                      <SkillCell
+                        key={index}
+                        variant="outlined"
+                      >
+                        <Image
+                          alt={production.imageAlt}
+                          src={production.image}
+                          title={production.imageAlt}
+                          width={45}
+                          height={45}
+                        />
+                        <Text color="#122442">
+                          {production.title}
+                        </Text>
+                      </SkillCell>
+                    </motion.div>
                   ),
                 )}
               </LanguagesContentBox>

@@ -1,21 +1,21 @@
 export const MainSkills = [
   {
-    skill: 'Design Patterns',
-  },
-  {
-    skill: 'Agile Projects',
-  },
-  {
     skill: 'Front-End',
   },
   {
-    skill: 'Clean Code',
+    skill: 'Work in multiple projects',
   },
   {
-    skill: 'Project Documentation',
+    skill: 'Agile projects',
   },
   {
-    skill: 'Flexibility',
+    skill: 'Clean code',
+  },
+  {
+    skill: 'Design patterns',
+  },
+  {
+    skill: 'Project documentation',
   },
   {
     skill: 'Web Responsive Apps',
@@ -24,7 +24,13 @@ export const MainSkills = [
     skill: 'Version control',
   },
   {
-    skill: 'Work in multiple projects',
+    skill: 'Flexibility',
+  },
+  {
+    skill: 'Fast learn',
+  },
+  {
+    skill: 'Attention to details',
   },
   {
     skill: 'Problem solving',

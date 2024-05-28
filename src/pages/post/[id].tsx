@@ -70,9 +70,19 @@ export default function Post() {
           <Text type="h5">{postContent.intro}</Text>
           <br />
 
-          <ReactMarkdown>
-            {postContent.content}
-          </ReactMarkdown>
+          <Text
+            sx={{
+              ['pre']: {
+                backgroundColor: PalletColor.silverSpring,
+                width: 'fit-content',
+                fontSize: '16px',
+              },
+            }}
+          >
+            <ReactMarkdown>
+              {postContent.content}
+            </ReactMarkdown>
+          </Text>
 
           <div
             style={{

@@ -190,24 +190,30 @@ In conclusion, the importance of studying trends and the full scope of technolog
     title: 'Eslint & Prettier setup',
     image: '/images/blog/eslintprettier.png',
     intro:
-      'A guide to setup eslint and prettier on next project',
+      'A guide to setup eslint and prettier in a next project',
     content: `
 ## Here's a straightforward guide to setting up ESLint and Prettier in a Next.js project:
 
+&nbsp;  
 ### Step 1: Create a Next.js Project
 bash
+~~~
 npx create-next-app@latest your-project-name
 cd your-project-name
+~~~
 
-
+&nbsp;  
 ### Step 2: Install ESLint and Prettier
 bash
+~~~
 npm install eslint prettier eslint-config-prettier eslint-plugin-prettier --save-dev
+~~~
 
-
+&nbsp;  
 ### Step 3: Set Up ESLint Configuration
 Create an '.eslintrc.json' file in the root of your project with the following content:
 json
+~~~
 {
   "env": {
     "browser": true,
@@ -241,37 +247,42 @@ json
     }
   }
 }
+~~~
 
-
+&nbsp;  
 ### Step 4: Set Up Prettier Configuration
 Create a '.prettierrc' file in the root of your project:
 json
+~~~
 {
   "singleQuote": true,
   "semi": false,
   "trailingComma": "es5"
 }
+~~~
 
 
 Create a '.prettierignore' file:
-
 node_modules
 .next
 out
 
-
+&nbsp;  
 ### Step 5: Configure Scripts in 'package.json'
 Add the following scripts to your 'package.json':
 json
+~~~
 "scripts": {
   "lint": "eslint .",
   "format": "prettier --write ."
 }
+~~~
 
-
+&nbsp;  
 ### Step 6: Optional - Integrate with VSCode
 Create a '.vscode/settings.json' file with the following content:
 json
+~~~
 {
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -285,27 +296,33 @@ json
     "source.fixAll.eslint": true
   }
 }
+~~~
 
-
+&nbsp;  
 ### Step 7: Run Linting and Formatting
 Lint your code:
 bash
+~~~
 npm run lint
-
-
+~~~
+&nbsp;  
 Format your code:
 bash
+~~~
 npm run format
+~~~
 
-
+&nbsp;  
 ### Step 8: Commit Hooks (Optional)
 Install 'husky' and 'lint-staged':
 bash
+~~~
 npm install husky lint-staged --save-dev
-
+~~~
 
 Add to 'package.json':
 json
+~~~
 "husky": {
   "hooks": {
     "pre-commit": "lint-staged"
@@ -317,13 +334,15 @@ json
     "prettier --write"
   ]
 }
-
+~~~
 
 Initialize husky:
 bash
+~~~
 npx husky install
+~~~
 
-
+&nbsp;  
 ### Conclusion
 Following these steps will set up ESLint and Prettier in your Next.js project, ensuring your code is consistently formatted and free of common errors.
     `,

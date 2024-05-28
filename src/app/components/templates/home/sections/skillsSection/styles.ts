@@ -66,7 +66,7 @@ export const SkillsContentBox = styled('div')({
   display: 'flex',
   flexDirection: 'column',
   gap: '1rem',
-  padding: '0px 1rem',
+  padding: '1rem 1rem',
 });
 
 export const LanguagesContentBox = styled('div')({
@@ -78,7 +78,7 @@ export const LanguagesContentBox = styled('div')({
 
 export const SkillsBox = styled(Paper)({
   // width: 'fit-content',
-  padding: '0.2rem 0.2rem 1rem',
+  padding: '0.2rem 0.2rem 0px',
   borderRadius: '5px',
   // height: 'fit-content',
   backgroundColor: PalletColor.skillColor.boxBackground,
