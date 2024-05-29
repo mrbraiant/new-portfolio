@@ -10,7 +10,7 @@ import {
   TitleBox,
   YearsTab,
 } from './styles';
-import { PalletColor } from '@utils/palletColor';
+import { ColorPalette } from '@utils/colorPalette';
 
 type ExperienceCardProps = {
   title: string;
@@ -58,7 +58,7 @@ export const ExperienceCard = ({
             objectFit: 'cover',
             width: isMobileVersion ? '230px' : '320px',
             height: '150px',
-            backgroundColor: PalletColor.auraWhite,
+            backgroundColor: ColorPalette.auraWhite,
             border: 'thick double darkblue',
           }}
         />

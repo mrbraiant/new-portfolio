@@ -1,4 +1,4 @@
-export const PalletColor = {
+export const ColorPalette = {
   midnight: '#00192F',
   darkMidnight: '#24394C',
   sevenSeas: '#485A6A',

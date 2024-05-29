@@ -6,7 +6,7 @@ import {
   LinkedIn,
   WhatsApp,
 } from '@mui/icons-material';
-import { PalletColor } from '@utils/palletColor';
+import { ColorPalette } from '@utils/colorPalette';
 import {
   FooterBox,
   FooterTopContent,
@@ -24,7 +24,7 @@ export const Footer = () => {
           <div style={{ alignSelf: 'center' }}>
             <LogoBox>
               <Logo />
-              <Text color={PalletColor.auraWhite}>
+              <Text color={ColorPalette.auraWhite}>
                 <strong>Braiant Dev ®</strong>
               </Text>
             </LogoBox>
@@ -34,8 +34,8 @@ export const Footer = () => {
             <ContactBox>
               <Email
                 sx={{
-                  backgroundColor: PalletColor.gmail.main,
-                  color: PalletColor.gmail.white,
+                  backgroundColor: ColorPalette.gmail.main,
+                  color: ColorPalette.gmail.white,
                   borderRadius: '5px',
                 }}
               />
@@ -49,7 +49,7 @@ export const Footer = () => {
 
             <ContactBox>
               <LinkedIn
-                sx={{ color: PalletColor.linkedIn.main }}
+                sx={{ color: ColorPalette.linkedIn.main }}
               />
 
               <StyledLink
@@ -82,8 +82,8 @@ export const Footer = () => {
               <WhatsApp
                 sx={{
                   backgroundColor:
-                    PalletColor.whatsaApp.main,
-                  color: PalletColor.whatsaApp.white,
+                    ColorPalette.whatsaApp.main,
+                  color: ColorPalette.whatsaApp.white,
                   borderRadius: '25px',
                 }}
               />
@@ -103,7 +103,7 @@ export const Footer = () => {
         <Text
           type="caption"
           textAlign="center"
-          color={PalletColor.auraWhite}
+          color={ColorPalette.auraWhite}
         >
           Developed with much &#9749; and ♥
         </Text>

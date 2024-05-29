@@ -8,7 +8,7 @@ import {
 } from '@mui/material';
 import { Project } from '@types';
 
-import { PalletColor } from '@utils/palletColor';
+import { ColorPalette } from '@utils/colorPalette';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import ReactMarkdown from 'react-markdown';
@@ -66,10 +66,10 @@ export const ProjectTemplate = ({
                       top: 45,
                       left: 100,
                       backgroundColor:
-                        PalletColor.darkMidnight,
+                        ColorPalette.darkMidnight,
                       '&:hover': {
                         backgroundColor:
-                          PalletColor.midnight,
+                          ColorPalette.midnight,
                       },
                     }}
                     onClick={() =>
@@ -78,7 +78,7 @@ export const ProjectTemplate = ({
                   >
                     <ArrowBack
                       sx={{
-                        color: PalletColor.auraWhite,
+                        color: ColorPalette.auraWhite,
                       }}
                     />
                   </IconButton>
@@ -101,16 +101,17 @@ export const ProjectTemplate = ({
               <IconButton
                 title="Back to project section"
                 sx={{
-                  backgroundColor: PalletColor.darkMidnight,
+                  backgroundColor:
+                    ColorPalette.darkMidnight,
                   '&:hover': {
-                    backgroundColor: PalletColor.midnight,
+                    backgroundColor: ColorPalette.midnight,
                   },
                 }}
                 onClick={() => router.push('/#projects')}
               >
                 <ArrowBack
                   sx={{
-                    color: PalletColor.auraWhite,
+                    color: ColorPalette.auraWhite,
                   }}
                 />
               </IconButton>

@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import { Projects } from '@utils/projects';
 import { ProjectTemplate } from '@components/templates/project';
+import { Suspense } from 'react';
 
 export default function Project() {
   const router = useRouter();
@@ -13,7 +14,11 @@ export default function Project() {
   );
   const projectContent = project[0];
 
-  return isReady ? (
-    <ProjectTemplate projectContent={projectContent} />
-  ) : null;
+  return (
+    <Suspense fallback={<h1>Loading</h1>}>
+      {isReady ? (
+        <ProjectTemplate projectContent={projectContent} />
+      ) : null}
+    </Suspense>
+  );
 }

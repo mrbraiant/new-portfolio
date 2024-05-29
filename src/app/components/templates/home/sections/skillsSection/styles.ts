@@ -1,5 +1,5 @@
 import { Paper, styled } from '@mui/material';
-import { PalletColor } from '@utils/palletColor';
+import { ColorPalette } from '@utils/colorPalette';
 
 export const PaperContainer = styled(Paper)(
   ({ theme }) => ({
@@ -7,7 +7,7 @@ export const PaperContainer = styled(Paper)(
     flexDirection: 'row',
     gap: '1rem',
     backgroundImage: 'url("/images/old-blue.png")',
-    // backgroundColor: PalletColor.greyBlue,
+    // backgroundColor: ColorPalette.greyBlue,
     padding: '1rem',
     borderRadius: '10px',
     width: '100%',
@@ -46,12 +46,12 @@ export const PaperTitle = styled(Paper)({
   padding: '0.2rem',
   borderRadius: '5px',
   opacity: 0.9,
-  backgroundColor: PalletColor.skillColor.boxBackground,
+  backgroundColor: ColorPalette.skillColor.boxBackground,
 });
 
 export const TitleBox = styled('div')({
   padding: '0px 1rem',
-  background: `linear-gradient(to left, ${PalletColor.skillColor.main} 0%, ${PalletColor.skillColor.secondary} 100%)`,
+  background: `linear-gradient(to left, ${ColorPalette.skillColor.main} 0%, ${ColorPalette.skillColor.secondary} 100%)`,
 });
 
 export const ContentBox = styled('div')({
@@ -59,7 +59,7 @@ export const ContentBox = styled('div')({
   flexDirection: 'row',
   gap: '1rem',
   padding: '0px 1rem',
-  backgroundColor: PalletColor.skillColor.background,
+  backgroundColor: ColorPalette.skillColor.background,
 });
 
 export const SkillsContentBox = styled('div')({
@@ -73,7 +73,7 @@ export const SkillsPaperBox = styled(Paper)({
   padding: '0.5rem',
   borderRadius: '5px',
   backgroundColor:
-    PalletColor.skillColor.secondaryBackground,
+    ColorPalette.skillColor.secondaryBackground,
   ['h5']: {
     marginBottom: '0.5rem',
   },
@@ -91,7 +91,7 @@ export const SkillsBox = styled(Paper)({
   padding: '0.2rem 0.2rem 0px',
   borderRadius: '5px',
   // height: 'fit-content',
-  backgroundColor: PalletColor.skillColor.boxBackground,
+  backgroundColor: ColorPalette.skillColor.boxBackground,
   // opacity: '0.9',
 });
 
@@ -100,7 +100,7 @@ export const SkillCell = styled(Paper)({
   gap: '0.5rem',
   alignItems: 'center',
   padding: '0px 0.5rem 0px 0px',
-  backgroundColor: PalletColor.skillColor.background,
+  backgroundColor: ColorPalette.skillColor.background,
 });
 
 export const MainSkillCell = styled(Paper)({
@@ -108,5 +108,5 @@ export const MainSkillCell = styled(Paper)({
   gap: '0.5rem',
   alignItems: 'center',
   padding: '0px 0.5rem',
-  backgroundColor: PalletColor.skillColor.background,
+  backgroundColor: ColorPalette.skillColor.background,
 });

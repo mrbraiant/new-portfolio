@@ -1,5 +1,5 @@
 import { Paper, styled } from '@mui/material';
-import { PalletColor } from '@utils/palletColor';
+import { ColorPalette } from '@utils/colorPalette';
 
 export const ExperienceCardPaper = styled(Paper)(
   ({ theme }) => ({
@@ -27,7 +27,7 @@ export const MainTitleBox = styled('div')({
   justifyContent: 'space-between',
   width: '100%',
   padding: '0px 0.5rem',
-  backgroundColor: PalletColor.auraWhite,
+  backgroundColor: ColorPalette.auraWhite,
   border: 'thick double darkblue',
   borderRadius: '10px 10px 0px 0px',
 });
@@ -38,13 +38,13 @@ export const TitleBox = styled('div')({
   justifyContent: 'space-between',
   width: '100%',
   padding: '0px 0.5rem',
-  backgroundColor: PalletColor.auraWhite,
+  backgroundColor: ColorPalette.auraWhite,
   border: 'thick double darkblue',
 });
 
 export const JobTypeBox = styled('div')({
-  backgroundColor: PalletColor.darkMidnight,
-  color: PalletColor.auraWhite,
+  backgroundColor: ColorPalette.darkMidnight,
+  color: ColorPalette.auraWhite,
   borderRadius: '15px',
   padding: '0px 0.5rem',
 });
@@ -60,11 +60,11 @@ export const JobDescriptionBox = styled('div')({
 });
 
 export const YearsTab = styled('div')({
-  backgroundColor: PalletColor.midnight,
+  backgroundColor: ColorPalette.midnight,
   borderRadius: '15px',
   padding: '0px 0.5rem',
   width: 'fit-content',
   alignSelf: 'self-end',
   marginBottom: '0.5rem',
-  color: PalletColor.auraWhite,
+  color: ColorPalette.auraWhite,
 });

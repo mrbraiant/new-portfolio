@@ -1,7 +1,7 @@
 import { Text } from '@components/text';
 import { TitleWrapper } from './styles';
 import { useMediaQuery, useTheme } from '@mui/material';
-import { PalletColor } from '@utils/palletColor';
+import { ColorPalette } from '@utils/colorPalette';
 import { ReactNode } from 'react';
 
 export type SectionTitleProps = {
@@ -35,7 +35,7 @@ export const SectionTitle = ({
       {iconTitle}
       <Text
         type={isMobileVersion ? 'h5' : 'h4'}
-        sx={{ color: PalletColor.auraWhite }}
+        sx={{ color: ColorPalette.auraWhite }}
         textAlign="center"
       >
         <strong>{title}</strong>

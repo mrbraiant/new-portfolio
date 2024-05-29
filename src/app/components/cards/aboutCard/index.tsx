@@ -9,7 +9,7 @@ import {
 import { Code, LogoDev } from '@mui/icons-material';
 import Image from 'next/image';
 import { useMediaQuery, useTheme } from '@mui/material';
-import { PalletColor } from '@utils/palletColor';
+import { ColorPalette } from '@utils/colorPalette';
 
 export const AboutCard = () => {
   const theme = useTheme();
@@ -37,7 +37,7 @@ export const AboutCard = () => {
             objectFit: 'cover',
             width: isMobileVersion ? '230px' : '320px',
             height: '150px',
-            backgroundColor: PalletColor.auraWhite,
+            backgroundColor: ColorPalette.auraWhite,
             border: 'thick double darkblue',
           }}
         />

@@ -1,6 +1,6 @@
 import { Layout } from '@components/layout';
 import { Button } from '@mui/material';
-import { PalletColor } from '@utils/palletColor';
+import { ColorPalette } from '@utils/colorPalette';
 import Image from 'next/image';
 import { ButtonBox, LayoutBox } from './styles';
 import { useRouter } from 'next/router';
@@ -27,7 +27,7 @@ export const NotFound = () => {
             variant="contained"
             fullWidth
             sx={{
-              backgroundColor: PalletColor.midnight,
+              backgroundColor: ColorPalette.midnight,
               borderRadius: '20px',
               '&:hover': {
                 backgroundColor: '#003D73',

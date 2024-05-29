@@ -8,7 +8,7 @@ import { Paper, useMediaQuery } from '@mui/material';
 import { DrawerMobile } from './drawerMobile';
 import { DrawerPc } from './drawerPc';
 import { MainImage } from '@components/layout/images/mainImage';
-import { PalletColor } from '@utils/palletColor';
+import { ColorPalette } from '@utils/colorPalette';
 import { Footer } from '@components/layout/footer';
 
 type MiniDrawerProps = {
@@ -85,7 +85,7 @@ export const MiniDrawer = ({
           sx={{
             flexGrow: 1,
             p: 3,
-            backgroundColor: PalletColor.auraWhite,
+            backgroundColor: ColorPalette.auraWhite,
           }}
         >
           {children}

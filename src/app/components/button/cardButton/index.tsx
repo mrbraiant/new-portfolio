@@ -1,5 +1,5 @@
 import { Button } from '@mui/material';
-import { PalletColor } from '@utils/palletColor';
+import { ColorPalette } from '@utils/colorPalette';
 import { ReactNode } from 'react';
 
 type CardButtonProps = {
@@ -15,9 +15,9 @@ export const CardButton = ({
     <Button
       onClick={onClick}
       sx={{
-        color: PalletColor.midnight,
+        color: ColorPalette.midnight,
         '&:hover': {
-          backgroundColor: PalletColor.auraWhite,
+          backgroundColor: ColorPalette.auraWhite,
         },
       }}
     >

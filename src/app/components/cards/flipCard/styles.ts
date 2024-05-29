@@ -1,5 +1,5 @@
 import { styled } from '@mui/material';
-import { PalletColor } from '@utils/palletColor';
+import { ColorPalette } from '@utils/colorPalette';
 
 export const CardContainer = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -57,7 +57,7 @@ export const FrontCard = styled('div')({
 
 export const BackCard = styled('div')({
   transform: 'rotateY(180deg)',
-  backgroundColor: PalletColor.auraWhite,
+  backgroundColor: ColorPalette.auraWhite,
   //   backgroundImage:
   //     'url("https://millenniumcomics.com.au/cdn/shop/products/a13fd31b-ab15-55c2-a25f-1ed36dd99ac1.png?v=1636761965")',
   //   backgroundSize: 'cover',

@@ -1,8 +1,8 @@
 import { styled } from '@mui/material';
-import { PalletColor } from '@utils/palletColor';
+import { ColorPalette } from '@utils/colorPalette';
 
 export const FooterBox = styled('div')(({ theme }) => ({
-  backgroundColor: PalletColor.darkMidnight,
+  backgroundColor: ColorPalette.darkMidnight,
   height: 'fit-content',
   padding: '1rem 1.5rem',
   display: 'flex',
@@ -36,6 +36,6 @@ export const SocialMediaBox = styled('div')({
   padding: '0.5rem',
   borderRadius: '10px',
   ['a']: {
-    color: PalletColor.auraWhite,
+    color: ColorPalette.auraWhite,
   },
 });

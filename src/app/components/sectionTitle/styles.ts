@@ -1,6 +1,6 @@
 import { Paper } from '@mui/material';
 import { styled } from '@mui/system';
-import { PalletColor } from '@utils/palletColor';
+import { ColorPalette } from '@utils/colorPalette';
 
 export const TitleWrapper = styled(Paper)({
   display: 'flex',
@@ -12,7 +12,7 @@ export const TitleWrapper = styled(Paper)({
   borderRadius: 10,
   margin: '2rem 0rem',
   ['svg']: {
-    color: PalletColor.auraWhite,
+    color: ColorPalette.auraWhite,
   },
 });
 

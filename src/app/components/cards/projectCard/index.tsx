@@ -11,7 +11,7 @@ import {
   useTheme,
 } from '@mui/material';
 import { motion } from 'framer-motion';
-import { PalletColor } from '@utils/palletColor';
+import { ColorPalette } from '@utils/colorPalette';
 import { StyledLink } from '@components/styledLink';
 import { ProjectCardPaper } from './styles';
 import { useRouter } from 'next/router';
@@ -73,7 +73,7 @@ export const ProjectCard = ({
                 objectFit: 'cover',
                 width: isMobileVersion ? '230px' : '320px',
                 height: '220px',
-                backgroundColor: PalletColor.auraWhite,
+                backgroundColor: ColorPalette.auraWhite,
                 border: 'thick double darkblue',
                 borderRadius: '10px 10px 0px 0px',
               }}
@@ -95,7 +95,7 @@ export const ProjectCard = ({
                 width: 'fit-content',
                 padding: '0px 0.5rem',
                 borderRadius: '15px',
-                backgroundColor: PalletColor.auraWhite,
+                backgroundColor: ColorPalette.auraWhite,
               }}
             >
               <Text

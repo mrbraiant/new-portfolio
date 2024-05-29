@@ -7,7 +7,7 @@ import {
   Message,
   WhatsApp,
 } from '@mui/icons-material';
-import { PalletColor } from '@utils/palletColor';
+import { ColorPalette } from '@utils/colorPalette';
 import { Text } from '@components/text';
 import { StyledLink } from '@components/styledLink';
 
@@ -28,8 +28,8 @@ export const ContactSection = () => {
           <ContactBox>
             <Email
               sx={{
-                backgroundColor: PalletColor.gmail.main,
-                color: PalletColor.gmail.white,
+                backgroundColor: ColorPalette.gmail.main,
+                color: ColorPalette.gmail.white,
                 borderRadius: '5px',
               }}
             />
@@ -43,7 +43,7 @@ export const ContactSection = () => {
 
           <ContactBox>
             <LinkedIn
-              sx={{ color: PalletColor.linkedIn.main }}
+              sx={{ color: ColorPalette.linkedIn.main }}
             />
 
             <StyledLink
@@ -75,8 +75,9 @@ export const ContactSection = () => {
           <ContactBox>
             <WhatsApp
               sx={{
-                backgroundColor: PalletColor.whatsaApp.main,
-                color: PalletColor.whatsaApp.white,
+                backgroundColor:
+                  ColorPalette.whatsaApp.main,
+                color: ColorPalette.whatsaApp.white,
                 borderRadius: '25px',
               }}
             />
