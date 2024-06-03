@@ -35,4 +35,16 @@ export const Projects = [
       'This landing page was developed using **React.Js** and **Figma** as design reference',
     projectUrl: 'https://www.iniciodesign.com.br/',
   },
+  {
+    id: 4,
+    projectCardImage: '/images/project/mystartup.png',
+    projectImage: '/images/project/mystartup.png',
+    projectName: 'My StartUp AI',
+    projectType: 'Landing Page',
+    projectIntro:
+      'Project developed using Webflow and Figma',
+    projectDescription:
+      'This landing page was developed using **Webflow** and **Figma** as design reference',
+    projectUrl: 'https://www.mystartup.ai/',
+  },
 ];
