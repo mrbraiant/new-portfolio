@@ -9,6 +9,15 @@ export const Experiences = [
       'Leading multiple projects, code reviewing, providing support to newcomers and colleagues, creating tasks, coding and developing custom Systems, Landing Pages, Dashboards, APIs',
   },
   {
+    title: 'My StartUp AI',
+    titleLogo: '/images/exp/mystartup.png',
+    cardImage: '/images/project/mystartup.png',
+    jobTitle: 'Front End Developer | Co-Founder',
+    jobType: 'Remote',
+    jobDescription:
+      'Develop landing page, adding and improving features, dashboards, integrate AI APIs using Webflow, React.js, Next.js and Figma',
+  },
+  {
     title: 'iDw Solutions',
     titleLogo: '/images/exp/idw.webp',
     cardImage: '/images/exp/idw-image.png',
