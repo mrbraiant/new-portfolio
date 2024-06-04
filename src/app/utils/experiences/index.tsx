@@ -1,6 +1,6 @@
 export const Experiences = [
   {
-    title: 'My StartUp AI',
+    title: 'mystartup.ai',
     titleLogo: '/images/exp/mystartup.svg',
     cardImage: '/images/project/mystartup.png',
     jobTitle: 'Front End Developer | Co-Founder',
