@@ -40,11 +40,11 @@ export const Projects = [
     projectCardImage: '/images/project/mystartup.png',
     projectImage: '/images/project/mystartup.gif',
     projectName: 'My StartUp AI',
-    projectType: 'Landing Page',
+    projectType: 'Landing Page / Dashboard',
     projectIntro:
       'Project developed using Webflow and Figma',
     projectDescription:
-      'This landing page was developed using **Webflow** and **Figma** as design reference',
+      'This landing page was developed using **Webflow** and **Figma** as design reference, Dashboard tech is **React.js** and **Next.js**',
     projectUrl: 'https://www.mystartup.ai/',
   },
 ];

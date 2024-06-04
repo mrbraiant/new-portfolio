@@ -6,7 +6,7 @@ export const Experiences = [
     jobTitle: 'Front End Developer | Co-Founder',
     jobType: 'Remote',
     jobDescription:
-      'Develop landing page, adding and improving features, develop dashboard, AI APIs integration. Tech stack used are Webflow, React.js, Next.js and Figma',
+      'Develop landing page, add and improve features, develop dashboard, AI APIs integration. Tech stack used are Webflow, React.js, Next.js and Figma',
     experienceYears: 'Actual',
   },
   {
