@@ -38,7 +38,7 @@ export const Projects = [
   {
     id: 4,
     projectCardImage: '/images/project/mystartup.png',
-    projectImage: '/images/project/mystartup.png',
+    projectImage: '/images/project/mystartup.gif',
     projectName: 'My StartUp AI',
     projectType: 'Landing Page',
     projectIntro:

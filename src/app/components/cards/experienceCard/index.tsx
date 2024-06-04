@@ -19,6 +19,7 @@ type ExperienceCardProps = {
   jobTitle: string;
   jobType: string;
   jobDescription: string;
+  experienceYears?: string;
 };
 
 export const ExperienceCard = ({
@@ -28,6 +29,7 @@ export const ExperienceCard = ({
   jobTitle,
   jobType,
   jobDescription,
+  experienceYears = '2years+',
 }: ExperienceCardProps) => {
   const theme = useTheme();
 
@@ -87,7 +89,7 @@ export const ExperienceCard = ({
             <Text
               type={isMobileVersion ? 'caption' : 'body2'}
             >
-              <strong>2years+</strong>
+              <strong>{experienceYears}</strong>
             </Text>
           </YearsTab>
         </JobDescriptionBox>

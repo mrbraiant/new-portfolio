@@ -60,6 +60,11 @@ export const ExperienceSection = () => {
                 jobTitle={experience.jobTitle}
                 jobType={experience.jobType}
                 jobDescription={experience.jobDescription}
+                experienceYears={
+                  experience.experienceYears
+                    ? experience.experienceYears
+                    : undefined
+                }
               />
             }
           />

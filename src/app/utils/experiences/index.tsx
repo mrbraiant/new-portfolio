@@ -10,12 +10,13 @@ export const Experiences = [
   },
   {
     title: 'My StartUp AI',
-    titleLogo: '/images/exp/mystartup.png',
+    titleLogo: '/images/exp/mystartup.svg',
     cardImage: '/images/project/mystartup.png',
     jobTitle: 'Front End Developer | Co-Founder',
     jobType: 'Remote',
     jobDescription:
-      'Develop landing page, adding and improving features, dashboards, integrate AI APIs using Webflow, React.js, Next.js and Figma',
+      'Develop landing page, adding and improving features, develop dashboard, AI APIs integration. Tech stack used are Webflow, React.js, Next.js and Figma',
+    experienceYears: 'Actual',
   },
   {
     title: 'iDw Solutions',
