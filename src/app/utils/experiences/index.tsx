@@ -1,14 +1,5 @@
 export const Experiences = [
   {
-    title: 'lupit.io',
-    titleLogo: '/images/exp/lupit-icon.svg',
-    cardImage: '/images/exp/lupit-image.png',
-    jobTitle: 'Front End Developer',
-    jobType: 'Remote',
-    jobDescription:
-      'Leading multiple projects, code reviewing, providing support to newcomers and colleagues, creating tasks, coding and developing custom Systems, Landing Pages, Dashboards, APIs',
-  },
-  {
     title: 'My StartUp AI',
     titleLogo: '/images/exp/mystartup.svg',
     cardImage: '/images/project/mystartup.png',
@@ -17,6 +8,15 @@ export const Experiences = [
     jobDescription:
       'Develop landing page, adding and improving features, develop dashboard, AI APIs integration. Tech stack used are Webflow, React.js, Next.js and Figma',
     experienceYears: 'Actual',
+  },
+  {
+    title: 'lupit.io',
+    titleLogo: '/images/exp/lupit-icon.svg',
+    cardImage: '/images/exp/lupit-image.png',
+    jobTitle: 'Front End Developer',
+    jobType: 'Remote',
+    jobDescription:
+      'Leading multiple projects, code reviewing, providing support to newcomers and colleagues, creating tasks, coding and developing custom Systems, Landing Pages, Dashboards, APIs',
   },
   {
     title: 'iDw Solutions',
