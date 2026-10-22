@@ -25,7 +25,7 @@ export default function App({
         'cursive',
       ].join(','),
       h1: {
-        fontSize: isMobileVersion ? 42 : 96,
+        fontSize: isMobileVersion ? 50 : 96,
       },
       h2: {
         fontSize: 60,

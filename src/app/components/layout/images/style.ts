@@ -28,7 +28,6 @@ export const AnimatedTitle = styled(Text)(
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ({ theme }) => ({
     textAlign: 'center',
-    fontWeight: 800,
     animation: `${fadeInUp} 1s cubic-bezier(0.16, 1, 0.3, 1) forwards`,
   }),
 );

@@ -30,7 +30,11 @@ export const MainImage = () => {
         }}
       /> */}
       <Wrapper>
-        <AnimatedTitle type="h1" color="white">
+        <AnimatedTitle
+          type="h1"
+          color="white"
+          sx={{ fontWeight: 800 }}
+        >
           I&apos;m Braiant Malta <br /> Developer
         </AnimatedTitle>
       </Wrapper>
