@@ -1,4 +1,8 @@
-import { styled } from '@mui/material';
+import {
+  keyframes,
+  styled,
+  Typography,
+} from '@mui/material';
 
 export const Wrapper = styled('div')({
   display: 'flex',
@@ -11,3 +15,24 @@ export const Wrapper = styled('div')({
   width: '100%',
   height: 'inherit',
 });
+
+const fadeInUp = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
+
+export const AnimatedTitle = styled(Typography)(
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  ({ theme }) => ({
+    textAlign: 'center',
+    fontWeight: 800,
+    color: 'white',
+    animation: `${fadeInUp} 1s cubic-bezier(0.16, 1, 0.3, 1) forwards`,
+  }),
+);

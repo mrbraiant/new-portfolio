@@ -1,7 +1,5 @@
-import { Text } from '@components/text';
-// import { useMediaQuery, useTheme } from '@mui/material';
 // import Image from 'next/image';
-import { Wrapper } from '../style';
+import { AnimatedTitle, Wrapper } from '../style';
 
 export const MainImage = () => {
   // const theme = useTheme();
@@ -32,16 +30,9 @@ export const MainImage = () => {
         }}
       /> */}
       <Wrapper>
-        <Text
-          type="h1"
-          style={{
-            textAlign: 'center',
-            fontWeight: '800',
-          }}
-          color="white"
-        >
-          I`&apos;`m Braiant Malta <br /> Developer
-        </Text>
+        <AnimatedTitle variant="h1">
+          I&apos;m Braiant Malta <br /> Developer
+        </AnimatedTitle>
       </Wrapper>
     </>
   );
