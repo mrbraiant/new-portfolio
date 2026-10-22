@@ -1,12 +1,23 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import '../app/globals.css';
-import { ThemeProvider, createTheme } from '@mui/material';
+import {
+  ThemeProvider,
+  createTheme,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material';
 
 export default function App({
   Component,
   pageProps,
 }: AppProps) {
+  const mobileTheme = useTheme();
+
+  const isMobileVersion = useMediaQuery(
+    mobileTheme.breakpoints.down('sm'),
+  );
+
   const theme = createTheme({
     typography: {
       fontFamily: [
@@ -14,7 +25,7 @@ export default function App({
         'cursive',
       ].join(','),
       h1: {
-        fontSize: 96,
+        fontSize: isMobileVersion ? 42 : 96,
       },
       h2: {
         fontSize: 60,

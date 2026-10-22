@@ -1,8 +1,5 @@
-import {
-  keyframes,
-  styled,
-  Typography,
-} from '@mui/material';
+import { Text } from '@components/text';
+import { keyframes, styled } from '@mui/material';
 
 export const Wrapper = styled('div')({
   display: 'flex',
@@ -27,7 +24,7 @@ const fadeInUp = keyframes`
   }
 `;
 
-export const AnimatedTitle = styled(Typography)(
+export const AnimatedTitle = styled(Text)(
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   ({ theme }) => ({
     textAlign: 'center',
