@@ -98,6 +98,7 @@ export const SkillsSection = () => {
             <Divider
               sx={{
                 // backgroundColor: 'red',
+                // backgroundColor: 'red',
                 borderBottomWidth: '3px',
               }}
             />
