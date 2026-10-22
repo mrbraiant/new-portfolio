@@ -71,7 +71,7 @@ export const MiniDrawer = ({
             variant="elevation"
             style={{
               width: '100%',
-              height: '95vh',
+              height: isMobileVersion ? '40vh' : '75vh',
               objectFit: 'cover',
               zIndex: 1,
             }}

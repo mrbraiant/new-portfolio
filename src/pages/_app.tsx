@@ -51,7 +51,7 @@ export default function App({
   return (
     <>
       <Head>
-        <title>Braiant Dev</title>
+        <title>Braiant Malta Developer</title>
 
         <meta
           name="description"
@@ -59,7 +59,7 @@ export default function App({
         />
         <meta
           name="keywords"
-          content="Braiant Dev, front-end developer, JavaScript, TypeScript, Next.js, React, Node, HTML, CSS"
+          content="Braiant Malta Developer, front-end developer, web developer, JavaScript, TypeScript, php, Next.js, React, Node, HTML, CSS"
         />
         <meta name="author" content="Braiant Malta" />
         <meta
