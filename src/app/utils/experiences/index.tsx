@@ -1,5 +1,15 @@
 export const Experiences = [
   {
+    title: '2Cubed.ie',
+    titleLogo: '/images/exp/2cb.svg',
+    cardImage: '/images/exp/2cubed.png',
+    jobTitle: 'Front End Developer | Web Developer',
+    jobType: 'Onsite',
+    jobDescription:
+      'Developing many websites, landing pages, e-commerces using Wordpress, shopify, managing website security, updating plugins.',
+    experienceYears: '2 Years',
+  },
+  {
     title: 'mystartup.ai',
     titleLogo: '/images/exp/mystartup.svg',
     cardImage: '/images/project/mystartup.png',
@@ -7,7 +17,7 @@ export const Experiences = [
     jobType: 'Remote',
     jobDescription:
       'Develop landing page, add and improve features, develop dashboard, AI APIs integration. Tech stack used are Webflow, React.js, Next.js and Figma',
-    experienceYears: 'Actual',
+    experienceYears: '1 Year',
   },
   {
     title: 'lupit.io',
@@ -17,6 +27,7 @@ export const Experiences = [
     jobType: 'Remote',
     jobDescription:
       'Leading multiple projects, code reviewing, providing support to newcomers and colleagues, creating tasks, coding and developing custom Systems, Landing Pages, Dashboards, APIs',
+    experienceYears: '2 Years',
   },
   {
     title: 'iDw Solutions',

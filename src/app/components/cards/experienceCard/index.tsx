@@ -11,6 +11,7 @@ import {
   YearsTab,
 } from './styles';
 import { ColorPalette } from '@utils/colorPalette';
+import { motion } from 'framer-motion';
 
 type ExperienceCardProps = {
   title: string;
@@ -38,62 +39,71 @@ export const ExperienceCard = ({
   );
 
   return (
-    <ExperienceCardPaper elevation={8}>
-      <ExperienceCardWrapper>
-        <MainTitleBox>
-          <Text>
-            <strong>{title}</strong>
-          </Text>
+    <motion.div
+      whileHover={{ scale: 1.02 }}
+      transition={{
+        type: 'spring',
+        stiffness: 400,
+        damping: 10,
+      }}
+    >
+      <ExperienceCardPaper elevation={8}>
+        <ExperienceCardWrapper>
+          <MainTitleBox>
+            <Text>
+              <strong>{title}</strong>
+            </Text>
+            <Image
+              alt="exp-logo-1"
+              src={titleLogo}
+              width={40}
+              height={40}
+            />
+          </MainTitleBox>
           <Image
-            alt="exp-logo-1"
-            src={titleLogo}
-            width={40}
-            height={40}
+            alt="avatar"
+            src={cardImage}
+            width={320}
+            height={150}
+            style={{
+              objectFit: 'cover',
+              width: isMobileVersion ? '230px' : '320px',
+              height: '150px',
+              backgroundColor: ColorPalette.auraWhite,
+              border: 'thick double darkblue',
+            }}
           />
-        </MainTitleBox>
-        <Image
-          alt="avatar"
-          src={cardImage}
-          width={320}
-          height={150}
-          style={{
-            objectFit: 'cover',
-            width: isMobileVersion ? '230px' : '320px',
-            height: '150px',
-            backgroundColor: ColorPalette.auraWhite,
-            border: 'thick double darkblue',
-          }}
-        />
-        <TitleBox>
-          <Text
-            type={isMobileVersion ? 'caption' : 'body2'}
-          >
-            <strong>{jobTitle}</strong>
-          </Text>
-          <JobTypeBox>
+          <TitleBox>
             <Text
               type={isMobileVersion ? 'caption' : 'body2'}
             >
-              <strong>{jobType}</strong>
+              <strong>{jobTitle}</strong>
             </Text>
-          </JobTypeBox>
-        </TitleBox>
-        <JobDescriptionBox>
-          <Text
-            type={isMobileVersion ? 'caption' : 'body2'}
-          >
-            {jobDescription}
-          </Text>
+            <JobTypeBox>
+              <Text
+                type={isMobileVersion ? 'caption' : 'body2'}
+              >
+                <strong>{jobType}</strong>
+              </Text>
+            </JobTypeBox>
+          </TitleBox>
+          <JobDescriptionBox>
+            <Text
+              type={isMobileVersion ? 'caption' : 'body2'}
+            >
+              {jobDescription}
+            </Text>
 
-          <YearsTab>
-            <Text
-              type={isMobileVersion ? 'caption' : 'body2'}
-            >
-              <strong>{experienceYears}</strong>
-            </Text>
-          </YearsTab>
-        </JobDescriptionBox>
-      </ExperienceCardWrapper>
-    </ExperienceCardPaper>
+            <YearsTab>
+              <Text
+                type={isMobileVersion ? 'caption' : 'body2'}
+              >
+                <strong>{experienceYears}</strong>
+              </Text>
+            </YearsTab>
+          </JobDescriptionBox>
+        </ExperienceCardWrapper>
+      </ExperienceCardPaper>
+    </motion.div>
   );
 };

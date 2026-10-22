@@ -65,4 +65,22 @@ export const MainFrameworks = [
     image:
       'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg',
   },
+  {
+    imageAlt: 'Wordpress',
+    title: 'Wordpress',
+    image:
+      'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/wordpress/wordpress-plain.svg',
+  },
+  {
+    imageAlt: 'WooCommerce',
+    title: 'WooCommerce',
+    image:
+      'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/woocommerce/woocommerce-original.svg',
+  },
+  {
+    imageAlt: 'Shopify',
+    title: 'Shopify',
+    image:
+      'https://cdn.shopify.com/shopifycloud/brochure/assets/brand-assets/shopify-logo-shopping-bag-full-color-66166b2e55d67988b56b4bd28b63c271e2b9713358cb723070a92bde17ad7d63.svg',
+  },
 ];

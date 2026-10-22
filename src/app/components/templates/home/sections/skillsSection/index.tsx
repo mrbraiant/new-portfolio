@@ -68,7 +68,7 @@ export const SkillsSection = () => {
                 }}
               />
               <Text type="body2" color="#122442">
-                <strong>4+ Years Coding</strong>
+                <strong>5+ Years Coding</strong>
               </Text>
             </ContentBox>
           </PaperTitle>

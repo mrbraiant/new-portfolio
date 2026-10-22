@@ -1,5 +1,5 @@
 import { ExperienceCard } from '@components/cards/experienceCard';
-import { FlipCard } from '@components/cards/flipCard';
+// import { FlipCard } from '@components/cards/flipCard';
 import { Section } from '@components/homeSection';
 import { Leaderboard } from '@mui/icons-material';
 import {
@@ -49,25 +49,26 @@ export const ExperienceSection = () => {
       </Paper>
       <ExperienceCardBox>
         {Experiences?.map((experience, index) => (
-          <FlipCard
+          // <FlipCard
+          //   key={index}
+          //   showBackImage
+          //   frontContent={
+          <ExperienceCard
             key={index}
-            showBackImage
-            frontContent={
-              <ExperienceCard
-                title={experience.title}
-                titleLogo={experience.titleLogo}
-                cardImage={experience.cardImage}
-                jobTitle={experience.jobTitle}
-                jobType={experience.jobType}
-                jobDescription={experience.jobDescription}
-                experienceYears={
-                  experience.experienceYears
-                    ? experience.experienceYears
-                    : undefined
-                }
-              />
+            title={experience.title}
+            titleLogo={experience.titleLogo}
+            cardImage={experience.cardImage}
+            jobTitle={experience.jobTitle}
+            jobType={experience.jobType}
+            jobDescription={experience.jobDescription}
+            experienceYears={
+              experience.experienceYears
+                ? experience.experienceYears
+                : undefined
             }
           />
+          //   }
+          // />
         ))}
       </ExperienceCardBox>
     </Section>
