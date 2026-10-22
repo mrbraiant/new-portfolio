@@ -30,7 +30,7 @@ export const MainImage = () => {
         }}
       /> */}
       <Wrapper>
-        <AnimatedTitle type="h1">
+        <AnimatedTitle type="h1" color="white">
           I&apos;m Braiant Malta <br /> Developer
         </AnimatedTitle>
       </Wrapper>

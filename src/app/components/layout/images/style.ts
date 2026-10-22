@@ -29,7 +29,6 @@ export const AnimatedTitle = styled(Text)(
   ({ theme }) => ({
     textAlign: 'center',
     fontWeight: 800,
-    color: 'white',
     animation: `${fadeInUp} 1s cubic-bezier(0.16, 1, 0.3, 1) forwards`,
   }),
 );
